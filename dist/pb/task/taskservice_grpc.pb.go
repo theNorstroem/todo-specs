@@ -19,19 +19,19 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type TasksClient interface {
 	// Use this to create new tasks.
-	CreateTasks(ctx context.Context, in *CreateTasksRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
+	CreateTask(ctx context.Context, in *CreateTaskRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
 	// Use this to delete existing tasks.
-	DeleteTasks(ctx context.Context, in *DeleteTasksRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
+	DeleteTask(ctx context.Context, in *DeleteTaskRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
 	// Use this to delete ALL tasks.
 	DeleteAllTaskss(ctx context.Context, in *DeleteAllTaskssRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
-	// Custom methods are always POST.
-	FermentTasks(ctx context.Context, in *FermentTasksRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
 	// Returns a single task.
-	GetTasks(ctx context.Context, in *GetTasksRequest, opts ...grpc.CallOption) (*TaskEntity, error)
+	GetTask(ctx context.Context, in *GetTaskRequest, opts ...grpc.CallOption) (*TaskEntity, error)
 	// List tasks with pagination.
-	ListTaskss(ctx context.Context, in *ListTaskssRequest, opts ...grpc.CallOption) (*TaskCollection, error)
+	ListTasks(ctx context.Context, in *ListTasksRequest, opts ...grpc.CallOption) (*TaskCollection, error)
+	// Custom methods are always POST.
+	SuspendTasks(ctx context.Context, in *SuspendTasksRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
 	// Use this to update existing tasks. PATCH is also supported
-	UpdateTasks(ctx context.Context, in *UpdateTasksRequest, opts ...grpc.CallOption) (*TaskEntity, error)
+	UpdateTask(ctx context.Context, in *UpdateTaskRequest, opts ...grpc.CallOption) (*TaskEntity, error)
 }
 
 type tasksClient struct {
@@ -42,18 +42,18 @@ func NewTasksClient(cc grpc.ClientConnInterface) TasksClient {
 	return &tasksClient{cc}
 }
 
-func (c *tasksClient) CreateTasks(ctx context.Context, in *CreateTasksRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+func (c *tasksClient) CreateTask(ctx context.Context, in *CreateTaskRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
 	out := new(emptypb.Empty)
-	err := c.cc.Invoke(ctx, "/task.Tasks/CreateTasks", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/task.Tasks/CreateTask", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *tasksClient) DeleteTasks(ctx context.Context, in *DeleteTasksRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+func (c *tasksClient) DeleteTask(ctx context.Context, in *DeleteTaskRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
 	out := new(emptypb.Empty)
-	err := c.cc.Invoke(ctx, "/task.Tasks/DeleteTasks", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/task.Tasks/DeleteTask", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -69,36 +69,36 @@ func (c *tasksClient) DeleteAllTaskss(ctx context.Context, in *DeleteAllTaskssRe
 	return out, nil
 }
 
-func (c *tasksClient) FermentTasks(ctx context.Context, in *FermentTasksRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
-	out := new(emptypb.Empty)
-	err := c.cc.Invoke(ctx, "/task.Tasks/FermentTasks", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *tasksClient) GetTasks(ctx context.Context, in *GetTasksRequest, opts ...grpc.CallOption) (*TaskEntity, error) {
+func (c *tasksClient) GetTask(ctx context.Context, in *GetTaskRequest, opts ...grpc.CallOption) (*TaskEntity, error) {
 	out := new(TaskEntity)
-	err := c.cc.Invoke(ctx, "/task.Tasks/GetTasks", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/task.Tasks/GetTask", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *tasksClient) ListTaskss(ctx context.Context, in *ListTaskssRequest, opts ...grpc.CallOption) (*TaskCollection, error) {
+func (c *tasksClient) ListTasks(ctx context.Context, in *ListTasksRequest, opts ...grpc.CallOption) (*TaskCollection, error) {
 	out := new(TaskCollection)
-	err := c.cc.Invoke(ctx, "/task.Tasks/ListTaskss", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/task.Tasks/ListTasks", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *tasksClient) UpdateTasks(ctx context.Context, in *UpdateTasksRequest, opts ...grpc.CallOption) (*TaskEntity, error) {
+func (c *tasksClient) SuspendTasks(ctx context.Context, in *SuspendTasksRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+	out := new(emptypb.Empty)
+	err := c.cc.Invoke(ctx, "/task.Tasks/SuspendTasks", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *tasksClient) UpdateTask(ctx context.Context, in *UpdateTaskRequest, opts ...grpc.CallOption) (*TaskEntity, error) {
 	out := new(TaskEntity)
-	err := c.cc.Invoke(ctx, "/task.Tasks/UpdateTasks", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/task.Tasks/UpdateTask", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -110,19 +110,19 @@ func (c *tasksClient) UpdateTasks(ctx context.Context, in *UpdateTasksRequest, o
 // for forward compatibility
 type TasksServer interface {
 	// Use this to create new tasks.
-	CreateTasks(context.Context, *CreateTasksRequest) (*emptypb.Empty, error)
+	CreateTask(context.Context, *CreateTaskRequest) (*emptypb.Empty, error)
 	// Use this to delete existing tasks.
-	DeleteTasks(context.Context, *DeleteTasksRequest) (*emptypb.Empty, error)
+	DeleteTask(context.Context, *DeleteTaskRequest) (*emptypb.Empty, error)
 	// Use this to delete ALL tasks.
 	DeleteAllTaskss(context.Context, *DeleteAllTaskssRequest) (*emptypb.Empty, error)
-	// Custom methods are always POST.
-	FermentTasks(context.Context, *FermentTasksRequest) (*emptypb.Empty, error)
 	// Returns a single task.
-	GetTasks(context.Context, *GetTasksRequest) (*TaskEntity, error)
+	GetTask(context.Context, *GetTaskRequest) (*TaskEntity, error)
 	// List tasks with pagination.
-	ListTaskss(context.Context, *ListTaskssRequest) (*TaskCollection, error)
+	ListTasks(context.Context, *ListTasksRequest) (*TaskCollection, error)
+	// Custom methods are always POST.
+	SuspendTasks(context.Context, *SuspendTasksRequest) (*emptypb.Empty, error)
 	// Use this to update existing tasks. PATCH is also supported
-	UpdateTasks(context.Context, *UpdateTasksRequest) (*TaskEntity, error)
+	UpdateTask(context.Context, *UpdateTaskRequest) (*TaskEntity, error)
 	mustEmbedUnimplementedTasksServer()
 }
 
@@ -130,26 +130,26 @@ type TasksServer interface {
 type UnimplementedTasksServer struct {
 }
 
-func (UnimplementedTasksServer) CreateTasks(context.Context, *CreateTasksRequest) (*emptypb.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateTasks not implemented")
+func (UnimplementedTasksServer) CreateTask(context.Context, *CreateTaskRequest) (*emptypb.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateTask not implemented")
 }
-func (UnimplementedTasksServer) DeleteTasks(context.Context, *DeleteTasksRequest) (*emptypb.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteTasks not implemented")
+func (UnimplementedTasksServer) DeleteTask(context.Context, *DeleteTaskRequest) (*emptypb.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteTask not implemented")
 }
 func (UnimplementedTasksServer) DeleteAllTaskss(context.Context, *DeleteAllTaskssRequest) (*emptypb.Empty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteAllTaskss not implemented")
 }
-func (UnimplementedTasksServer) FermentTasks(context.Context, *FermentTasksRequest) (*emptypb.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method FermentTasks not implemented")
+func (UnimplementedTasksServer) GetTask(context.Context, *GetTaskRequest) (*TaskEntity, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetTask not implemented")
 }
-func (UnimplementedTasksServer) GetTasks(context.Context, *GetTasksRequest) (*TaskEntity, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetTasks not implemented")
+func (UnimplementedTasksServer) ListTasks(context.Context, *ListTasksRequest) (*TaskCollection, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListTasks not implemented")
 }
-func (UnimplementedTasksServer) ListTaskss(context.Context, *ListTaskssRequest) (*TaskCollection, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListTaskss not implemented")
+func (UnimplementedTasksServer) SuspendTasks(context.Context, *SuspendTasksRequest) (*emptypb.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SuspendTasks not implemented")
 }
-func (UnimplementedTasksServer) UpdateTasks(context.Context, *UpdateTasksRequest) (*TaskEntity, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateTasks not implemented")
+func (UnimplementedTasksServer) UpdateTask(context.Context, *UpdateTaskRequest) (*TaskEntity, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateTask not implemented")
 }
 func (UnimplementedTasksServer) mustEmbedUnimplementedTasksServer() {}
 
@@ -164,38 +164,38 @@ func RegisterTasksServer(s *grpc.Server, srv TasksServer) {
 	s.RegisterService(&_Tasks_serviceDesc, srv)
 }
 
-func _Tasks_CreateTasks_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateTasksRequest)
+func _Tasks_CreateTask_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateTaskRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TasksServer).CreateTasks(ctx, in)
+		return srv.(TasksServer).CreateTask(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/task.Tasks/CreateTasks",
+		FullMethod: "/task.Tasks/CreateTask",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TasksServer).CreateTasks(ctx, req.(*CreateTasksRequest))
+		return srv.(TasksServer).CreateTask(ctx, req.(*CreateTaskRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Tasks_DeleteTasks_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteTasksRequest)
+func _Tasks_DeleteTask_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteTaskRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TasksServer).DeleteTasks(ctx, in)
+		return srv.(TasksServer).DeleteTask(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/task.Tasks/DeleteTasks",
+		FullMethod: "/task.Tasks/DeleteTask",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TasksServer).DeleteTasks(ctx, req.(*DeleteTasksRequest))
+		return srv.(TasksServer).DeleteTask(ctx, req.(*DeleteTaskRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -218,74 +218,74 @@ func _Tasks_DeleteAllTaskss_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Tasks_FermentTasks_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(FermentTasksRequest)
+func _Tasks_GetTask_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetTaskRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TasksServer).FermentTasks(ctx, in)
+		return srv.(TasksServer).GetTask(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/task.Tasks/FermentTasks",
+		FullMethod: "/task.Tasks/GetTask",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TasksServer).FermentTasks(ctx, req.(*FermentTasksRequest))
+		return srv.(TasksServer).GetTask(ctx, req.(*GetTaskRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Tasks_GetTasks_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetTasksRequest)
+func _Tasks_ListTasks_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListTasksRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TasksServer).GetTasks(ctx, in)
+		return srv.(TasksServer).ListTasks(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/task.Tasks/GetTasks",
+		FullMethod: "/task.Tasks/ListTasks",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TasksServer).GetTasks(ctx, req.(*GetTasksRequest))
+		return srv.(TasksServer).ListTasks(ctx, req.(*ListTasksRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Tasks_ListTaskss_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListTaskssRequest)
+func _Tasks_SuspendTasks_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SuspendTasksRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TasksServer).ListTaskss(ctx, in)
+		return srv.(TasksServer).SuspendTasks(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/task.Tasks/ListTaskss",
+		FullMethod: "/task.Tasks/SuspendTasks",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TasksServer).ListTaskss(ctx, req.(*ListTaskssRequest))
+		return srv.(TasksServer).SuspendTasks(ctx, req.(*SuspendTasksRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Tasks_UpdateTasks_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateTasksRequest)
+func _Tasks_UpdateTask_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateTaskRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TasksServer).UpdateTasks(ctx, in)
+		return srv.(TasksServer).UpdateTask(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/task.Tasks/UpdateTasks",
+		FullMethod: "/task.Tasks/UpdateTask",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TasksServer).UpdateTasks(ctx, req.(*UpdateTasksRequest))
+		return srv.(TasksServer).UpdateTask(ctx, req.(*UpdateTaskRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -295,32 +295,32 @@ var _Tasks_serviceDesc = grpc.ServiceDesc{
 	HandlerType: (*TasksServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "CreateTasks",
-			Handler:    _Tasks_CreateTasks_Handler,
+			MethodName: "CreateTask",
+			Handler:    _Tasks_CreateTask_Handler,
 		},
 		{
-			MethodName: "DeleteTasks",
-			Handler:    _Tasks_DeleteTasks_Handler,
+			MethodName: "DeleteTask",
+			Handler:    _Tasks_DeleteTask_Handler,
 		},
 		{
 			MethodName: "DeleteAllTaskss",
 			Handler:    _Tasks_DeleteAllTaskss_Handler,
 		},
 		{
-			MethodName: "FermentTasks",
-			Handler:    _Tasks_FermentTasks_Handler,
+			MethodName: "GetTask",
+			Handler:    _Tasks_GetTask_Handler,
 		},
 		{
-			MethodName: "GetTasks",
-			Handler:    _Tasks_GetTasks_Handler,
+			MethodName: "ListTasks",
+			Handler:    _Tasks_ListTasks_Handler,
 		},
 		{
-			MethodName: "ListTaskss",
-			Handler:    _Tasks_ListTaskss_Handler,
+			MethodName: "SuspendTasks",
+			Handler:    _Tasks_SuspendTasks_Handler,
 		},
 		{
-			MethodName: "UpdateTasks",
-			Handler:    _Tasks_UpdateTasks_Handler,
+			MethodName: "UpdateTask",
+			Handler:    _Tasks_UpdateTask_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

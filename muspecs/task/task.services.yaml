@@ -24,6 +24,6 @@
       qp:
         tsk: 'string #tsk string.'
     - md: 'DeleteAll: DELETE /tasks google.protobuf.Empty , google.protobuf.Empty #Use this to delete ALL tasks.'
-    - md: 'Ferment: POST /tasks/{tsk}:ferment google.protobuf.Empty , google.protobuf.Empty #Custom methods are always POST.'
+    - md: 'Suspend: POST /tasks/{tsk}:suspend google.protobuf.Empty , google.protobuf.Empty #Custom methods are always POST.'
       qp:
         tsk: 'string #tsk string.'

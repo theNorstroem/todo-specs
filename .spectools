@@ -44,7 +44,3 @@ dist:
     - specs
     - README.md
     - .spectools
-extensions:
-  genserver:
-    corename: task
-    modulename: tasks

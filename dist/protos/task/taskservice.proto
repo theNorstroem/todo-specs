@@ -21,7 +21,7 @@ import "task/task.proto";
 service Tasks {
 
   // Use this to create new tasks.
-  rpc CreateTasks (CreateTasksRequest) returns (google.protobuf.Empty){
+  rpc CreateTask (CreateTaskRequest) returns (google.protobuf.Empty){
 	//Create: POST /tasks task.Task , google.protobuf.Empty #Use this to create new tasks.
 	option (google.api.http) = {
 		post: "/tasks"
@@ -30,7 +30,7 @@ service Tasks {
   }
 
   // Use this to delete existing tasks.
-  rpc DeleteTasks (DeleteTasksRequest) returns (google.protobuf.Empty){
+  rpc DeleteTask (DeleteTaskRequest) returns (google.protobuf.Empty){
 	//Delete: DELETE /tasks/{tsk} google.protobuf.Empty , google.protobuf.Empty #Use this to delete existing tasks.
 	option (google.api.http) = {
 		delete: "/tasks/{tsk}"
@@ -47,17 +47,8 @@ service Tasks {
 	};
   }
 
-  // Custom methods are always POST.
-  rpc FermentTasks (FermentTasksRequest) returns (google.protobuf.Empty){
-	//Ferment: POST /tasks/{tsk}:ferment google.protobuf.Empty , google.protobuf.Empty #Custom methods are always POST.
-	option (google.api.http) = {
-		post: "/tasks/{tsk}:ferment"
-		body: "body"
-	};
-  }
-
   // Returns a single task.
-  rpc GetTasks (GetTasksRequest) returns (task.TaskEntity){
+  rpc GetTask (GetTaskRequest) returns (task.TaskEntity){
 	//Get: GET /tasks/{tsk} google.protobuf.Empty , task.TaskEntity #Returns a single task.
 	option (google.api.http) = {
 		get: "/tasks/{tsk}"
@@ -66,7 +57,7 @@ service Tasks {
   }
 
   // List tasks with pagination.
-  rpc ListTaskss (ListTaskssRequest) returns (task.TaskCollection){
+  rpc ListTasks (ListTasksRequest) returns (task.TaskCollection){
 	//List: GET /tasks google.protobuf.Empty , task.TaskCollection #List tasks with pagination.
 	option (google.api.http) = {
 		get: "/tasks"
@@ -74,8 +65,17 @@ service Tasks {
 	};
   }
 
+  // Custom methods are always POST.
+  rpc SuspendTasks (SuspendTasksRequest) returns (google.protobuf.Empty){
+	//Suspend: POST /tasks/{tsk}:suspend google.protobuf.Empty , google.protobuf.Empty #Custom methods are always POST.
+	option (google.api.http) = {
+		post: "/tasks/{tsk}:suspend"
+		body: "body"
+	};
+  }
+
   // Use this to update existing tasks. PATCH is also supported
-  rpc UpdateTasks (UpdateTasksRequest) returns (task.TaskEntity){
+  rpc UpdateTask (UpdateTaskRequest) returns (task.TaskEntity){
 	//Update: PUT /tasks/{tsk} task.Task , task.TaskEntity #Use this to update existing tasks. PATCH is also supported
 	option (google.api.http) = {
 		put: "/tasks/{tsk}"

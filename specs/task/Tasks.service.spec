@@ -52,7 +52,7 @@ services:
                 description: Use this field to specify page to display.
                 meta: null
                 type: string
-        rpc_name: ListTaskss
+        rpc_name: ListTasks
     Get:
         description: Returns a single task.
         data:
@@ -70,7 +70,7 @@ services:
                 description: The query param tsk stands for the id of a task.
                 meta: null
                 type: string
-        rpc_name: GetTasks
+        rpc_name: GetTask
     Create:
         description: Use this to create new tasks.
         data:
@@ -83,7 +83,7 @@ services:
             method: POST
             rel: create
         query: {}
-        rpc_name: CreateTasks
+        rpc_name: CreateTask
     Update:
         description: Use this to update existing tasks. PATCH is also supported
         data:
@@ -106,7 +106,7 @@ services:
                 description: Needed to patch a record
                 meta: null
                 type: google.protobuf.FieldMask
-        rpc_name: UpdateTasks
+        rpc_name: UpdateTask
     Delete:
         description: Use this to delete existing tasks.
         data:
@@ -124,7 +124,7 @@ services:
                 description: tsk string.
                 meta: null
                 type: string
-        rpc_name: DeleteTasks
+        rpc_name: DeleteTask
     DeleteAll:
         description: Use this to delete ALL tasks.
         data:
@@ -138,21 +138,21 @@ services:
             rel: delete
         query: {}
         rpc_name: DeleteAllTaskss
-    Ferment:
+    Suspend:
         description: Custom methods are always POST.
         data:
             request: google.protobuf.Empty
             response: google.protobuf.Empty
             bodyfield: body
         deeplink:
-            description: 'Ferment: POST /tasks/{tsk}:ferment google.protobuf.Empty , google.protobuf.Empty #Custom methods are always POST.'
-            href: /tasks/{tsk}:ferment
+            description: 'Suspend: POST /tasks/{tsk}:suspend google.protobuf.Empty , google.protobuf.Empty #Custom methods are always POST.'
+            href: /tasks/{tsk}:suspend
             method: POST
-            rel: ferment
+            rel: suspend
         query:
             tsk:
                 constraints: {}
                 description: tsk string.
                 meta: null
                 type: string
-        rpc_name: FermentTasks
+        rpc_name: SuspendTasks

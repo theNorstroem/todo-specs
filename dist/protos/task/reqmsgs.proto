@@ -11,6 +11,13 @@ import "google/protobuf/field_mask.proto";
 import "task/task.proto";
 
 
+// request message for CreateTask
+message CreateTaskRequest {  
+
+    // Body with task.Task
+    .task.Task body = 1;
+}
+
 // request message for CreateTasks
 message CreateTasksRequest {  
 
@@ -23,6 +30,16 @@ message DeleteAllTaskssRequest {
 
     // Body with google.protobuf.Empty
     .google.protobuf.Empty body = 1;
+}
+
+// request message for DeleteTask
+message DeleteTaskRequest {  
+
+    // Body with google.protobuf.Empty
+    .google.protobuf.Empty body = 1;
+
+    // tsk string.
+    string tsk = 2;
 }
 
 // request message for DeleteTasks
@@ -45,6 +62,16 @@ message FermentTasksRequest {
     string tsk = 2;
 }
 
+// request message for GetTask
+message GetTaskRequest {  
+
+    // Body with google.protobuf.Empty
+    .google.protobuf.Empty body = 1;
+
+    // The query param tsk stands for the id of a task.
+    string tsk = 2;
+}
+
 // request message for GetTasks
 message GetTasksRequest {  
 
@@ -53,6 +80,25 @@ message GetTasksRequest {
 
     // The query param tsk stands for the id of a task.
     string tsk = 2;
+}
+
+// request message for ListTasks
+message ListTasksRequest {  
+
+    // Body with google.protobuf.Empty
+    .google.protobuf.Empty body = 1;
+
+    // Use this to search for a task by text.
+    string q = 2;
+
+    // Use this field to filter the tasks, this is not searching.
+    string filter = 3;
+
+    // Use this field to specify the ordering.
+    string order_by = 4;
+
+    // Use this field to specify page to display.
+    string page = 5;
 }
 
 // request message for ListTaskss
@@ -72,6 +118,29 @@ message ListTaskssRequest {
 
     // Use this field to specify page to display.
     string page = 5;
+}
+
+// request message for SuspendTasks
+message SuspendTasksRequest {  
+
+    // Body with google.protobuf.Empty
+    .google.protobuf.Empty body = 1;
+
+    // tsk string.
+    string tsk = 2;
+}
+
+// request message for UpdateTask
+message UpdateTaskRequest {  
+
+    // Body with task.Task
+    .task.Task body = 1;
+
+    // tsk string.
+    string tsk = 2;
+
+    // Needed to patch a record
+    google.protobuf.FieldMask update_mask = 3;
 }
 
 // request message for UpdateTasks
