@@ -4,13 +4,13 @@ import (
 	"context"
 	"github.com/grpc-ecosystem/grpc-gateway/v2/runtime"
 	//auth.AuthSession
-	authpb "github.com/theNorstroesm/todo-specs/dist/pb/auth"
+	authpb "github.com/theNorstroem/todo-specs/dist/pb/auth"
 
 	//person.Persons
-	personpb "github.com/theNorstroesm/todo-specs/dist/pb/person"
+	personpb "github.com/theNorstroem/todo-specs/dist/pb/person"
 
 	//task.Tasks
-	taskpb "github.com/theNorstroesm/todo-specs/dist/pb/task"
+	taskpb "github.com/theNorstroem/todo-specs/dist/pb/task"
 
 	"google.golang.org/grpc"
 )

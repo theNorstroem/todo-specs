@@ -7,7 +7,7 @@ __proto:
     imports:
         - google/protobuf/empty.proto
     options:
-        go_package: github.com/theNorstroesm/todo-specs/dist/pb/person;personpb
+        go_package: github.com/theNorstroem/todo-specs/dist/pb/person;personpb
         java_multiple_files: "true"
         java_outer_classname: ReqmsgsProto
         java_package: com.furo.baseperson

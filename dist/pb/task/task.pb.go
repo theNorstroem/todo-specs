@@ -11,7 +11,7 @@ package taskpb
 import (
 	proto "github.com/golang/protobuf/proto"
 	furo "github.com/theNorstroem/FuroBaseSpecs/dist/pb/furo"
-	person "github.com/theNorstroesm/todo-specs/dist/pb/person"
+	person "github.com/theNorstroem/todo-specs/dist/pb/person"
 	date "google.golang.org/genproto/googleapis/type/date"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"

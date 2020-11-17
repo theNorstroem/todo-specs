@@ -1,5 +1,5 @@
 spectools: "1.18.1"
-module: "github.com/theNorstroesm/todo-specs"
+module: "github.com/theNorstroem/todo-specs"
 version: "v1.0.0"
 specDir: "./specs"
 specFormat: "yaml" #set to yaml or json
@@ -13,7 +13,7 @@ muSpec:
   services:
     - "./muspecs/**/*services.yaml"
     - "./muspecs/*services.yaml"
-  goPackageBase: "github.com/theNorstroesm/todo-specs/dist/pb/" #this is used to prefix the go package option
+  goPackageBase: "github.com/theNorstroem/todo-specs/dist/pb/" #this is used to prefix the go package option
   javaPackagePrefix: "com.furo.base"
   dir: "muspecs"
 commands: #camelCase is not allowed, command scripts can only be executed from a flow

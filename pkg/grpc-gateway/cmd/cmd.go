@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	grpc_gateway "github.com/theNorstroesm/todo-specs/pkg/grpc-gateway"
+	grpc_gateway "github.com/theNorstroem/todo-specs/pkg/grpc-gateway"
 )
 
 func main() {

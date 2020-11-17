@@ -2,7 +2,7 @@
 # exit when any command fails
 set -e
 
-DOMAINTYPESPATH=github.com/theNorstroesm/todo-specs/dist/pb/
+DOMAINTYPESPATH=github.com/theNorstroem/todo-specs/dist/pb/
 TARGETDIR="../pb"
 # enable recursion for /**/*.xxx
 shopt -s globstar dotglob
@@ -26,7 +26,7 @@ protoc --proto_path=./ \
 --go-grpc_out=\
 :$TMPDIR $FILES
 
-cd $TMPDIR/github.com/theNorstroesm/todo-specs
+cd $TMPDIR/github.com/theNorstroem/todo-specs
 
 FILES=**/*.go
 

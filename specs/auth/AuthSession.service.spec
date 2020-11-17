@@ -11,7 +11,7 @@ __proto:
         - google/protobuf/empty.proto
         - auth/auth.proto
     options:
-        go_package: github.com/theNorstroesm/todo-specs/dist/pb/auth;authpb
+        go_package: github.com/theNorstroem/todo-specs/dist/pb/auth;authpb
         java_multiple_files: "true"
         java_outer_classname: AuthserviceProto
         java_package: com.furo.baseauth

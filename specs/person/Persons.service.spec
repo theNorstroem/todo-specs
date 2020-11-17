@@ -13,7 +13,7 @@ __proto:
         - google/protobuf/field_mask.proto
         - person/person.proto
     options:
-        go_package: github.com/theNorstroesm/todo-specs/dist/pb/person;personpb
+        go_package: github.com/theNorstroem/todo-specs/dist/pb/person;personpb
         java_multiple_files: "true"
         java_outer_classname: PersonserviceProto
         java_package: com.furo.baseperson

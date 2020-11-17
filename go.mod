@@ -1,4 +1,4 @@
-module github.com/theNorstroesm/todo-specs
+module github.com/theNorstroem/todo-specs
 
 go 1.15
 

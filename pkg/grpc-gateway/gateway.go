@@ -3,7 +3,7 @@ package transcoder
 import (
 	"context"
 	"github.com/grpc-ecosystem/grpc-gateway/v2/runtime"
-	"github.com/theNorstroesm/todo-specs/pkg/grpc-gateway/autoregister"
+	"github.com/theNorstroem/todo-specs/pkg/grpc-gateway/autoregister"
 	_ "google.golang.org/genproto/googleapis/rpc/errdetails"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/metadata"

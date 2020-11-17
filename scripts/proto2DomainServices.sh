@@ -3,7 +3,7 @@
 set -e
 
 
-DOMAINTYPESPATH=github.com/theNorstroesm/todo-specs/dist/pb/
+DOMAINTYPESPATH=github.com/theNorstroem/todo-specs/dist/pb/
 TARGETDIR="../pb"
 # enable recursion for /**/*.xxx
 shopt -s globstar dotglob
@@ -42,7 +42,7 @@ protoc --proto_path=./ \
 done
 
 
-cd $TMPDIR/github.com/theNorstroesm/todo-specs
+cd $TMPDIR/github.com/theNorstroem/todo-specs
 
 FILES=**/*.go
 

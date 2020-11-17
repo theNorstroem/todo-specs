@@ -7,7 +7,7 @@ __proto:
     imports:
         - furo/furo.proto
     options:
-        go_package: github.com/theNorstroesm/todo-specs/dist/pb/person;personpb
+        go_package: github.com/theNorstroem/todo-specs/dist/pb/person;personpb
         java_multiple_files: "true"
         java_outer_classname: PersonProto
         java_package: com.furo.baseperson

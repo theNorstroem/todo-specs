@@ -7,7 +7,7 @@ __proto:
     imports:
         - furo/furo.proto
     options:
-        go_package: github.com/theNorstroesm/todo-specs/dist/pb/task;taskpb
+        go_package: github.com/theNorstroem/todo-specs/dist/pb/task;taskpb
         java_multiple_files: "true"
         java_outer_classname: TaskProto
         java_package: pro.furo.todo
