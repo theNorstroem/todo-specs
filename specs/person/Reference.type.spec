@@ -62,7 +62,14 @@ fields:
             oneof: ""
         __ui: null
         meta:
-            default: ""
+            default: |
+                {
+                    "rel": "list",
+                    "href": "/api/persons",
+                    "method": "GET",
+                    "type": "person.Person",
+                    "service": "Persons"
+                }
             hint: ""
             label: person.Reference.link.label
             options:

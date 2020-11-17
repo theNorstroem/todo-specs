@@ -4,6 +4,7 @@ package personpb
 
 import (
 	context "context"
+	signatures "github.com/theNorstroem/FuroBaseSpecs/dist/pb/furo/signatures"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -19,7 +20,7 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type PersonsClient interface {
 	// Use this to create new persons.
-	CreatePersons(ctx context.Context, in *CreatePersonsRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
+	CreatePersons(ctx context.Context, in *CreatePersonsRequest, opts ...grpc.CallOption) (*signatures.EmptyEntity, error)
 	// We use this to disable a person in the list, we do not delete them.
 	DeletePersons(ctx context.Context, in *DeletePersonsRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
 	// Fireing some persons can increase the performance of the other persons POST. Do not use this to much.
@@ -40,8 +41,8 @@ func NewPersonsClient(cc grpc.ClientConnInterface) PersonsClient {
 	return &personsClient{cc}
 }
 
-func (c *personsClient) CreatePersons(ctx context.Context, in *CreatePersonsRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
-	out := new(emptypb.Empty)
+func (c *personsClient) CreatePersons(ctx context.Context, in *CreatePersonsRequest, opts ...grpc.CallOption) (*signatures.EmptyEntity, error) {
+	out := new(signatures.EmptyEntity)
 	err := c.cc.Invoke(ctx, "/person.Persons/CreatePersons", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -99,7 +100,7 @@ func (c *personsClient) UpdatePersons(ctx context.Context, in *UpdatePersonsRequ
 // for forward compatibility
 type PersonsServer interface {
 	// Use this to create new persons.
-	CreatePersons(context.Context, *CreatePersonsRequest) (*emptypb.Empty, error)
+	CreatePersons(context.Context, *CreatePersonsRequest) (*signatures.EmptyEntity, error)
 	// We use this to disable a person in the list, we do not delete them.
 	DeletePersons(context.Context, *DeletePersonsRequest) (*emptypb.Empty, error)
 	// Fireing some persons can increase the performance of the other persons POST. Do not use this to much.
@@ -117,7 +118,7 @@ type PersonsServer interface {
 type UnimplementedPersonsServer struct {
 }
 
-func (UnimplementedPersonsServer) CreatePersons(context.Context, *CreatePersonsRequest) (*emptypb.Empty, error) {
+func (UnimplementedPersonsServer) CreatePersons(context.Context, *CreatePersonsRequest) (*signatures.EmptyEntity, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreatePersons not implemented")
 }
 func (UnimplementedPersonsServer) DeletePersons(context.Context, *DeletePersonsRequest) (*emptypb.Empty, error) {

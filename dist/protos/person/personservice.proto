@@ -7,6 +7,7 @@ option java_multiple_files = true;
 option java_outer_classname = "PersonserviceProto";
 option java_package = "com.furo.baseperson";
 
+import "furo/signatures/signatures.proto";
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
 import "google/protobuf/field_mask.proto";
@@ -19,8 +20,8 @@ import "person/reqmsgs.proto";
 service Persons {
 
   // Use this to create new persons.
-  rpc CreatePersons (CreatePersonsRequest) returns (google.protobuf.Empty){
-	//Create: POST /persons person.Person , google.protobuf.Empty #Use this to create new persons.
+  rpc CreatePersons (CreatePersonsRequest) returns (furo.signatures.EmptyEntity){
+	//Create: POST /persons person.Person , furo.signatures.EmptyEntity #Use this to create new persons.
 	option (google.api.http) = {
 		post: "/persons"
 		body: "body"

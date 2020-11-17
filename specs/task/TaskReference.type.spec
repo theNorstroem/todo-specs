@@ -62,7 +62,14 @@ fields:
             oneof: ""
         __ui: null
         meta:
-            default: ""
+            default: |
+                {
+                    "rel": "list",
+                    "href": "/api/tasks",
+                    "method": "GET",
+                    "type": "task.Task",
+                    "service": "Tasks"
+                }
             hint: ""
             label: task.Reference.link.label
             options:

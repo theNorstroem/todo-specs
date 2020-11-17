@@ -13,7 +13,7 @@
     - md: 'Get: GET /persons/{pn} google.protobuf.Empty , person.PersonEntity #Returns a single person.'
       qp:
         pn: 'string #The query param pn stands for the id of a person.'
-    - md: 'Create: POST /persons person.Person , google.protobuf.Empty #Use this to create new persons.'
+    - md: 'Create: POST /persons person.Person , furo.signatures.EmptyEntity #Use this to create new persons.'
     - md: 'Update: PUT /persons/{pn} person.Person , person.PersonEntity #Use this to update existing persons. PATCH is also supported'
       qp:
         pn: 'string #The query param pn stands for the id of a person.'

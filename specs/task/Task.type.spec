@@ -37,7 +37,12 @@ fields:
         __proto:
             number: 2
             oneof: ""
-        __ui: null
+        __ui:
+            component: furo-data-text-input
+            flags:
+                - full
+            noinit: false
+            noskip: false
         meta:
             default: ""
             hint: ""
@@ -76,7 +81,12 @@ fields:
         __proto:
             number: 4
             oneof: ""
-        __ui: null
+        __ui:
+            component: task-task-reference-search
+            flags:
+                - full
+            noinit: false
+            noskip: false
         meta:
             default: ""
             hint: ""

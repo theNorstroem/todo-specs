@@ -12,6 +12,7 @@ __proto:
         - google/protobuf/empty.proto
         - google/protobuf/field_mask.proto
         - person/person.proto
+        - furo/signatures/signatures.proto
     options:
         go_package: github.com/theNorstroem/todo-specs/dist/pb/person;personpb
         java_multiple_files: "true"
@@ -73,10 +74,10 @@ services:
         description: Use this to create new persons.
         data:
             request: person.Person
-            response: google.protobuf.Empty
+            response: furo.signatures.EmptyEntity
             bodyfield: body
         deeplink:
-            description: 'Create: POST /persons person.Person , google.protobuf.Empty #Use this to create new persons.'
+            description: 'Create: POST /persons person.Person , furo.signatures.EmptyEntity #Use this to create new persons.'
             href: /persons
             method: POST
             rel: create

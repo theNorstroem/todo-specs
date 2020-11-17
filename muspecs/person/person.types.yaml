@@ -8,7 +8,7 @@
   target: person.proto
 
 
-- type: 'person.Reference (ce) #Use this type to set a reference to a person'
+- type: 'person.Reference #Use this type to set a reference to a person'
   fields:
     id: '* string:1 #Id of the referenced person.'
     display_name: '* string:2 #Label of the referenced person'
