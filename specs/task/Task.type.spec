@@ -188,3 +188,21 @@ fields:
             repeated: false
             typespecific: null
         constraints: {}
+    done:
+        type: bool
+        description: this si maybe the main feature.
+        __proto:
+            number: 10
+            oneof: ""
+        __ui: null
+        meta:
+            default: ""
+            hint: ""
+            label: task.Task.done.label
+            options:
+                flags: []
+                list: []
+            readonly: false
+            repeated: false
+            typespecific: null
+        constraints: {}
