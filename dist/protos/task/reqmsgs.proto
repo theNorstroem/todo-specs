@@ -4,7 +4,7 @@ package task;
 option go_package = "github.com/theNorstroem/todo-specs/dist/pb/task;taskpb";
 option java_multiple_files = true;
 option java_outer_classname = "ReqmsgsProto";
-option java_package = "com.furo.basetask";
+option java_package = "pro.furo.todo";
 
 import "google/protobuf/empty.proto";
 import "google/protobuf/field_mask.proto";

@@ -50,7 +50,7 @@ message Task {
     string note = 3;
 
     // The parent for this task
-    task.Task parent = 4;
+    task.Reference parent = 4;
 
     // A task can have a checklist (more work)
     repeated string checklist = 5;

@@ -3,7 +3,7 @@
     id: '- string:1 #Task id (is a ULID).'
     display_name: '* string:2 #We use this field label the task'
     note: 'string:3 #Add some notes'
-    parent: 'task.Task:4 #The parent for this task'
+    parent: 'task.Reference:4 #The parent for this task'
     checklist: '[]string:5 #A task can have a checklist (more work)'
     due_date: 'google.type.Date:6 #Use this to give pressure.'
     related_tasks: '[]task.Reference:7 #Maybe we can benefit.'

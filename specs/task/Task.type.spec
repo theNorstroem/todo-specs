@@ -71,7 +71,7 @@ fields:
             typespecific: null
         constraints: {}
     parent:
-        type: task.Task
+        type: task.Reference
         description: The parent for this task
         __proto:
             number: 4
