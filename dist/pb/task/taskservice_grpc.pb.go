@@ -4,6 +4,7 @@ package taskpb
 
 import (
 	context "context"
+	signatures "github.com/theNorstroem/FuroBaseSpecs/dist/pb/furo/signatures"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -19,7 +20,7 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type TasksClient interface {
 	// Use this to create new tasks.
-	CreateTask(ctx context.Context, in *CreateTaskRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
+	CreateTask(ctx context.Context, in *CreateTaskRequest, opts ...grpc.CallOption) (*signatures.EmptyEntity, error)
 	// Use this to delete existing tasks.
 	DeleteTask(ctx context.Context, in *DeleteTaskRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
 	// Use this to delete ALL tasks.
@@ -42,8 +43,8 @@ func NewTasksClient(cc grpc.ClientConnInterface) TasksClient {
 	return &tasksClient{cc}
 }
 
-func (c *tasksClient) CreateTask(ctx context.Context, in *CreateTaskRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
-	out := new(emptypb.Empty)
+func (c *tasksClient) CreateTask(ctx context.Context, in *CreateTaskRequest, opts ...grpc.CallOption) (*signatures.EmptyEntity, error) {
+	out := new(signatures.EmptyEntity)
 	err := c.cc.Invoke(ctx, "/task.Tasks/CreateTask", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -110,7 +111,7 @@ func (c *tasksClient) UpdateTask(ctx context.Context, in *UpdateTaskRequest, opt
 // for forward compatibility
 type TasksServer interface {
 	// Use this to create new tasks.
-	CreateTask(context.Context, *CreateTaskRequest) (*emptypb.Empty, error)
+	CreateTask(context.Context, *CreateTaskRequest) (*signatures.EmptyEntity, error)
 	// Use this to delete existing tasks.
 	DeleteTask(context.Context, *DeleteTaskRequest) (*emptypb.Empty, error)
 	// Use this to delete ALL tasks.
@@ -130,7 +131,7 @@ type TasksServer interface {
 type UnimplementedTasksServer struct {
 }
 
-func (UnimplementedTasksServer) CreateTask(context.Context, *CreateTaskRequest) (*emptypb.Empty, error) {
+func (UnimplementedTasksServer) CreateTask(context.Context, *CreateTaskRequest) (*signatures.EmptyEntity, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateTask not implemented")
 }
 func (UnimplementedTasksServer) DeleteTask(context.Context, *DeleteTaskRequest) (*emptypb.Empty, error) {

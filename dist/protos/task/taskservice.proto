@@ -7,6 +7,7 @@ option java_multiple_files = true;
 option java_outer_classname = "TaskserviceProto";
 option java_package = "pro.furo.todo";
 
+import "furo/signatures/signatures.proto";
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
 import "google/protobuf/field_mask.proto";
@@ -21,8 +22,8 @@ import "task/task.proto";
 service Tasks {
 
   // Use this to create new tasks.
-  rpc CreateTask (CreateTaskRequest) returns (google.protobuf.Empty){
-	//Create: POST /tasks task.Task , google.protobuf.Empty #Use this to create new tasks.
+  rpc CreateTask (CreateTaskRequest) returns (furo.signatures.EmptyEntity){
+	//Create: POST /tasks task.Task , furo.signatures.EmptyEntity #Use this to create new tasks.
 	option (google.api.http) = {
 		post: "/tasks"
 		body: "body"

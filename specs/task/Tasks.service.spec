@@ -14,6 +14,7 @@ __proto:
         - google/protobuf/empty.proto
         - google/protobuf/field_mask.proto
         - task/task.proto
+        - furo/signatures/signatures.proto
     options:
         go_package: github.com/theNorstroem/todo-specs/dist/pb/task;taskpb
         java_multiple_files: "true"
@@ -75,10 +76,10 @@ services:
         description: Use this to create new tasks.
         data:
             request: task.Task
-            response: google.protobuf.Empty
+            response: furo.signatures.EmptyEntity
             bodyfield: body
         deeplink:
-            description: 'Create: POST /tasks task.Task , google.protobuf.Empty #Use this to create new tasks.'
+            description: 'Create: POST /tasks task.Task , furo.signatures.EmptyEntity #Use this to create new tasks.'
             href: /tasks
             method: POST
             rel: create

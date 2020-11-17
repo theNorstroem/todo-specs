@@ -15,7 +15,7 @@
     - md: 'Get: GET /tasks/{tsk} google.protobuf.Empty , task.TaskEntity #Returns a single task.'
       qp:
         tsk: 'string #The query param tsk stands for the id of a task.'
-    - md: 'Create: POST /tasks task.Task , google.protobuf.Empty #Use this to create new tasks.'
+    - md: 'Create: POST /tasks task.Task , furo.signatures.EmptyEntity #Use this to create new tasks.'
     - md: 'Update: PUT /tasks/{tsk} task.Task , task.TaskEntity #Use this to update existing tasks. PATCH is also supported'
       qp:
         tsk: 'string #tsk string.'
