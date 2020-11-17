@@ -1,0 +1,29 @@
+- name: Tasks
+  description: |
+    Doing nothing is very hard to do… you never know when you’re finished.
+    Having some tasks can help you a lot by giving you that comfortable feeling that you
+    did something.
+  package: task
+  target: taskservice.proto
+  methods:
+    - md: 'List: GET /tasks google.protobuf.Empty , task.TaskCollection #List tasks with pagination.'
+      qp:
+        q: 'string #Use this to search for a task by text.'
+        filter: 'string #Use this field to filter the tasks, this is not searching.'
+        order_by: 'string #Use this field to specify the ordering.'
+        page: 'string #Use this field to specify page to display.'
+    - md: 'Get: GET /tasks/{tsk} google.protobuf.Empty , task.TaskEntity #Returns a single task.'
+      qp:
+        tsk: 'string #The query param tsk stands for the id of a task.'
+    - md: 'Create: POST /tasks task.Task , google.protobuf.Empty #Use this to create new tasks.'
+    - md: 'Update: PUT /tasks/{tsk} task.Task , task.TaskEntity #Use this to update existing tasks. PATCH is also supported'
+      qp:
+        tsk: 'string #tsk string.'
+        update_mask: 'google.protobuf.FieldMask #Needed to patch a record'
+    - md: 'Delete: DELETE /tasks/{tsk} google.protobuf.Empty , google.protobuf.Empty #Use this to delete existing tasks.'
+      qp:
+        tsk: 'string #tsk string.'
+    - md: 'DeleteAll: DELETE /tasks google.protobuf.Empty , google.protobuf.Empty #Use this to delete ALL tasks.'
+    - md: 'Ferment: POST /tasks/{tsk}:ferment google.protobuf.Empty , google.protobuf.Empty #Custom methods are always POST.'
+      qp:
+        tsk: 'string #tsk string.'

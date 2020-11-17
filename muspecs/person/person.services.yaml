@@ -1,0 +1,26 @@
+- name: Persons
+  description: |
+    People / persons are important to us, they should do the work for us.
+  package: person
+  target: personservice.proto
+  methods:
+    - md: 'List: GET /persons google.protobuf.Empty , person.PersonCollection #List persons with pagination.'
+      qp:
+        q: 'string #Use this to search for a person by text.'
+        filter: 'string #Use this field to filter the persons, this is not searching.'
+        order_by: 'string #Use this field to specify the ordering.'
+        page: 'string #Use this field to specify page to display.'
+    - md: 'Get: GET /persons/{pn} google.protobuf.Empty , person.PersonEntity #Returns a single person.'
+      qp:
+        pn: 'string #The query param pn stands for the id of a person.'
+    - md: 'Create: POST /persons person.Person , google.protobuf.Empty #Use this to create new persons.'
+    - md: 'Update: PUT /persons/{pn} person.Person , person.PersonEntity #Use this to update existing persons. PATCH is also supported'
+      qp:
+        pn: 'string #The query param pn stands for the id of a person.'
+        update_mask: 'google.protobuf.FieldMask #Needed to patch a record'
+    - md: 'Delete: DELETE /persons/{pn} google.protobuf.Empty , google.protobuf.Empty #We use this to disable a person in the list, we do not delete them.'
+      qp:
+        pn: 'string #The query param pn stands for the id of a person.'
+    - md: 'Fire: POST /persons/{pn}:ferment google.protobuf.Empty , google.protobuf.Empty #Fireing some persons can increase the performance of the other persons POST. Do not use this to much.'
+      qp:
+        pn: 'string #The query param pn stands for the id of a person.'

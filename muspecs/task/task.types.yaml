@@ -1,0 +1,26 @@
+- type: 'task.Task (ce) #Tasks are essential at work.'
+  fields:
+    id: '- string:1 #Task id (is a ULID).'
+    display_name: '* string:2 #We use this field label the task'
+    note: 'string:3 #Add some notes'
+    parent: 'task.Task:4 #The parent for this task'
+    checklist: '[]string:5 #A task can have a checklist (more work)'
+    due_date: 'google.type.Date:6 #Use this to give pressure.'
+    related_tasks: '[]task.Reference:7 #Maybe we can benefit.'
+    involved_persons: '[]person.Reference:8 #Sometimes a task is to hard for one person only.'
+    responsible_person: 'person.Reference:9 #If something goes wrong, we should be able to make some one responsible for it. This is aligned with our CYA strategy.'
+  target: task.proto
+
+- type: 'task.CheckboxItem #A checkbox item'
+  fields:
+    display_name: '* string:2 #We use this field label the task'
+    done: 'bool:3 #Sample'
+    note: 'string:4 #Add some notes'
+  target: task.proto
+
+- type: 'task.Reference (ce) #Use this to set a reference to a task'
+  fields:
+    id: '* string:1 #Id of the referenced task.'
+    display_name: '* string:2 #Label of the referenced task'
+    link: '* furo.Link:3 #HTS for the initial search (works on root resources only)'
+  target: task.proto

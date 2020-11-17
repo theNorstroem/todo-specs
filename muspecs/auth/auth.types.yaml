@@ -1,0 +1,5 @@
+- type: 'auth.Credentials #Credentials type for login.'
+  fields:
+    password: '* string:1 #The password.'
+    username: '* string:2 #The username or email, or something to identify.'
+  target: auth.proto

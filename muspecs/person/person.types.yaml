@@ -1,0 +1,16 @@
+- type: 'person.Person (ce) #Someone has to do the work.'
+  fields:
+    id: '- string:1 #id (is a ULID). We do not use the email, they change sometimes.'
+    display_name: '* string:2 #We use this field label the person, using last_name and first_name is so 2008'
+    note: 'string:3 #Add some notes, limited to 140 chars'
+    email: 'string:4 #We should be able to contact someone.'
+    mobile: 'string:5 #We should be able to talk with someone.'
+  target: person.proto
+
+
+- type: 'person.Reference (ce) #Use this type to set a reference to a person'
+  fields:
+    id: '* string:1 #Id of the referenced person.'
+    display_name: '* string:2 #Label of the referenced person'
+    link: '* furo.Link:3 #HTS for the initial search (works on root resources only)'
+  target: person.proto
