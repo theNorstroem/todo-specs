@@ -1,6 +1,6 @@
-name: SuspendTasksRequest
-type: SuspendTasksRequest
-description: request message for SuspendTasks
+name: SuspendTaskRequest
+type: SuspendTaskRequest
+description: request message for SuspendTask
 __proto:
     package: task
     targetfile: reqmsgs.proto
@@ -22,7 +22,7 @@ fields:
         meta:
             default: ""
             hint: ""
-            label: task.SuspendTasksRequest.body.label
+            label: task.SuspendTaskRequest.body.label
             options:
                 flags: []
                 list: []
@@ -40,7 +40,7 @@ fields:
         meta:
             default: ""
             hint: ""
-            label: task.SuspendTasksRequest.tsk.label
+            label: task.SuspendTaskRequest.tsk.label
             options:
                 flags: []
                 list: []

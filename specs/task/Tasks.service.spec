@@ -155,4 +155,4 @@ services:
                 description: tsk string.
                 meta: null
                 type: string
-        rpc_name: SuspendTasks
+        rpc_name: SuspendTask

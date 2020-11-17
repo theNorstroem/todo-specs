@@ -37,32 +37,6 @@ message Reference {
     furo.Link link = 3;
 }
 
-// Collectioncontainer which holds a task.Reference
-message ReferenceCollection {  
-
-    // the data contains a task.Reference
-    repeated task.ReferenceEntity entities = 1;
-
-    // the Hateoas links
-    repeated furo.Link links = 2;
-
-    // Meta for the response
-    furo.Meta meta = 3;
-}
-
-// Entitycontainer which holds a task.Reference
-message ReferenceEntity {  
-
-    // the data contains a task.Reference
-    task.Reference data = 1;
-
-    // the Hateoas links
-    repeated furo.Link links = 2;
-
-    // Meta for the response
-    furo.Meta meta = 3;
-}
-
 // Tasks are essential at work.
 message Task {  
 

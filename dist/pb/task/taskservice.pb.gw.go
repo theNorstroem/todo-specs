@@ -277,8 +277,8 @@ func local_request_Tasks_ListTasks_0(ctx context.Context, marshaler runtime.Mars
 
 }
 
-func request_Tasks_SuspendTasks_0(ctx context.Context, marshaler runtime.Marshaler, client TasksClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq SuspendTasksRequest
+func request_Tasks_SuspendTask_0(ctx context.Context, marshaler runtime.Marshaler, client TasksClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq SuspendTaskRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -306,13 +306,13 @@ func request_Tasks_SuspendTasks_0(ctx context.Context, marshaler runtime.Marshal
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "tsk", err)
 	}
 
-	msg, err := client.SuspendTasks(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.SuspendTask(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_Tasks_SuspendTasks_0(ctx context.Context, marshaler runtime.Marshaler, server TasksServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq SuspendTasksRequest
+func local_request_Tasks_SuspendTask_0(ctx context.Context, marshaler runtime.Marshaler, server TasksServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq SuspendTaskRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -340,7 +340,7 @@ func local_request_Tasks_SuspendTasks_0(ctx context.Context, marshaler runtime.M
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "tsk", err)
 	}
 
-	msg, err := server.SuspendTasks(ctx, &protoReq)
+	msg, err := server.SuspendTask(ctx, &protoReq)
 	return msg, metadata, err
 
 }
@@ -652,18 +652,18 @@ func RegisterTasksHandlerServer(ctx context.Context, mux *runtime.ServeMux, serv
 
 	})
 
-	mux.Handle("POST", pattern_Tasks_SuspendTasks_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Tasks_SuspendTask_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/task.Tasks/SuspendTasks")
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/task.Tasks/SuspendTask")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Tasks_SuspendTasks_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Tasks_SuspendTask_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -671,7 +671,7 @@ func RegisterTasksHandlerServer(ctx context.Context, mux *runtime.ServeMux, serv
 			return
 		}
 
-		forward_Tasks_SuspendTasks_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Tasks_SuspendTask_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -862,23 +862,23 @@ func RegisterTasksHandlerClient(ctx context.Context, mux *runtime.ServeMux, clie
 
 	})
 
-	mux.Handle("POST", pattern_Tasks_SuspendTasks_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Tasks_SuspendTask_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/task.Tasks/SuspendTasks")
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/task.Tasks/SuspendTask")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Tasks_SuspendTasks_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Tasks_SuspendTask_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Tasks_SuspendTasks_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Tasks_SuspendTask_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -936,7 +936,7 @@ var (
 
 	pattern_Tasks_ListTasks_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0}, []string{"tasks"}, ""))
 
-	pattern_Tasks_SuspendTasks_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 1, 0, 4, 1, 5, 1}, []string{"tasks", "tsk"}, "suspend"))
+	pattern_Tasks_SuspendTask_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 1, 0, 4, 1, 5, 1}, []string{"tasks", "tsk"}, "suspend"))
 
 	pattern_Tasks_UpdateTask_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 1, 0, 4, 1, 5, 1}, []string{"tasks", "tsk"}, ""))
 
@@ -954,7 +954,7 @@ var (
 
 	forward_Tasks_ListTasks_0 = runtime.ForwardResponseMessage
 
-	forward_Tasks_SuspendTasks_0 = runtime.ForwardResponseMessage
+	forward_Tasks_SuspendTask_0 = runtime.ForwardResponseMessage
 
 	forward_Tasks_UpdateTask_0 = runtime.ForwardResponseMessage
 

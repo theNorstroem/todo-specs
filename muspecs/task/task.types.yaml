@@ -18,7 +18,7 @@
     note: 'string:4 #Add some notes'
   target: task.proto
 
-- type: 'task.Reference (ce) #Use this to set a reference to a task'
+- type: 'task.Reference #Use this to set a reference to a task'
   fields:
     id: '* string:1 #Id of the referenced task.'
     display_name: '* string:2 #Label of the referenced task'

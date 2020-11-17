@@ -29,7 +29,7 @@ type TasksClient interface {
 	// List tasks with pagination.
 	ListTasks(ctx context.Context, in *ListTasksRequest, opts ...grpc.CallOption) (*TaskCollection, error)
 	// Custom methods are always POST.
-	SuspendTasks(ctx context.Context, in *SuspendTasksRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
+	SuspendTask(ctx context.Context, in *SuspendTaskRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
 	// Use this to update existing tasks. PATCH is also supported
 	UpdateTask(ctx context.Context, in *UpdateTaskRequest, opts ...grpc.CallOption) (*TaskEntity, error)
 }
@@ -87,9 +87,9 @@ func (c *tasksClient) ListTasks(ctx context.Context, in *ListTasksRequest, opts 
 	return out, nil
 }
 
-func (c *tasksClient) SuspendTasks(ctx context.Context, in *SuspendTasksRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+func (c *tasksClient) SuspendTask(ctx context.Context, in *SuspendTaskRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
 	out := new(emptypb.Empty)
-	err := c.cc.Invoke(ctx, "/task.Tasks/SuspendTasks", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/task.Tasks/SuspendTask", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -120,7 +120,7 @@ type TasksServer interface {
 	// List tasks with pagination.
 	ListTasks(context.Context, *ListTasksRequest) (*TaskCollection, error)
 	// Custom methods are always POST.
-	SuspendTasks(context.Context, *SuspendTasksRequest) (*emptypb.Empty, error)
+	SuspendTask(context.Context, *SuspendTaskRequest) (*emptypb.Empty, error)
 	// Use this to update existing tasks. PATCH is also supported
 	UpdateTask(context.Context, *UpdateTaskRequest) (*TaskEntity, error)
 	mustEmbedUnimplementedTasksServer()
@@ -145,8 +145,8 @@ func (UnimplementedTasksServer) GetTask(context.Context, *GetTaskRequest) (*Task
 func (UnimplementedTasksServer) ListTasks(context.Context, *ListTasksRequest) (*TaskCollection, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListTasks not implemented")
 }
-func (UnimplementedTasksServer) SuspendTasks(context.Context, *SuspendTasksRequest) (*emptypb.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method SuspendTasks not implemented")
+func (UnimplementedTasksServer) SuspendTask(context.Context, *SuspendTaskRequest) (*emptypb.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SuspendTask not implemented")
 }
 func (UnimplementedTasksServer) UpdateTask(context.Context, *UpdateTaskRequest) (*TaskEntity, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateTask not implemented")
@@ -254,20 +254,20 @@ func _Tasks_ListTasks_Handler(srv interface{}, ctx context.Context, dec func(int
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Tasks_SuspendTasks_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SuspendTasksRequest)
+func _Tasks_SuspendTask_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SuspendTaskRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TasksServer).SuspendTasks(ctx, in)
+		return srv.(TasksServer).SuspendTask(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/task.Tasks/SuspendTasks",
+		FullMethod: "/task.Tasks/SuspendTask",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TasksServer).SuspendTasks(ctx, req.(*SuspendTasksRequest))
+		return srv.(TasksServer).SuspendTask(ctx, req.(*SuspendTaskRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -315,8 +315,8 @@ var _Tasks_serviceDesc = grpc.ServiceDesc{
 			Handler:    _Tasks_ListTasks_Handler,
 		},
 		{
-			MethodName: "SuspendTasks",
-			Handler:    _Tasks_SuspendTasks_Handler,
+			MethodName: "SuspendTask",
+			Handler:    _Tasks_SuspendTask_Handler,
 		},
 		{
 			MethodName: "UpdateTask",

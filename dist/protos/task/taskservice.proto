@@ -66,7 +66,7 @@ service Tasks {
   }
 
   // Custom methods are always POST.
-  rpc SuspendTasks (SuspendTasksRequest) returns (google.protobuf.Empty){
+  rpc SuspendTask (SuspendTaskRequest) returns (google.protobuf.Empty){
 	//Suspend: POST /tasks/{tsk}:suspend google.protobuf.Empty , google.protobuf.Empty #Custom methods are always POST.
 	option (google.api.http) = {
 		post: "/tasks/{tsk}:suspend"
