@@ -65,7 +65,7 @@ fields:
             default: |
                 {
                     "rel": "list",
-                    "href": "/api/persons",
+                    "href": "/persons",
                     "method": "GET",
                     "type": "person.Person",
                     "service": "Persons"

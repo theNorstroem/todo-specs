@@ -65,7 +65,7 @@ fields:
             default: |
                 {
                     "rel": "list",
-                    "href": "/api/tasks",
+                    "href": "/tasks",
                     "method": "GET",
                     "type": "task.Task",
                     "service": "Tasks"
