@@ -1,12 +1,11 @@
-name: UpdatePersonsRequest
-type: UpdatePersonsRequest
-description: request message for UpdatePersons
+name: GetPersonRequest
+type: GetPersonRequest
+description: request message for GetPerson
 __proto:
     package: person
     targetfile: reqmsgs.proto
     imports:
-        - google/protobuf/field_mask.proto
-        - person/person.proto
+        - google/protobuf/empty.proto
     options:
         go_package: github.com/theNorstroem/todo-specs/dist/pb/person;personpb
         java_multiple_files: "true"
@@ -14,8 +13,8 @@ __proto:
         java_package: com.furo.baseperson
 fields:
     body:
-        type: .person.Person
-        description: Body with person.Person
+        type: .google.protobuf.Empty
+        description: Body with google.protobuf.Empty
         __proto:
             number: 1
             oneof: ""
@@ -23,7 +22,7 @@ fields:
         meta:
             default: ""
             hint: ""
-            label: person.UpdatePersonsRequest.body.label
+            label: person.GetPersonRequest.body.label
             options:
                 flags: []
                 list: []
@@ -41,25 +40,7 @@ fields:
         meta:
             default: ""
             hint: ""
-            label: person.UpdatePersonsRequest.pn.label
-            options:
-                flags: []
-                list: []
-            readonly: false
-            repeated: false
-            typespecific: null
-        constraints: {}
-    update_mask:
-        type: google.protobuf.FieldMask
-        description: Needed to patch a record
-        __proto:
-            number: 3
-            oneof: ""
-        __ui: null
-        meta:
-            default: ""
-            hint: ""
-            label: person.UpdatePersonsRequest.update_mask.label
+            label: person.GetPersonRequest.pn.label
             options:
                 flags: []
                 list: []

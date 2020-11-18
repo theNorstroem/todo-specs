@@ -1,6 +1,6 @@
-name: ListPersonssRequest
-type: ListPersonssRequest
-description: request message for ListPersonss
+name: ListPersonsRequest
+type: ListPersonsRequest
+description: request message for ListPersons
 __proto:
     package: person
     targetfile: reqmsgs.proto
@@ -22,7 +22,7 @@ fields:
         meta:
             default: ""
             hint: ""
-            label: person.ListPersonssRequest.body.label
+            label: person.ListPersonsRequest.body.label
             options:
                 flags: []
                 list: []
@@ -40,7 +40,7 @@ fields:
         meta:
             default: ""
             hint: ""
-            label: person.ListPersonssRequest.q.label
+            label: person.ListPersonsRequest.q.label
             options:
                 flags: []
                 list: []
@@ -58,7 +58,7 @@ fields:
         meta:
             default: ""
             hint: ""
-            label: person.ListPersonssRequest.filter.label
+            label: person.ListPersonsRequest.filter.label
             options:
                 flags: []
                 list: []
@@ -76,7 +76,7 @@ fields:
         meta:
             default: ""
             hint: ""
-            label: person.ListPersonssRequest.order_by.label
+            label: person.ListPersonsRequest.order_by.label
             options:
                 flags: []
                 list: []
@@ -94,7 +94,7 @@ fields:
         meta:
             default: ""
             hint: ""
-            label: person.ListPersonssRequest.page.label
+            label: person.ListPersonsRequest.page.label
             options:
                 flags: []
                 list: []

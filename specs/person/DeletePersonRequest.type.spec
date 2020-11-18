@@ -1,6 +1,6 @@
-name: DeletePersonsRequest
-type: DeletePersonsRequest
-description: request message for DeletePersons
+name: DeletePersonRequest
+type: DeletePersonRequest
+description: request message for DeletePerson
 __proto:
     package: person
     targetfile: reqmsgs.proto
@@ -22,7 +22,7 @@ fields:
         meta:
             default: ""
             hint: ""
-            label: person.DeletePersonsRequest.body.label
+            label: person.DeletePersonRequest.body.label
             options:
                 flags: []
                 list: []
@@ -40,7 +40,7 @@ fields:
         meta:
             default: ""
             hint: ""
-            label: person.DeletePersonsRequest.pn.label
+            label: person.DeletePersonRequest.pn.label
             options:
                 flags: []
                 list: []

@@ -1,6 +1,6 @@
-name: CreatePersonsRequest
-type: CreatePersonsRequest
-description: request message for CreatePersons
+name: CreatePersonRequest
+type: CreatePersonRequest
+description: request message for CreatePerson
 __proto:
     package: person
     targetfile: reqmsgs.proto
@@ -22,7 +22,7 @@ fields:
         meta:
             default: ""
             hint: ""
-            label: person.CreatePersonsRequest.body.label
+            label: person.CreatePersonRequest.body.label
             options:
                 flags: []
                 list: []

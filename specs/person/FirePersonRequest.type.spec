@@ -1,6 +1,6 @@
-name: GetPersonsRequest
-type: GetPersonsRequest
-description: request message for GetPersons
+name: FirePersonRequest
+type: FirePersonRequest
+description: request message for FirePerson
 __proto:
     package: person
     targetfile: reqmsgs.proto
@@ -22,7 +22,7 @@ fields:
         meta:
             default: ""
             hint: ""
-            label: person.GetPersonsRequest.body.label
+            label: person.FirePersonRequest.body.label
             options:
                 flags: []
                 list: []
@@ -40,7 +40,7 @@ fields:
         meta:
             default: ""
             hint: ""
-            label: person.GetPersonsRequest.pn.label
+            label: person.FirePersonRequest.pn.label
             options:
                 flags: []
                 list: []
