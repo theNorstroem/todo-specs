@@ -29,6 +29,55 @@ const (
 // of the legacy proto package is being used.
 const _ = proto.ProtoPackageIsVersion4
 
+// request message for CreatePerson
+type CreatePersonRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Body with person.Person
+	Body *Person `protobuf:"bytes,1,opt,name=body,proto3" json:"body,omitempty"`
+}
+
+func (x *CreatePersonRequest) Reset() {
+	*x = CreatePersonRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_person_reqmsgs_proto_msgTypes[0]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *CreatePersonRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreatePersonRequest) ProtoMessage() {}
+
+func (x *CreatePersonRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_person_reqmsgs_proto_msgTypes[0]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreatePersonRequest.ProtoReflect.Descriptor instead.
+func (*CreatePersonRequest) Descriptor() ([]byte, []int) {
+	return file_person_reqmsgs_proto_rawDescGZIP(), []int{0}
+}
+
+func (x *CreatePersonRequest) GetBody() *Person {
+	if x != nil {
+		return x.Body
+	}
+	return nil
+}
+
 // request message for CreatePersons
 type CreatePersonsRequest struct {
 	state         protoimpl.MessageState
@@ -42,7 +91,7 @@ type CreatePersonsRequest struct {
 func (x *CreatePersonsRequest) Reset() {
 	*x = CreatePersonsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_person_reqmsgs_proto_msgTypes[0]
+		mi := &file_person_reqmsgs_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -55,7 +104,7 @@ func (x *CreatePersonsRequest) String() string {
 func (*CreatePersonsRequest) ProtoMessage() {}
 
 func (x *CreatePersonsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_person_reqmsgs_proto_msgTypes[0]
+	mi := &file_person_reqmsgs_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -68,7 +117,7 @@ func (x *CreatePersonsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreatePersonsRequest.ProtoReflect.Descriptor instead.
 func (*CreatePersonsRequest) Descriptor() ([]byte, []int) {
-	return file_person_reqmsgs_proto_rawDescGZIP(), []int{0}
+	return file_person_reqmsgs_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *CreatePersonsRequest) GetBody() *Person {
@@ -76,6 +125,64 @@ func (x *CreatePersonsRequest) GetBody() *Person {
 		return x.Body
 	}
 	return nil
+}
+
+// request message for DeletePerson
+type DeletePersonRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Body with google.protobuf.Empty
+	Body *emptypb.Empty `protobuf:"bytes,1,opt,name=body,proto3" json:"body,omitempty"`
+	// The query param pn stands for the id of a person.
+	Pn string `protobuf:"bytes,2,opt,name=pn,proto3" json:"pn,omitempty"`
+}
+
+func (x *DeletePersonRequest) Reset() {
+	*x = DeletePersonRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_person_reqmsgs_proto_msgTypes[2]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DeletePersonRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeletePersonRequest) ProtoMessage() {}
+
+func (x *DeletePersonRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_person_reqmsgs_proto_msgTypes[2]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeletePersonRequest.ProtoReflect.Descriptor instead.
+func (*DeletePersonRequest) Descriptor() ([]byte, []int) {
+	return file_person_reqmsgs_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *DeletePersonRequest) GetBody() *emptypb.Empty {
+	if x != nil {
+		return x.Body
+	}
+	return nil
+}
+
+func (x *DeletePersonRequest) GetPn() string {
+	if x != nil {
+		return x.Pn
+	}
+	return ""
 }
 
 // request message for DeletePersons
@@ -93,7 +200,7 @@ type DeletePersonsRequest struct {
 func (x *DeletePersonsRequest) Reset() {
 	*x = DeletePersonsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_person_reqmsgs_proto_msgTypes[1]
+		mi := &file_person_reqmsgs_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -106,7 +213,7 @@ func (x *DeletePersonsRequest) String() string {
 func (*DeletePersonsRequest) ProtoMessage() {}
 
 func (x *DeletePersonsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_person_reqmsgs_proto_msgTypes[1]
+	mi := &file_person_reqmsgs_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -119,7 +226,7 @@ func (x *DeletePersonsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeletePersonsRequest.ProtoReflect.Descriptor instead.
 func (*DeletePersonsRequest) Descriptor() ([]byte, []int) {
-	return file_person_reqmsgs_proto_rawDescGZIP(), []int{1}
+	return file_person_reqmsgs_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *DeletePersonsRequest) GetBody() *emptypb.Empty {
@@ -130,6 +237,64 @@ func (x *DeletePersonsRequest) GetBody() *emptypb.Empty {
 }
 
 func (x *DeletePersonsRequest) GetPn() string {
+	if x != nil {
+		return x.Pn
+	}
+	return ""
+}
+
+// request message for FirePerson
+type FirePersonRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Body with google.protobuf.Empty
+	Body *emptypb.Empty `protobuf:"bytes,1,opt,name=body,proto3" json:"body,omitempty"`
+	// The query param pn stands for the id of a person.
+	Pn string `protobuf:"bytes,2,opt,name=pn,proto3" json:"pn,omitempty"`
+}
+
+func (x *FirePersonRequest) Reset() {
+	*x = FirePersonRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_person_reqmsgs_proto_msgTypes[4]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *FirePersonRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*FirePersonRequest) ProtoMessage() {}
+
+func (x *FirePersonRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_person_reqmsgs_proto_msgTypes[4]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use FirePersonRequest.ProtoReflect.Descriptor instead.
+func (*FirePersonRequest) Descriptor() ([]byte, []int) {
+	return file_person_reqmsgs_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *FirePersonRequest) GetBody() *emptypb.Empty {
+	if x != nil {
+		return x.Body
+	}
+	return nil
+}
+
+func (x *FirePersonRequest) GetPn() string {
 	if x != nil {
 		return x.Pn
 	}
@@ -151,7 +316,7 @@ type FirePersonsRequest struct {
 func (x *FirePersonsRequest) Reset() {
 	*x = FirePersonsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_person_reqmsgs_proto_msgTypes[2]
+		mi := &file_person_reqmsgs_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -164,7 +329,7 @@ func (x *FirePersonsRequest) String() string {
 func (*FirePersonsRequest) ProtoMessage() {}
 
 func (x *FirePersonsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_person_reqmsgs_proto_msgTypes[2]
+	mi := &file_person_reqmsgs_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -177,7 +342,7 @@ func (x *FirePersonsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use FirePersonsRequest.ProtoReflect.Descriptor instead.
 func (*FirePersonsRequest) Descriptor() ([]byte, []int) {
-	return file_person_reqmsgs_proto_rawDescGZIP(), []int{2}
+	return file_person_reqmsgs_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *FirePersonsRequest) GetBody() *emptypb.Empty {
@@ -188,6 +353,64 @@ func (x *FirePersonsRequest) GetBody() *emptypb.Empty {
 }
 
 func (x *FirePersonsRequest) GetPn() string {
+	if x != nil {
+		return x.Pn
+	}
+	return ""
+}
+
+// request message for GetPerson
+type GetPersonRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Body with google.protobuf.Empty
+	Body *emptypb.Empty `protobuf:"bytes,1,opt,name=body,proto3" json:"body,omitempty"`
+	// The query param pn stands for the id of a person.
+	Pn string `protobuf:"bytes,2,opt,name=pn,proto3" json:"pn,omitempty"`
+}
+
+func (x *GetPersonRequest) Reset() {
+	*x = GetPersonRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_person_reqmsgs_proto_msgTypes[6]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetPersonRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetPersonRequest) ProtoMessage() {}
+
+func (x *GetPersonRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_person_reqmsgs_proto_msgTypes[6]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetPersonRequest.ProtoReflect.Descriptor instead.
+func (*GetPersonRequest) Descriptor() ([]byte, []int) {
+	return file_person_reqmsgs_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *GetPersonRequest) GetBody() *emptypb.Empty {
+	if x != nil {
+		return x.Body
+	}
+	return nil
+}
+
+func (x *GetPersonRequest) GetPn() string {
 	if x != nil {
 		return x.Pn
 	}
@@ -209,7 +432,7 @@ type GetPersonsRequest struct {
 func (x *GetPersonsRequest) Reset() {
 	*x = GetPersonsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_person_reqmsgs_proto_msgTypes[3]
+		mi := &file_person_reqmsgs_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -222,7 +445,7 @@ func (x *GetPersonsRequest) String() string {
 func (*GetPersonsRequest) ProtoMessage() {}
 
 func (x *GetPersonsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_person_reqmsgs_proto_msgTypes[3]
+	mi := &file_person_reqmsgs_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -235,7 +458,7 @@ func (x *GetPersonsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetPersonsRequest.ProtoReflect.Descriptor instead.
 func (*GetPersonsRequest) Descriptor() ([]byte, []int) {
-	return file_person_reqmsgs_proto_rawDescGZIP(), []int{3}
+	return file_person_reqmsgs_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *GetPersonsRequest) GetBody() *emptypb.Empty {
@@ -248,6 +471,91 @@ func (x *GetPersonsRequest) GetBody() *emptypb.Empty {
 func (x *GetPersonsRequest) GetPn() string {
 	if x != nil {
 		return x.Pn
+	}
+	return ""
+}
+
+// request message for ListPersons
+type ListPersonsRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Body with google.protobuf.Empty
+	Body *emptypb.Empty `protobuf:"bytes,1,opt,name=body,proto3" json:"body,omitempty"`
+	// Use this to search for a person by text.
+	Q string `protobuf:"bytes,2,opt,name=q,proto3" json:"q,omitempty"`
+	// Use this field to filter the persons, this is not searching.
+	Filter string `protobuf:"bytes,3,opt,name=filter,proto3" json:"filter,omitempty"`
+	// Use this field to specify the ordering.
+	OrderBy string `protobuf:"bytes,4,opt,name=order_by,json=orderBy,proto3" json:"order_by,omitempty"`
+	// Use this field to specify page to display.
+	Page string `protobuf:"bytes,5,opt,name=page,proto3" json:"page,omitempty"`
+}
+
+func (x *ListPersonsRequest) Reset() {
+	*x = ListPersonsRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_person_reqmsgs_proto_msgTypes[8]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ListPersonsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListPersonsRequest) ProtoMessage() {}
+
+func (x *ListPersonsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_person_reqmsgs_proto_msgTypes[8]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListPersonsRequest.ProtoReflect.Descriptor instead.
+func (*ListPersonsRequest) Descriptor() ([]byte, []int) {
+	return file_person_reqmsgs_proto_rawDescGZIP(), []int{8}
+}
+
+func (x *ListPersonsRequest) GetBody() *emptypb.Empty {
+	if x != nil {
+		return x.Body
+	}
+	return nil
+}
+
+func (x *ListPersonsRequest) GetQ() string {
+	if x != nil {
+		return x.Q
+	}
+	return ""
+}
+
+func (x *ListPersonsRequest) GetFilter() string {
+	if x != nil {
+		return x.Filter
+	}
+	return ""
+}
+
+func (x *ListPersonsRequest) GetOrderBy() string {
+	if x != nil {
+		return x.OrderBy
+	}
+	return ""
+}
+
+func (x *ListPersonsRequest) GetPage() string {
+	if x != nil {
+		return x.Page
 	}
 	return ""
 }
@@ -273,7 +581,7 @@ type ListPersonssRequest struct {
 func (x *ListPersonssRequest) Reset() {
 	*x = ListPersonssRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_person_reqmsgs_proto_msgTypes[4]
+		mi := &file_person_reqmsgs_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -286,7 +594,7 @@ func (x *ListPersonssRequest) String() string {
 func (*ListPersonssRequest) ProtoMessage() {}
 
 func (x *ListPersonssRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_person_reqmsgs_proto_msgTypes[4]
+	mi := &file_person_reqmsgs_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -299,7 +607,7 @@ func (x *ListPersonssRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListPersonssRequest.ProtoReflect.Descriptor instead.
 func (*ListPersonssRequest) Descriptor() ([]byte, []int) {
-	return file_person_reqmsgs_proto_rawDescGZIP(), []int{4}
+	return file_person_reqmsgs_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *ListPersonssRequest) GetBody() *emptypb.Empty {
@@ -337,6 +645,73 @@ func (x *ListPersonssRequest) GetPage() string {
 	return ""
 }
 
+// request message for UpdatePerson
+type UpdatePersonRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Body with person.Person
+	Body *Person `protobuf:"bytes,1,opt,name=body,proto3" json:"body,omitempty"`
+	// The query param pn stands for the id of a person.
+	Pn string `protobuf:"bytes,2,opt,name=pn,proto3" json:"pn,omitempty"`
+	// Needed to patch a record
+	UpdateMask *fieldmaskpb.FieldMask `protobuf:"bytes,3,opt,name=update_mask,json=updateMask,proto3" json:"update_mask,omitempty"`
+}
+
+func (x *UpdatePersonRequest) Reset() {
+	*x = UpdatePersonRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_person_reqmsgs_proto_msgTypes[10]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *UpdatePersonRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdatePersonRequest) ProtoMessage() {}
+
+func (x *UpdatePersonRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_person_reqmsgs_proto_msgTypes[10]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdatePersonRequest.ProtoReflect.Descriptor instead.
+func (*UpdatePersonRequest) Descriptor() ([]byte, []int) {
+	return file_person_reqmsgs_proto_rawDescGZIP(), []int{10}
+}
+
+func (x *UpdatePersonRequest) GetBody() *Person {
+	if x != nil {
+		return x.Body
+	}
+	return nil
+}
+
+func (x *UpdatePersonRequest) GetPn() string {
+	if x != nil {
+		return x.Pn
+	}
+	return ""
+}
+
+func (x *UpdatePersonRequest) GetUpdateMask() *fieldmaskpb.FieldMask {
+	if x != nil {
+		return x.UpdateMask
+	}
+	return nil
+}
+
 // request message for UpdatePersons
 type UpdatePersonsRequest struct {
 	state         protoimpl.MessageState
@@ -354,7 +729,7 @@ type UpdatePersonsRequest struct {
 func (x *UpdatePersonsRequest) Reset() {
 	*x = UpdatePersonsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_person_reqmsgs_proto_msgTypes[5]
+		mi := &file_person_reqmsgs_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -367,7 +742,7 @@ func (x *UpdatePersonsRequest) String() string {
 func (*UpdatePersonsRequest) ProtoMessage() {}
 
 func (x *UpdatePersonsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_person_reqmsgs_proto_msgTypes[5]
+	mi := &file_person_reqmsgs_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -380,7 +755,7 @@ func (x *UpdatePersonsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdatePersonsRequest.ProtoReflect.Descriptor instead.
 func (*UpdatePersonsRequest) Descriptor() ([]byte, []int) {
-	return file_person_reqmsgs_proto_rawDescGZIP(), []int{5}
+	return file_person_reqmsgs_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *UpdatePersonsRequest) GetBody() *Person {
@@ -414,35 +789,72 @@ var file_person_reqmsgs_proto_rawDesc = []byte{
 	0x67, 0x6c, 0x65, 0x2f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2f, 0x66, 0x69, 0x65,
 	0x6c, 0x64, 0x5f, 0x6d, 0x61, 0x73, 0x6b, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x13, 0x70,
 	0x65, 0x72, 0x73, 0x6f, 0x6e, 0x2f, 0x70, 0x65, 0x72, 0x73, 0x6f, 0x6e, 0x2e, 0x70, 0x72, 0x6f,
-	0x74, 0x6f, 0x22, 0x3a, 0x0a, 0x14, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x50, 0x65, 0x72, 0x73,
-	0x6f, 0x6e, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x22, 0x0a, 0x04, 0x62, 0x6f,
-	0x64, 0x79, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0e, 0x2e, 0x70, 0x65, 0x72, 0x73, 0x6f,
-	0x6e, 0x2e, 0x50, 0x65, 0x72, 0x73, 0x6f, 0x6e, 0x52, 0x04, 0x62, 0x6f, 0x64, 0x79, 0x22, 0x52,
-	0x0a, 0x14, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x50, 0x65, 0x72, 0x73, 0x6f, 0x6e, 0x73, 0x52,
-	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x2a, 0x0a, 0x04, 0x62, 0x6f, 0x64, 0x79, 0x18, 0x01,
-	0x20, 0x01, 0x28, 0x0b, 0x32, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72,
-	0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x52, 0x04, 0x62, 0x6f,
-	0x64, 0x79, 0x12, 0x0e, 0x0a, 0x02, 0x70, 0x6e, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02,
-	0x70, 0x6e, 0x22, 0x50, 0x0a, 0x12, 0x46, 0x69, 0x72, 0x65, 0x50, 0x65, 0x72, 0x73, 0x6f, 0x6e,
+	0x74, 0x6f, 0x22, 0x39, 0x0a, 0x13, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x50, 0x65, 0x72, 0x73,
+	0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x22, 0x0a, 0x04, 0x62, 0x6f, 0x64,
+	0x79, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0e, 0x2e, 0x70, 0x65, 0x72, 0x73, 0x6f, 0x6e,
+	0x2e, 0x50, 0x65, 0x72, 0x73, 0x6f, 0x6e, 0x52, 0x04, 0x62, 0x6f, 0x64, 0x79, 0x22, 0x3a, 0x0a,
+	0x14, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x50, 0x65, 0x72, 0x73, 0x6f, 0x6e, 0x73, 0x52, 0x65,
+	0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x22, 0x0a, 0x04, 0x62, 0x6f, 0x64, 0x79, 0x18, 0x01, 0x20,
+	0x01, 0x28, 0x0b, 0x32, 0x0e, 0x2e, 0x70, 0x65, 0x72, 0x73, 0x6f, 0x6e, 0x2e, 0x50, 0x65, 0x72,
+	0x73, 0x6f, 0x6e, 0x52, 0x04, 0x62, 0x6f, 0x64, 0x79, 0x22, 0x51, 0x0a, 0x13, 0x44, 0x65, 0x6c,
+	0x65, 0x74, 0x65, 0x50, 0x65, 0x72, 0x73, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+	0x12, 0x2a, 0x0a, 0x04, 0x62, 0x6f, 0x64, 0x79, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x16,
+	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66,
+	0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x52, 0x04, 0x62, 0x6f, 0x64, 0x79, 0x12, 0x0e, 0x0a, 0x02,
+	0x70, 0x6e, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x70, 0x6e, 0x22, 0x52, 0x0a, 0x14,
+	0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x50, 0x65, 0x72, 0x73, 0x6f, 0x6e, 0x73, 0x52, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x12, 0x2a, 0x0a, 0x04, 0x62, 0x6f, 0x64, 0x79, 0x18, 0x01, 0x20, 0x01,
+	0x28, 0x0b, 0x32, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74,
+	0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x52, 0x04, 0x62, 0x6f, 0x64, 0x79,
+	0x12, 0x0e, 0x0a, 0x02, 0x70, 0x6e, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x70, 0x6e,
+	0x22, 0x4f, 0x0a, 0x11, 0x46, 0x69, 0x72, 0x65, 0x50, 0x65, 0x72, 0x73, 0x6f, 0x6e, 0x52, 0x65,
+	0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x2a, 0x0a, 0x04, 0x62, 0x6f, 0x64, 0x79, 0x18, 0x01, 0x20,
+	0x01, 0x28, 0x0b, 0x32, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f,
+	0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x52, 0x04, 0x62, 0x6f, 0x64,
+	0x79, 0x12, 0x0e, 0x0a, 0x02, 0x70, 0x6e, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x70,
+	0x6e, 0x22, 0x50, 0x0a, 0x12, 0x46, 0x69, 0x72, 0x65, 0x50, 0x65, 0x72, 0x73, 0x6f, 0x6e, 0x73,
+	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x2a, 0x0a, 0x04, 0x62, 0x6f, 0x64, 0x79, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70,
+	0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x52, 0x04, 0x62,
+	0x6f, 0x64, 0x79, 0x12, 0x0e, 0x0a, 0x02, 0x70, 0x6e, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x02, 0x70, 0x6e, 0x22, 0x4e, 0x0a, 0x10, 0x47, 0x65, 0x74, 0x50, 0x65, 0x72, 0x73, 0x6f, 0x6e,
+	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x2a, 0x0a, 0x04, 0x62, 0x6f, 0x64, 0x79, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70,
+	0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x52, 0x04, 0x62,
+	0x6f, 0x64, 0x79, 0x12, 0x0e, 0x0a, 0x02, 0x70, 0x6e, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x02, 0x70, 0x6e, 0x22, 0x4f, 0x0a, 0x11, 0x47, 0x65, 0x74, 0x50, 0x65, 0x72, 0x73, 0x6f, 0x6e,
 	0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x2a, 0x0a, 0x04, 0x62, 0x6f, 0x64, 0x79,
 	0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e,
 	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x52, 0x04,
 	0x62, 0x6f, 0x64, 0x79, 0x12, 0x0e, 0x0a, 0x02, 0x70, 0x6e, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09,
-	0x52, 0x02, 0x70, 0x6e, 0x22, 0x4f, 0x0a, 0x11, 0x47, 0x65, 0x74, 0x50, 0x65, 0x72, 0x73, 0x6f,
-	0x6e, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x2a, 0x0a, 0x04, 0x62, 0x6f, 0x64,
-	0x79, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x52,
-	0x04, 0x62, 0x6f, 0x64, 0x79, 0x12, 0x0e, 0x0a, 0x02, 0x70, 0x6e, 0x18, 0x02, 0x20, 0x01, 0x28,
-	0x09, 0x52, 0x02, 0x70, 0x6e, 0x22, 0x96, 0x01, 0x0a, 0x13, 0x4c, 0x69, 0x73, 0x74, 0x50, 0x65,
-	0x72, 0x73, 0x6f, 0x6e, 0x73, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x2a, 0x0a,
-	0x04, 0x62, 0x6f, 0x64, 0x79, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x16, 0x2e, 0x67, 0x6f,
-	0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d,
-	0x70, 0x74, 0x79, 0x52, 0x04, 0x62, 0x6f, 0x64, 0x79, 0x12, 0x0c, 0x0a, 0x01, 0x71, 0x18, 0x02,
-	0x20, 0x01, 0x28, 0x09, 0x52, 0x01, 0x71, 0x12, 0x16, 0x0a, 0x06, 0x66, 0x69, 0x6c, 0x74, 0x65,
-	0x72, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x66, 0x69, 0x6c, 0x74, 0x65, 0x72, 0x12,
-	0x19, 0x0a, 0x08, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x5f, 0x62, 0x79, 0x18, 0x04, 0x20, 0x01, 0x28,
-	0x09, 0x52, 0x07, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x42, 0x79, 0x12, 0x12, 0x0a, 0x04, 0x70, 0x61,
-	0x67, 0x65, 0x18, 0x05, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x70, 0x61, 0x67, 0x65, 0x22, 0x87,
+	0x52, 0x02, 0x70, 0x6e, 0x22, 0x95, 0x01, 0x0a, 0x12, 0x4c, 0x69, 0x73, 0x74, 0x50, 0x65, 0x72,
+	0x73, 0x6f, 0x6e, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x2a, 0x0a, 0x04, 0x62,
+	0x6f, 0x64, 0x79, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
+	0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74,
+	0x79, 0x52, 0x04, 0x62, 0x6f, 0x64, 0x79, 0x12, 0x0c, 0x0a, 0x01, 0x71, 0x18, 0x02, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x01, 0x71, 0x12, 0x16, 0x0a, 0x06, 0x66, 0x69, 0x6c, 0x74, 0x65, 0x72, 0x18,
+	0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x66, 0x69, 0x6c, 0x74, 0x65, 0x72, 0x12, 0x19, 0x0a,
+	0x08, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x5f, 0x62, 0x79, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x07, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x42, 0x79, 0x12, 0x12, 0x0a, 0x04, 0x70, 0x61, 0x67, 0x65,
+	0x18, 0x05, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x70, 0x61, 0x67, 0x65, 0x22, 0x96, 0x01, 0x0a,
+	0x13, 0x4c, 0x69, 0x73, 0x74, 0x50, 0x65, 0x72, 0x73, 0x6f, 0x6e, 0x73, 0x73, 0x52, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x12, 0x2a, 0x0a, 0x04, 0x62, 0x6f, 0x64, 0x79, 0x18, 0x01, 0x20, 0x01,
+	0x28, 0x0b, 0x32, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74,
+	0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x52, 0x04, 0x62, 0x6f, 0x64, 0x79,
+	0x12, 0x0c, 0x0a, 0x01, 0x71, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x01, 0x71, 0x12, 0x16,
+	0x0a, 0x06, 0x66, 0x69, 0x6c, 0x74, 0x65, 0x72, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06,
+	0x66, 0x69, 0x6c, 0x74, 0x65, 0x72, 0x12, 0x19, 0x0a, 0x08, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x5f,
+	0x62, 0x79, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x42,
+	0x79, 0x12, 0x12, 0x0a, 0x04, 0x70, 0x61, 0x67, 0x65, 0x18, 0x05, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x04, 0x70, 0x61, 0x67, 0x65, 0x22, 0x86, 0x01, 0x0a, 0x13, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65,
+	0x50, 0x65, 0x72, 0x73, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x22, 0x0a,
+	0x04, 0x62, 0x6f, 0x64, 0x79, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0e, 0x2e, 0x70, 0x65,
+	0x72, 0x73, 0x6f, 0x6e, 0x2e, 0x50, 0x65, 0x72, 0x73, 0x6f, 0x6e, 0x52, 0x04, 0x62, 0x6f, 0x64,
+	0x79, 0x12, 0x0e, 0x0a, 0x02, 0x70, 0x6e, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x70,
+	0x6e, 0x12, 0x3b, 0x0a, 0x0b, 0x75, 0x70, 0x64, 0x61, 0x74, 0x65, 0x5f, 0x6d, 0x61, 0x73, 0x6b,
+	0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1a, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e,
+	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x46, 0x69, 0x65, 0x6c, 0x64, 0x4d, 0x61,
+	0x73, 0x6b, 0x52, 0x0a, 0x75, 0x70, 0x64, 0x61, 0x74, 0x65, 0x4d, 0x61, 0x73, 0x6b, 0x22, 0x87,
 	0x01, 0x0a, 0x14, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x50, 0x65, 0x72, 0x73, 0x6f, 0x6e, 0x73,
 	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x22, 0x0a, 0x04, 0x62, 0x6f, 0x64, 0x79, 0x18,
 	0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0e, 0x2e, 0x70, 0x65, 0x72, 0x73, 0x6f, 0x6e, 0x2e, 0x50,
@@ -473,31 +885,44 @@ func file_person_reqmsgs_proto_rawDescGZIP() []byte {
 	return file_person_reqmsgs_proto_rawDescData
 }
 
-var file_person_reqmsgs_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
+var file_person_reqmsgs_proto_msgTypes = make([]protoimpl.MessageInfo, 12)
 var file_person_reqmsgs_proto_goTypes = []interface{}{
-	(*CreatePersonsRequest)(nil),  // 0: person.CreatePersonsRequest
-	(*DeletePersonsRequest)(nil),  // 1: person.DeletePersonsRequest
-	(*FirePersonsRequest)(nil),    // 2: person.FirePersonsRequest
-	(*GetPersonsRequest)(nil),     // 3: person.GetPersonsRequest
-	(*ListPersonssRequest)(nil),   // 4: person.ListPersonssRequest
-	(*UpdatePersonsRequest)(nil),  // 5: person.UpdatePersonsRequest
-	(*Person)(nil),                // 6: person.Person
-	(*emptypb.Empty)(nil),         // 7: google.protobuf.Empty
-	(*fieldmaskpb.FieldMask)(nil), // 8: google.protobuf.FieldMask
+	(*CreatePersonRequest)(nil),   // 0: person.CreatePersonRequest
+	(*CreatePersonsRequest)(nil),  // 1: person.CreatePersonsRequest
+	(*DeletePersonRequest)(nil),   // 2: person.DeletePersonRequest
+	(*DeletePersonsRequest)(nil),  // 3: person.DeletePersonsRequest
+	(*FirePersonRequest)(nil),     // 4: person.FirePersonRequest
+	(*FirePersonsRequest)(nil),    // 5: person.FirePersonsRequest
+	(*GetPersonRequest)(nil),      // 6: person.GetPersonRequest
+	(*GetPersonsRequest)(nil),     // 7: person.GetPersonsRequest
+	(*ListPersonsRequest)(nil),    // 8: person.ListPersonsRequest
+	(*ListPersonssRequest)(nil),   // 9: person.ListPersonssRequest
+	(*UpdatePersonRequest)(nil),   // 10: person.UpdatePersonRequest
+	(*UpdatePersonsRequest)(nil),  // 11: person.UpdatePersonsRequest
+	(*Person)(nil),                // 12: person.Person
+	(*emptypb.Empty)(nil),         // 13: google.protobuf.Empty
+	(*fieldmaskpb.FieldMask)(nil), // 14: google.protobuf.FieldMask
 }
 var file_person_reqmsgs_proto_depIdxs = []int32{
-	6, // 0: person.CreatePersonsRequest.body:type_name -> person.Person
-	7, // 1: person.DeletePersonsRequest.body:type_name -> google.protobuf.Empty
-	7, // 2: person.FirePersonsRequest.body:type_name -> google.protobuf.Empty
-	7, // 3: person.GetPersonsRequest.body:type_name -> google.protobuf.Empty
-	7, // 4: person.ListPersonssRequest.body:type_name -> google.protobuf.Empty
-	6, // 5: person.UpdatePersonsRequest.body:type_name -> person.Person
-	8, // 6: person.UpdatePersonsRequest.update_mask:type_name -> google.protobuf.FieldMask
-	7, // [7:7] is the sub-list for method output_type
-	7, // [7:7] is the sub-list for method input_type
-	7, // [7:7] is the sub-list for extension type_name
-	7, // [7:7] is the sub-list for extension extendee
-	0, // [0:7] is the sub-list for field type_name
+	12, // 0: person.CreatePersonRequest.body:type_name -> person.Person
+	12, // 1: person.CreatePersonsRequest.body:type_name -> person.Person
+	13, // 2: person.DeletePersonRequest.body:type_name -> google.protobuf.Empty
+	13, // 3: person.DeletePersonsRequest.body:type_name -> google.protobuf.Empty
+	13, // 4: person.FirePersonRequest.body:type_name -> google.protobuf.Empty
+	13, // 5: person.FirePersonsRequest.body:type_name -> google.protobuf.Empty
+	13, // 6: person.GetPersonRequest.body:type_name -> google.protobuf.Empty
+	13, // 7: person.GetPersonsRequest.body:type_name -> google.protobuf.Empty
+	13, // 8: person.ListPersonsRequest.body:type_name -> google.protobuf.Empty
+	13, // 9: person.ListPersonssRequest.body:type_name -> google.protobuf.Empty
+	12, // 10: person.UpdatePersonRequest.body:type_name -> person.Person
+	14, // 11: person.UpdatePersonRequest.update_mask:type_name -> google.protobuf.FieldMask
+	12, // 12: person.UpdatePersonsRequest.body:type_name -> person.Person
+	14, // 13: person.UpdatePersonsRequest.update_mask:type_name -> google.protobuf.FieldMask
+	14, // [14:14] is the sub-list for method output_type
+	14, // [14:14] is the sub-list for method input_type
+	14, // [14:14] is the sub-list for extension type_name
+	14, // [14:14] is the sub-list for extension extendee
+	0,  // [0:14] is the sub-list for field type_name
 }
 
 func init() { file_person_reqmsgs_proto_init() }
@@ -508,7 +933,7 @@ func file_person_reqmsgs_proto_init() {
 	file_person_person_proto_init()
 	if !protoimpl.UnsafeEnabled {
 		file_person_reqmsgs_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreatePersonsRequest); i {
+			switch v := v.(*CreatePersonRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -520,7 +945,7 @@ func file_person_reqmsgs_proto_init() {
 			}
 		}
 		file_person_reqmsgs_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DeletePersonsRequest); i {
+			switch v := v.(*CreatePersonsRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -532,7 +957,7 @@ func file_person_reqmsgs_proto_init() {
 			}
 		}
 		file_person_reqmsgs_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*FirePersonsRequest); i {
+			switch v := v.(*DeletePersonRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -544,7 +969,7 @@ func file_person_reqmsgs_proto_init() {
 			}
 		}
 		file_person_reqmsgs_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetPersonsRequest); i {
+			switch v := v.(*DeletePersonsRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -556,7 +981,7 @@ func file_person_reqmsgs_proto_init() {
 			}
 		}
 		file_person_reqmsgs_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ListPersonssRequest); i {
+			switch v := v.(*FirePersonRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -568,6 +993,78 @@ func file_person_reqmsgs_proto_init() {
 			}
 		}
 		file_person_reqmsgs_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*FirePersonsRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_person_reqmsgs_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetPersonRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_person_reqmsgs_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetPersonsRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_person_reqmsgs_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ListPersonsRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_person_reqmsgs_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ListPersonssRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_person_reqmsgs_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*UpdatePersonRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_person_reqmsgs_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdatePersonsRequest); i {
 			case 0:
 				return &v.state
@@ -586,7 +1083,7 @@ func file_person_reqmsgs_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_person_reqmsgs_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   6,
+			NumMessages:   12,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

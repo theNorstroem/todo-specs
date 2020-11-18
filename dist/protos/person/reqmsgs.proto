@@ -11,6 +11,13 @@ import "google/protobuf/field_mask.proto";
 import "person/person.proto";
 
 
+// request message for CreatePerson
+message CreatePersonRequest {  
+
+    // Body with person.Person
+    .person.Person body = 1;
+}
+
 // request message for CreatePersons
 message CreatePersonsRequest {  
 
@@ -18,8 +25,28 @@ message CreatePersonsRequest {
     .person.Person body = 1;
 }
 
+// request message for DeletePerson
+message DeletePersonRequest {  
+
+    // Body with google.protobuf.Empty
+    .google.protobuf.Empty body = 1;
+
+    // The query param pn stands for the id of a person.
+    string pn = 2;
+}
+
 // request message for DeletePersons
 message DeletePersonsRequest {  
+
+    // Body with google.protobuf.Empty
+    .google.protobuf.Empty body = 1;
+
+    // The query param pn stands for the id of a person.
+    string pn = 2;
+}
+
+// request message for FirePerson
+message FirePersonRequest {  
 
     // Body with google.protobuf.Empty
     .google.protobuf.Empty body = 1;
@@ -38,6 +65,16 @@ message FirePersonsRequest {
     string pn = 2;
 }
 
+// request message for GetPerson
+message GetPersonRequest {  
+
+    // Body with google.protobuf.Empty
+    .google.protobuf.Empty body = 1;
+
+    // The query param pn stands for the id of a person.
+    string pn = 2;
+}
+
 // request message for GetPersons
 message GetPersonsRequest {  
 
@@ -46,6 +83,25 @@ message GetPersonsRequest {
 
     // The query param pn stands for the id of a person.
     string pn = 2;
+}
+
+// request message for ListPersons
+message ListPersonsRequest {  
+
+    // Body with google.protobuf.Empty
+    .google.protobuf.Empty body = 1;
+
+    // Use this to search for a person by text.
+    string q = 2;
+
+    // Use this field to filter the persons, this is not searching.
+    string filter = 3;
+
+    // Use this field to specify the ordering.
+    string order_by = 4;
+
+    // Use this field to specify page to display.
+    string page = 5;
 }
 
 // request message for ListPersonss
@@ -65,6 +121,19 @@ message ListPersonssRequest {
 
     // Use this field to specify page to display.
     string page = 5;
+}
+
+// request message for UpdatePerson
+message UpdatePersonRequest {  
+
+    // Body with person.Person
+    .person.Person body = 1;
+
+    // The query param pn stands for the id of a person.
+    string pn = 2;
+
+    // Needed to patch a record
+    google.protobuf.FieldMask update_mask = 3;
 }
 
 // request message for UpdatePersons

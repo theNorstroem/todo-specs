@@ -51,7 +51,7 @@ services:
                 description: Use this field to specify page to display.
                 meta: null
                 type: string
-        rpc_name: ListPersonss
+        rpc_name: ListPersons
     Get:
         description: Returns a single person.
         data:
@@ -69,7 +69,7 @@ services:
                 description: The query param pn stands for the id of a person.
                 meta: null
                 type: string
-        rpc_name: GetPersons
+        rpc_name: GetPerson
     Create:
         description: Use this to create new persons.
         data:
@@ -82,7 +82,7 @@ services:
             method: POST
             rel: create
         query: {}
-        rpc_name: CreatePersons
+        rpc_name: CreatePerson
     Update:
         description: Use this to update existing persons. PATCH is also supported
         data:
@@ -105,7 +105,7 @@ services:
                 description: Needed to patch a record
                 meta: null
                 type: google.protobuf.FieldMask
-        rpc_name: UpdatePersons
+        rpc_name: UpdatePerson
     Delete:
         description: We use this to disable a person in the list, we do not delete them.
         data:
@@ -123,7 +123,7 @@ services:
                 description: The query param pn stands for the id of a person.
                 meta: null
                 type: string
-        rpc_name: DeletePersons
+        rpc_name: DeletePerson
     Fire:
         description: Fireing some persons can increase the performance of the other persons POST. Do not use this to much.
         data:
@@ -141,4 +141,4 @@ services:
                 description: The query param pn stands for the id of a person.
                 meta: null
                 type: string
-        rpc_name: FirePersons
+        rpc_name: FirePerson

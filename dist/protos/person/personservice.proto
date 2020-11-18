@@ -20,7 +20,7 @@ import "person/reqmsgs.proto";
 service Persons {
 
   // Use this to create new persons.
-  rpc CreatePersons (CreatePersonsRequest) returns (furo.signatures.EmptyEntity){
+  rpc CreatePerson (CreatePersonRequest) returns (furo.signatures.EmptyEntity){
 	//Create: POST /persons person.Person , furo.signatures.EmptyEntity #Use this to create new persons.
 	option (google.api.http) = {
 		post: "/persons"
@@ -29,7 +29,7 @@ service Persons {
   }
 
   // We use this to disable a person in the list, we do not delete them.
-  rpc DeletePersons (DeletePersonsRequest) returns (google.protobuf.Empty){
+  rpc DeletePerson (DeletePersonRequest) returns (google.protobuf.Empty){
 	//Delete: DELETE /persons/{pn} google.protobuf.Empty , google.protobuf.Empty #We use this to disable a person in the list, we do not delete them.
 	option (google.api.http) = {
 		delete: "/persons/{pn}"
@@ -38,7 +38,7 @@ service Persons {
   }
 
   // Fireing some persons can increase the performance of the other persons POST. Do not use this to much.
-  rpc FirePersons (FirePersonsRequest) returns (google.protobuf.Empty){
+  rpc FirePerson (FirePersonRequest) returns (google.protobuf.Empty){
 	//Fire: POST /persons/{pn}:ferment google.protobuf.Empty , google.protobuf.Empty #Fireing some persons can increase the performance of the other persons POST. Do not use this to much.
 	option (google.api.http) = {
 		post: "/persons/{pn}:ferment"
@@ -47,7 +47,7 @@ service Persons {
   }
 
   // Returns a single person.
-  rpc GetPersons (GetPersonsRequest) returns (person.PersonEntity){
+  rpc GetPerson (GetPersonRequest) returns (person.PersonEntity){
 	//Get: GET /persons/{pn} google.protobuf.Empty , person.PersonEntity #Returns a single person.
 	option (google.api.http) = {
 		get: "/persons/{pn}"
@@ -56,7 +56,7 @@ service Persons {
   }
 
   // List persons with pagination.
-  rpc ListPersonss (ListPersonssRequest) returns (person.PersonCollection){
+  rpc ListPersons (ListPersonsRequest) returns (person.PersonCollection){
 	//List: GET /persons google.protobuf.Empty , person.PersonCollection #List persons with pagination.
 	option (google.api.http) = {
 		get: "/persons"
@@ -65,7 +65,7 @@ service Persons {
   }
 
   // Use this to update existing persons. PATCH is also supported
-  rpc UpdatePersons (UpdatePersonsRequest) returns (person.PersonEntity){
+  rpc UpdatePerson (UpdatePersonRequest) returns (person.PersonEntity){
 	//Update: PUT /persons/{pn} person.Person , person.PersonEntity #Use this to update existing persons. PATCH is also supported
 	option (google.api.http) = {
 		put: "/persons/{pn}"

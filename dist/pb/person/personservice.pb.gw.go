@@ -31,8 +31,8 @@ var _ = runtime.String
 var _ = utilities.NewDoubleArray
 var _ = metadata.Join
 
-func request_Persons_CreatePersons_0(ctx context.Context, marshaler runtime.Marshaler, client PersonsClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq CreatePersonsRequest
+func request_Persons_CreatePerson_0(ctx context.Context, marshaler runtime.Marshaler, client PersonsClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq CreatePersonRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -43,13 +43,13 @@ func request_Persons_CreatePersons_0(ctx context.Context, marshaler runtime.Mars
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.CreatePersons(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.CreatePerson(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_Persons_CreatePersons_0(ctx context.Context, marshaler runtime.Marshaler, server PersonsServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq CreatePersonsRequest
+func local_request_Persons_CreatePerson_0(ctx context.Context, marshaler runtime.Marshaler, server PersonsServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq CreatePersonRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -60,17 +60,17 @@ func local_request_Persons_CreatePersons_0(ctx context.Context, marshaler runtim
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.CreatePersons(ctx, &protoReq)
+	msg, err := server.CreatePerson(ctx, &protoReq)
 	return msg, metadata, err
 
 }
 
 var (
-	filter_Persons_DeletePersons_0 = &utilities.DoubleArray{Encoding: map[string]int{"pn": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
+	filter_Persons_DeletePerson_0 = &utilities.DoubleArray{Encoding: map[string]int{"pn": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
-func request_Persons_DeletePersons_0(ctx context.Context, marshaler runtime.Marshaler, client PersonsClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq DeletePersonsRequest
+func request_Persons_DeletePerson_0(ctx context.Context, marshaler runtime.Marshaler, client PersonsClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq DeletePersonRequest
 	var metadata runtime.ServerMetadata
 
 	var (
@@ -93,17 +93,17 @@ func request_Persons_DeletePersons_0(ctx context.Context, marshaler runtime.Mars
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_Persons_DeletePersons_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_Persons_DeletePerson_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.DeletePersons(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.DeletePerson(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_Persons_DeletePersons_0(ctx context.Context, marshaler runtime.Marshaler, server PersonsServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq DeletePersonsRequest
+func local_request_Persons_DeletePerson_0(ctx context.Context, marshaler runtime.Marshaler, server PersonsServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq DeletePersonRequest
 	var metadata runtime.ServerMetadata
 
 	var (
@@ -126,17 +126,17 @@ func local_request_Persons_DeletePersons_0(ctx context.Context, marshaler runtim
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_Persons_DeletePersons_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_Persons_DeletePerson_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.DeletePersons(ctx, &protoReq)
+	msg, err := server.DeletePerson(ctx, &protoReq)
 	return msg, metadata, err
 
 }
 
-func request_Persons_FirePersons_0(ctx context.Context, marshaler runtime.Marshaler, client PersonsClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq FirePersonsRequest
+func request_Persons_FirePerson_0(ctx context.Context, marshaler runtime.Marshaler, client PersonsClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq FirePersonRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -164,13 +164,13 @@ func request_Persons_FirePersons_0(ctx context.Context, marshaler runtime.Marsha
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "pn", err)
 	}
 
-	msg, err := client.FirePersons(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.FirePerson(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_Persons_FirePersons_0(ctx context.Context, marshaler runtime.Marshaler, server PersonsServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq FirePersonsRequest
+func local_request_Persons_FirePerson_0(ctx context.Context, marshaler runtime.Marshaler, server PersonsServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq FirePersonRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -198,17 +198,17 @@ func local_request_Persons_FirePersons_0(ctx context.Context, marshaler runtime.
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "pn", err)
 	}
 
-	msg, err := server.FirePersons(ctx, &protoReq)
+	msg, err := server.FirePerson(ctx, &protoReq)
 	return msg, metadata, err
 
 }
 
 var (
-	filter_Persons_GetPersons_0 = &utilities.DoubleArray{Encoding: map[string]int{"pn": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
+	filter_Persons_GetPerson_0 = &utilities.DoubleArray{Encoding: map[string]int{"pn": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
-func request_Persons_GetPersons_0(ctx context.Context, marshaler runtime.Marshaler, client PersonsClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetPersonsRequest
+func request_Persons_GetPerson_0(ctx context.Context, marshaler runtime.Marshaler, client PersonsClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetPersonRequest
 	var metadata runtime.ServerMetadata
 
 	var (
@@ -231,17 +231,17 @@ func request_Persons_GetPersons_0(ctx context.Context, marshaler runtime.Marshal
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_Persons_GetPersons_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_Persons_GetPerson_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.GetPersons(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.GetPerson(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_Persons_GetPersons_0(ctx context.Context, marshaler runtime.Marshaler, server PersonsServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq GetPersonsRequest
+func local_request_Persons_GetPerson_0(ctx context.Context, marshaler runtime.Marshaler, server PersonsServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetPersonRequest
 	var metadata runtime.ServerMetadata
 
 	var (
@@ -264,98 +264,57 @@ func local_request_Persons_GetPersons_0(ctx context.Context, marshaler runtime.M
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_Persons_GetPersons_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_Persons_GetPerson_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.GetPersons(ctx, &protoReq)
+	msg, err := server.GetPerson(ctx, &protoReq)
 	return msg, metadata, err
 
 }
 
 var (
-	filter_Persons_ListPersonss_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
+	filter_Persons_ListPersons_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
 )
 
-func request_Persons_ListPersonss_0(ctx context.Context, marshaler runtime.Marshaler, client PersonsClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq ListPersonssRequest
+func request_Persons_ListPersons_0(ctx context.Context, marshaler runtime.Marshaler, client PersonsClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq ListPersonsRequest
 	var metadata runtime.ServerMetadata
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_Persons_ListPersonss_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_Persons_ListPersons_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.ListPersonss(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.ListPersons(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_Persons_ListPersonss_0(ctx context.Context, marshaler runtime.Marshaler, server PersonsServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq ListPersonssRequest
+func local_request_Persons_ListPersons_0(ctx context.Context, marshaler runtime.Marshaler, server PersonsServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq ListPersonsRequest
 	var metadata runtime.ServerMetadata
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_Persons_ListPersonss_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_Persons_ListPersons_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.ListPersonss(ctx, &protoReq)
+	msg, err := server.ListPersons(ctx, &protoReq)
 	return msg, metadata, err
 
 }
 
 var (
-	filter_Persons_UpdatePersons_0 = &utilities.DoubleArray{Encoding: map[string]int{"body": 0, "pn": 1}, Base: []int{1, 1, 2, 0, 0}, Check: []int{0, 1, 1, 2, 3}}
+	filter_Persons_UpdatePerson_0 = &utilities.DoubleArray{Encoding: map[string]int{"body": 0, "pn": 1}, Base: []int{1, 1, 2, 0, 0}, Check: []int{0, 1, 1, 2, 3}}
 )
 
-func request_Persons_UpdatePersons_0(ctx context.Context, marshaler runtime.Marshaler, client PersonsClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq UpdatePersonsRequest
-	var metadata runtime.ServerMetadata
-
-	newReader, berr := utilities.IOReaderFactory(req.Body)
-	if berr != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
-	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.Body); err != nil && err != io.EOF {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
-	}
-
-	var (
-		val string
-		ok  bool
-		err error
-		_   = err
-	)
-
-	val, ok = pathParams["pn"]
-	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "pn")
-	}
-
-	protoReq.Pn, err = runtime.String(val)
-	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "pn", err)
-	}
-
-	if err := req.ParseForm(); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
-	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_Persons_UpdatePersons_0); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
-	}
-
-	msg, err := client.UpdatePersons(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
-	return msg, metadata, err
-
-}
-
-func local_request_Persons_UpdatePersons_0(ctx context.Context, marshaler runtime.Marshaler, server PersonsServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq UpdatePersonsRequest
+func request_Persons_UpdatePerson_0(ctx context.Context, marshaler runtime.Marshaler, client PersonsClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq UpdatePersonRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -386,21 +345,62 @@ func local_request_Persons_UpdatePersons_0(ctx context.Context, marshaler runtim
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_Persons_UpdatePersons_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_Persons_UpdatePerson_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.UpdatePersons(ctx, &protoReq)
+	msg, err := client.UpdatePerson(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	return msg, metadata, err
+
+}
+
+func local_request_Persons_UpdatePerson_0(ctx context.Context, marshaler runtime.Marshaler, server PersonsServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq UpdatePersonRequest
+	var metadata runtime.ServerMetadata
+
+	newReader, berr := utilities.IOReaderFactory(req.Body)
+	if berr != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
+	}
+	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.Body); err != nil && err != io.EOF {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+
+	var (
+		val string
+		ok  bool
+		err error
+		_   = err
+	)
+
+	val, ok = pathParams["pn"]
+	if !ok {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "pn")
+	}
+
+	protoReq.Pn, err = runtime.String(val)
+	if err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "pn", err)
+	}
+
+	if err := req.ParseForm(); err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_Persons_UpdatePerson_0); err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+
+	msg, err := server.UpdatePerson(ctx, &protoReq)
 	return msg, metadata, err
 
 }
 
 var (
-	filter_Persons_UpdatePersons_1 = &utilities.DoubleArray{Encoding: map[string]int{"body": 0, "pn": 1}, Base: []int{1, 1, 2, 0, 0}, Check: []int{0, 1, 1, 2, 3}}
+	filter_Persons_UpdatePerson_1 = &utilities.DoubleArray{Encoding: map[string]int{"body": 0, "pn": 1}, Base: []int{1, 1, 2, 0, 0}, Check: []int{0, 1, 1, 2, 3}}
 )
 
-func request_Persons_UpdatePersons_1(ctx context.Context, marshaler runtime.Marshaler, client PersonsClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq UpdatePersonsRequest
+func request_Persons_UpdatePerson_1(ctx context.Context, marshaler runtime.Marshaler, client PersonsClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq UpdatePersonRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -438,17 +438,17 @@ func request_Persons_UpdatePersons_1(ctx context.Context, marshaler runtime.Mars
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_Persons_UpdatePersons_1); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_Persons_UpdatePerson_1); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.UpdatePersons(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.UpdatePerson(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_Persons_UpdatePersons_1(ctx context.Context, marshaler runtime.Marshaler, server PersonsServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq UpdatePersonsRequest
+func local_request_Persons_UpdatePerson_1(ctx context.Context, marshaler runtime.Marshaler, server PersonsServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq UpdatePersonRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -486,11 +486,11 @@ func local_request_Persons_UpdatePersons_1(ctx context.Context, marshaler runtim
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_Persons_UpdatePersons_1); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_Persons_UpdatePerson_1); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.UpdatePersons(ctx, &protoReq)
+	msg, err := server.UpdatePerson(ctx, &protoReq)
 	return msg, metadata, err
 
 }
@@ -501,18 +501,18 @@ func local_request_Persons_UpdatePersons_1(ctx context.Context, marshaler runtim
 // Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterPersonsHandlerFromEndpoint instead.
 func RegisterPersonsHandlerServer(ctx context.Context, mux *runtime.ServeMux, server PersonsServer) error {
 
-	mux.Handle("POST", pattern_Persons_CreatePersons_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Persons_CreatePerson_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/person.Persons/CreatePersons")
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/person.Persons/CreatePerson")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Persons_CreatePersons_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Persons_CreatePerson_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -520,22 +520,22 @@ func RegisterPersonsHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 			return
 		}
 
-		forward_Persons_CreatePersons_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Persons_CreatePerson_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("DELETE", pattern_Persons_DeletePersons_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("DELETE", pattern_Persons_DeletePerson_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/person.Persons/DeletePersons")
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/person.Persons/DeletePerson")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Persons_DeletePersons_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Persons_DeletePerson_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -543,22 +543,22 @@ func RegisterPersonsHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 			return
 		}
 
-		forward_Persons_DeletePersons_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Persons_DeletePerson_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_Persons_FirePersons_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Persons_FirePerson_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/person.Persons/FirePersons")
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/person.Persons/FirePerson")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Persons_FirePersons_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Persons_FirePerson_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -566,22 +566,22 @@ func RegisterPersonsHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 			return
 		}
 
-		forward_Persons_FirePersons_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Persons_FirePerson_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("GET", pattern_Persons_GetPersons_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("GET", pattern_Persons_GetPerson_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/person.Persons/GetPersons")
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/person.Persons/GetPerson")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Persons_GetPersons_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Persons_GetPerson_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -589,22 +589,22 @@ func RegisterPersonsHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 			return
 		}
 
-		forward_Persons_GetPersons_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Persons_GetPerson_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("GET", pattern_Persons_ListPersonss_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("GET", pattern_Persons_ListPersons_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/person.Persons/ListPersonss")
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/person.Persons/ListPersons")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Persons_ListPersonss_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Persons_ListPersons_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -612,22 +612,22 @@ func RegisterPersonsHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 			return
 		}
 
-		forward_Persons_ListPersonss_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Persons_ListPersons_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("PUT", pattern_Persons_UpdatePersons_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("PUT", pattern_Persons_UpdatePerson_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/person.Persons/UpdatePersons")
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/person.Persons/UpdatePerson")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Persons_UpdatePersons_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Persons_UpdatePerson_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -635,22 +635,22 @@ func RegisterPersonsHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 			return
 		}
 
-		forward_Persons_UpdatePersons_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Persons_UpdatePerson_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("PATCH", pattern_Persons_UpdatePersons_1, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("PATCH", pattern_Persons_UpdatePerson_1, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/person.Persons/UpdatePersons")
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/person.Persons/UpdatePerson")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Persons_UpdatePersons_1(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Persons_UpdatePerson_1(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -658,7 +658,7 @@ func RegisterPersonsHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 			return
 		}
 
-		forward_Persons_UpdatePersons_1(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Persons_UpdatePerson_1(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -703,143 +703,143 @@ func RegisterPersonsHandler(ctx context.Context, mux *runtime.ServeMux, conn *gr
 // "PersonsClient" to call the correct interceptors.
 func RegisterPersonsHandlerClient(ctx context.Context, mux *runtime.ServeMux, client PersonsClient) error {
 
-	mux.Handle("POST", pattern_Persons_CreatePersons_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Persons_CreatePerson_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/person.Persons/CreatePersons")
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/person.Persons/CreatePerson")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Persons_CreatePersons_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Persons_CreatePerson_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Persons_CreatePersons_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Persons_CreatePerson_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("DELETE", pattern_Persons_DeletePersons_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("DELETE", pattern_Persons_DeletePerson_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/person.Persons/DeletePersons")
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/person.Persons/DeletePerson")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Persons_DeletePersons_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Persons_DeletePerson_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Persons_DeletePersons_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Persons_DeletePerson_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_Persons_FirePersons_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Persons_FirePerson_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/person.Persons/FirePersons")
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/person.Persons/FirePerson")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Persons_FirePersons_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Persons_FirePerson_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Persons_FirePersons_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Persons_FirePerson_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("GET", pattern_Persons_GetPersons_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("GET", pattern_Persons_GetPerson_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/person.Persons/GetPersons")
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/person.Persons/GetPerson")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Persons_GetPersons_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Persons_GetPerson_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Persons_GetPersons_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Persons_GetPerson_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("GET", pattern_Persons_ListPersonss_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("GET", pattern_Persons_ListPersons_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/person.Persons/ListPersonss")
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/person.Persons/ListPersons")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Persons_ListPersonss_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Persons_ListPersons_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Persons_ListPersonss_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Persons_ListPersons_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("PUT", pattern_Persons_UpdatePersons_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("PUT", pattern_Persons_UpdatePerson_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/person.Persons/UpdatePersons")
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/person.Persons/UpdatePerson")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Persons_UpdatePersons_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Persons_UpdatePerson_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Persons_UpdatePersons_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Persons_UpdatePerson_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("PATCH", pattern_Persons_UpdatePersons_1, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("PATCH", pattern_Persons_UpdatePerson_1, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/person.Persons/UpdatePersons")
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/person.Persons/UpdatePerson")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Persons_UpdatePersons_1(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Persons_UpdatePerson_1(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Persons_UpdatePersons_1(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Persons_UpdatePerson_1(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -847,33 +847,33 @@ func RegisterPersonsHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 }
 
 var (
-	pattern_Persons_CreatePersons_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0}, []string{"persons"}, ""))
+	pattern_Persons_CreatePerson_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0}, []string{"persons"}, ""))
 
-	pattern_Persons_DeletePersons_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 1, 0, 4, 1, 5, 1}, []string{"persons", "pn"}, ""))
+	pattern_Persons_DeletePerson_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 1, 0, 4, 1, 5, 1}, []string{"persons", "pn"}, ""))
 
-	pattern_Persons_FirePersons_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 1, 0, 4, 1, 5, 1}, []string{"persons", "pn"}, "ferment"))
+	pattern_Persons_FirePerson_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 1, 0, 4, 1, 5, 1}, []string{"persons", "pn"}, "ferment"))
 
-	pattern_Persons_GetPersons_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 1, 0, 4, 1, 5, 1}, []string{"persons", "pn"}, ""))
+	pattern_Persons_GetPerson_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 1, 0, 4, 1, 5, 1}, []string{"persons", "pn"}, ""))
 
-	pattern_Persons_ListPersonss_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0}, []string{"persons"}, ""))
+	pattern_Persons_ListPersons_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0}, []string{"persons"}, ""))
 
-	pattern_Persons_UpdatePersons_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 1, 0, 4, 1, 5, 1}, []string{"persons", "pn"}, ""))
+	pattern_Persons_UpdatePerson_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 1, 0, 4, 1, 5, 1}, []string{"persons", "pn"}, ""))
 
-	pattern_Persons_UpdatePersons_1 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 1, 0, 4, 1, 5, 1}, []string{"persons", "pn"}, ""))
+	pattern_Persons_UpdatePerson_1 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 1, 0, 4, 1, 5, 1}, []string{"persons", "pn"}, ""))
 )
 
 var (
-	forward_Persons_CreatePersons_0 = runtime.ForwardResponseMessage
+	forward_Persons_CreatePerson_0 = runtime.ForwardResponseMessage
 
-	forward_Persons_DeletePersons_0 = runtime.ForwardResponseMessage
+	forward_Persons_DeletePerson_0 = runtime.ForwardResponseMessage
 
-	forward_Persons_FirePersons_0 = runtime.ForwardResponseMessage
+	forward_Persons_FirePerson_0 = runtime.ForwardResponseMessage
 
-	forward_Persons_GetPersons_0 = runtime.ForwardResponseMessage
+	forward_Persons_GetPerson_0 = runtime.ForwardResponseMessage
 
-	forward_Persons_ListPersonss_0 = runtime.ForwardResponseMessage
+	forward_Persons_ListPersons_0 = runtime.ForwardResponseMessage
 
-	forward_Persons_UpdatePersons_0 = runtime.ForwardResponseMessage
+	forward_Persons_UpdatePerson_0 = runtime.ForwardResponseMessage
 
-	forward_Persons_UpdatePersons_1 = runtime.ForwardResponseMessage
+	forward_Persons_UpdatePerson_1 = runtime.ForwardResponseMessage
 )
