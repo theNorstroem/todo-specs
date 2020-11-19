@@ -52,12 +52,12 @@ services:
                 constraints: {}
                 description: Use this field to specify page to display.
                 meta: null
-                type: string
+                type: uint32
             page_size:
                 constraints: {}
                 description: Define the size of a page.
                 meta: null
-                type: string
+                type: uint32
         rpc_name: ListTasks
     Get:
         description: Returns a single task.

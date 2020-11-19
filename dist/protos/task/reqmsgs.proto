@@ -61,10 +61,10 @@ message ListTasksRequest {
     string order_by = 4;
 
     // Use this field to specify page to display.
-    string page = 5;
+    uint32 page = 5;
 
     // Define the size of a page.
-    string page_size = 6;
+    uint32 page_size = 6;
 }
 
 // request message for SuspendTask

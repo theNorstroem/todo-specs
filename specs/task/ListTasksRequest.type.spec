@@ -85,7 +85,7 @@ fields:
             typespecific: null
         constraints: {}
     page:
-        type: string
+        type: uint32
         description: Use this field to specify page to display.
         __proto:
             number: 5
@@ -103,7 +103,7 @@ fields:
             typespecific: null
         constraints: {}
     page_size:
-        type: string
+        type: uint32
         description: Define the size of a page.
         __proto:
             number: 6
