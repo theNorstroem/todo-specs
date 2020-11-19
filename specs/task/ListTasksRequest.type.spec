@@ -102,3 +102,21 @@ fields:
             repeated: false
             typespecific: null
         constraints: {}
+    page_size:
+        type: string
+        description: Define the size of a page.
+        __proto:
+            number: 6
+            oneof: ""
+        __ui: null
+        meta:
+            default: ""
+            hint: ""
+            label: task.ListTasksRequest.page_size.label
+            options:
+                flags: []
+                list: []
+            readonly: false
+            repeated: false
+            typespecific: null
+        constraints: {}

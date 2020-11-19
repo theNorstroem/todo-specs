@@ -12,6 +12,7 @@
         filter: 'string #Use this field to filter the tasks, this is not searching.'
         order_by: 'string #Use this field to specify the ordering.'
         page: 'string #Use this field to specify page to display.'
+        page_size: 'string #Define the size of a page.'
     - md: 'Get: GET /tasks/{tsk} google.protobuf.Empty , task.TaskEntity #Returns a single task.'
       qp:
         tsk: 'string #The query param tsk stands for the id of a task.'
