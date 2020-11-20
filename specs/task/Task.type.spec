@@ -45,7 +45,7 @@ fields:
             noskip: false
         meta:
             default: ""
-            hint: ""
+            hint: task.Task.display_name.hint
             label: task.Task.display_name.label
             options:
                 flags: []
@@ -66,7 +66,7 @@ fields:
         __ui: null
         meta:
             default: ""
-            hint: ""
+            hint: task.Task.note.hint
             label: task.Task.note.label
             options:
                 flags: []
@@ -89,7 +89,7 @@ fields:
             noskip: false
         meta:
             default: ""
-            hint: ""
+            hint: task.Task.parent.hint
             label: task.Task.parent.label
             options:
                 flags: []
@@ -125,7 +125,7 @@ fields:
         __ui: null
         meta:
             default: ""
-            hint: ""
+            hint: task.Task.due_date.hint
             label: task.Task.due_date.label
             options:
                 flags: []
