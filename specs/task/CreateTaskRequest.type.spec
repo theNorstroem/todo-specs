@@ -10,7 +10,7 @@ __proto:
         go_package: github.com/theNorstroem/todo-specs/dist/pb/task;taskpb
         java_multiple_files: "true"
         java_outer_classname: ReqmsgsProto
-        java_package: com.furo.basetask
+        java_package: pro.furo.todo
 fields:
     body:
         type: .task.Task
