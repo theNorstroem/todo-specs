@@ -30,9 +30,9 @@ fields:
             repeated: false
             typespecific: null
         constraints: {}
-    pn:
+    prs:
         type: string
-        description: The query param pn stands for the id of a person.
+        description: The query param prs stands for the id of a person.
         __proto:
             number: 2
             oneof: ""

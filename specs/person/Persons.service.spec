@@ -59,14 +59,19 @@ services:
             response: person.PersonEntity
             bodyfield: body
         deeplink:
-            description: 'Get: GET /persons/{pn} google.protobuf.Empty , person.PersonEntity #Returns a single person.'
-            href: /persons/{pn}
+            description: 'Get: GET /persons/{prs} google.protobuf.Empty , person.PersonEntity #Returns a single person.'
+            href: /persons/{prs}
             method: GET
             rel: self
         query:
             pn:
                 constraints: {}
                 description: The query param pn stands for the id of a person.
+                meta: null
+                type: string
+            prs:
+                constraints: {}
+                description: The query param prs stands for the id of a person.
                 meta: null
                 type: string
         rpc_name: GetPerson
@@ -90,8 +95,8 @@ services:
             response: person.PersonEntity
             bodyfield: body
         deeplink:
-            description: 'Update: PUT /persons/{pn} person.Person , person.PersonEntity #Use this to update existing persons. PATCH is also supported'
-            href: /persons/{pn}
+            description: 'Update: PUT /persons/{prs} person.Person , person.PersonEntity #Use this to update existing persons. PATCH is also supported'
+            href: /persons/{prs}
             method: PUT
             rel: update
         query:
@@ -105,6 +110,11 @@ services:
                 description: Needed to patch a record
                 meta: null
                 type: google.protobuf.FieldMask
+            prs:
+                constraints: {}
+                description: The query param prs stands for the id of a person.
+                meta: null
+                type: string
         rpc_name: UpdatePerson
     Delete:
         description: We use this to disable a person in the list, we do not delete them.
@@ -113,8 +123,8 @@ services:
             response: google.protobuf.Empty
             bodyfield: body
         deeplink:
-            description: 'Delete: DELETE /persons/{pn} google.protobuf.Empty , google.protobuf.Empty #We use this to disable a person in the list, we do not delete them.'
-            href: /persons/{pn}
+            description: 'Delete: DELETE /persons/{prs} google.protobuf.Empty , google.protobuf.Empty #We use this to disable a person in the list, we do not delete them.'
+            href: /persons/{prs}
             method: DELETE
             rel: delete
         query:
@@ -123,22 +133,32 @@ services:
                 description: The query param pn stands for the id of a person.
                 meta: null
                 type: string
+            prs:
+                constraints: {}
+                description: The query param prs stands for the id of a person.
+                meta: null
+                type: string
         rpc_name: DeletePerson
     Fire:
-        description: Fireing some persons can increase the performance of the other persons POST. Do not use this to much.
+        description: Fireing some persons can increase the performance of the other persons POST. Do not use this to much. The big downside is, that you have to assign their work to somone other.
         data:
             request: google.protobuf.Empty
             response: google.protobuf.Empty
             bodyfield: body
         deeplink:
-            description: 'Fire: POST /persons/{pn}:ferment google.protobuf.Empty , google.protobuf.Empty #Fireing some persons can increase the performance of the other persons POST. Do not use this to much.'
-            href: /persons/{pn}:ferment
+            description: 'Fire: POST /persons/{prs}:ferment google.protobuf.Empty , google.protobuf.Empty #Fireing some persons can increase the performance of the other persons POST. Do not use this to much. The big downside is, that you have to assign their work to somone other.'
+            href: /persons/{prs}:ferment
             method: POST
             rel: fire
         query:
             pn:
                 constraints: {}
                 description: The query param pn stands for the id of a person.
+                meta: null
+                type: string
+            prs:
+                constraints: {}
+                description: The query param prs stands for the id of a person.
                 meta: null
                 type: string
         rpc_name: FirePerson

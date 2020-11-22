@@ -23,7 +23,7 @@ type PersonsClient interface {
 	CreatePerson(ctx context.Context, in *CreatePersonRequest, opts ...grpc.CallOption) (*signatures.EmptyEntity, error)
 	// We use this to disable a person in the list, we do not delete them.
 	DeletePerson(ctx context.Context, in *DeletePersonRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
-	// Fireing some persons can increase the performance of the other persons POST. Do not use this to much.
+	// Fireing some persons can increase the performance of the other persons POST. Do not use this to much. The big downside is, that you have to assign their work to somone other.
 	FirePerson(ctx context.Context, in *FirePersonRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
 	// Returns a single person.
 	GetPerson(ctx context.Context, in *GetPersonRequest, opts ...grpc.CallOption) (*PersonEntity, error)
@@ -103,7 +103,7 @@ type PersonsServer interface {
 	CreatePerson(context.Context, *CreatePersonRequest) (*signatures.EmptyEntity, error)
 	// We use this to disable a person in the list, we do not delete them.
 	DeletePerson(context.Context, *DeletePersonRequest) (*emptypb.Empty, error)
-	// Fireing some persons can increase the performance of the other persons POST. Do not use this to much.
+	// Fireing some persons can increase the performance of the other persons POST. Do not use this to much. The big downside is, that you have to assign their work to somone other.
 	FirePerson(context.Context, *FirePersonRequest) (*emptypb.Empty, error)
 	// Returns a single person.
 	GetPerson(context.Context, *GetPersonRequest) (*PersonEntity, error)

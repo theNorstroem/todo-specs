@@ -31,24 +31,6 @@ fields:
             repeated: false
             typespecific: null
         constraints: {}
-    pn:
-        type: string
-        description: The query param pn stands for the id of a person.
-        __proto:
-            number: 2
-            oneof: ""
-        __ui: null
-        meta:
-            default: ""
-            hint: ""
-            label: person.UpdatePersonRequest.pn.label
-            options:
-                flags: []
-                list: []
-            readonly: false
-            repeated: false
-            typespecific: null
-        constraints: {}
     update_mask:
         type: google.protobuf.FieldMask
         description: Needed to patch a record
@@ -60,6 +42,24 @@ fields:
             default: ""
             hint: ""
             label: person.UpdatePersonRequest.update_mask.label
+            options:
+                flags: []
+                list: []
+            readonly: false
+            repeated: false
+            typespecific: null
+        constraints: {}
+    prs:
+        type: string
+        description: The query param prs stands for the id of a person.
+        __proto:
+            number: 2
+            oneof: ""
+        __ui: null
+        meta:
+            default: ""
+            hint: ""
+            label: person.UpdatePersonRequest.pn.label
             options:
                 flags: []
                 list: []

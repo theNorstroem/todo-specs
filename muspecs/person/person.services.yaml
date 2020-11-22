@@ -10,17 +10,17 @@
         filter: 'string #Use this field to filter the persons, this is not searching.'
         order_by: 'string #Use this field to specify the ordering.'
         page: 'string #Use this field to specify page to display.'
-    - md: 'Get: GET /persons/{pn} google.protobuf.Empty , person.PersonEntity #Returns a single person.'
+    - md: 'Get: GET /persons/{prs} google.protobuf.Empty , person.PersonEntity #Returns a single person.'
       qp:
-        pn: 'string #The query param pn stands for the id of a person.'
+        prs: 'string #The query param prs stands for the id of a person.'
     - md: 'Create: POST /persons person.Person , furo.signatures.EmptyEntity #Use this to create new persons.'
-    - md: 'Update: PUT /persons/{pn} person.Person , person.PersonEntity #Use this to update existing persons. PATCH is also supported'
+    - md: 'Update: PUT /persons/{prs} person.Person , person.PersonEntity #Use this to update existing persons. PATCH is also supported'
       qp:
-        pn: 'string #The query param pn stands for the id of a person.'
+        prs: 'string #The query param prs stands for the id of a person.'
         update_mask: 'google.protobuf.FieldMask #Needed to patch a record'
-    - md: 'Delete: DELETE /persons/{pn} google.protobuf.Empty , google.protobuf.Empty #We use this to disable a person in the list, we do not delete them.'
+    - md: 'Delete: DELETE /persons/{prs} google.protobuf.Empty , google.protobuf.Empty #We use this to disable a person in the list, we do not delete them.'
       qp:
-        pn: 'string #The query param pn stands for the id of a person.'
-    - md: 'Fire: POST /persons/{pn}:ferment google.protobuf.Empty , google.protobuf.Empty #Fireing some persons can increase the performance of the other persons POST. Do not use this to much.'
+        prs: 'string #The query param prs stands for the id of a person.'
+    - md: 'Fire: POST /persons/{prs}:ferment google.protobuf.Empty , google.protobuf.Empty #Fireing some persons can increase the performance of the other persons POST. Do not use this to much. The big downside is, that you have to assign their work to somone other.'
       qp:
-        pn: 'string #The query param pn stands for the id of a person.'
+        prs: 'string #The query param prs stands for the id of a person.'

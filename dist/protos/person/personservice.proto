@@ -30,27 +30,27 @@ service Persons {
 
   // We use this to disable a person in the list, we do not delete them.
   rpc DeletePerson (DeletePersonRequest) returns (google.protobuf.Empty){
-	//Delete: DELETE /persons/{pn} google.protobuf.Empty , google.protobuf.Empty #We use this to disable a person in the list, we do not delete them.
+	//Delete: DELETE /persons/{prs} google.protobuf.Empty , google.protobuf.Empty #We use this to disable a person in the list, we do not delete them.
 	option (google.api.http) = {
-		delete: "/persons/{pn}"
+		delete: "/persons/{prs}"
 		
 	};
   }
 
-  // Fireing some persons can increase the performance of the other persons POST. Do not use this to much.
+  // Fireing some persons can increase the performance of the other persons POST. Do not use this to much. The big downside is, that you have to assign their work to somone other.
   rpc FirePerson (FirePersonRequest) returns (google.protobuf.Empty){
-	//Fire: POST /persons/{pn}:ferment google.protobuf.Empty , google.protobuf.Empty #Fireing some persons can increase the performance of the other persons POST. Do not use this to much.
+	//Fire: POST /persons/{prs}:ferment google.protobuf.Empty , google.protobuf.Empty #Fireing some persons can increase the performance of the other persons POST. Do not use this to much. The big downside is, that you have to assign their work to somone other.
 	option (google.api.http) = {
-		post: "/persons/{pn}:ferment"
+		post: "/persons/{prs}:ferment"
 		body: "body"
 	};
   }
 
   // Returns a single person.
   rpc GetPerson (GetPersonRequest) returns (person.PersonEntity){
-	//Get: GET /persons/{pn} google.protobuf.Empty , person.PersonEntity #Returns a single person.
+	//Get: GET /persons/{prs} google.protobuf.Empty , person.PersonEntity #Returns a single person.
 	option (google.api.http) = {
-		get: "/persons/{pn}"
+		get: "/persons/{prs}"
 		
 	};
   }
@@ -66,12 +66,12 @@ service Persons {
 
   // Use this to update existing persons. PATCH is also supported
   rpc UpdatePerson (UpdatePersonRequest) returns (person.PersonEntity){
-	//Update: PUT /persons/{pn} person.Person , person.PersonEntity #Use this to update existing persons. PATCH is also supported
+	//Update: PUT /persons/{prs} person.Person , person.PersonEntity #Use this to update existing persons. PATCH is also supported
 	option (google.api.http) = {
-		put: "/persons/{pn}"
+		put: "/persons/{prs}"
 		body: "body"
 		additional_bindings {
-            patch: "/persons/{pn}"
+            patch: "/persons/{prs}"
             body: "body"
         }
 	};

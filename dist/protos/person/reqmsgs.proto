@@ -24,8 +24,8 @@ message DeletePersonRequest {
     // Body with google.protobuf.Empty
     .google.protobuf.Empty body = 1;
 
-    // The query param pn stands for the id of a person.
-    string pn = 2;
+    // The query param prs stands for the id of a person.
+    string prs = 2;
 }
 
 // request message for FirePerson
@@ -34,8 +34,8 @@ message FirePersonRequest {
     // Body with google.protobuf.Empty
     .google.protobuf.Empty body = 1;
 
-    // The query param pn stands for the id of a person.
-    string pn = 2;
+    // The query param prs stands for the id of a person.
+    string prs = 2;
 }
 
 // request message for GetPerson
@@ -44,8 +44,8 @@ message GetPersonRequest {
     // Body with google.protobuf.Empty
     .google.protobuf.Empty body = 1;
 
-    // The query param pn stands for the id of a person.
-    string pn = 2;
+    // The query param prs stands for the id of a person.
+    string prs = 2;
 }
 
 // request message for ListPersons
@@ -73,9 +73,9 @@ message UpdatePersonRequest {
     // Body with person.Person
     .person.Person body = 1;
 
-    // The query param pn stands for the id of a person.
-    string pn = 2;
-
     // Needed to patch a record
     google.protobuf.FieldMask update_mask = 3;
+
+    // The query param prs stands for the id of a person.
+    string prs = 2;
 }

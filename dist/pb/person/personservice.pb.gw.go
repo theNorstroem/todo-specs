@@ -66,7 +66,7 @@ func local_request_Persons_CreatePerson_0(ctx context.Context, marshaler runtime
 }
 
 var (
-	filter_Persons_DeletePerson_0 = &utilities.DoubleArray{Encoding: map[string]int{"pn": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
+	filter_Persons_DeletePerson_0 = &utilities.DoubleArray{Encoding: map[string]int{"prs": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_Persons_DeletePerson_0(ctx context.Context, marshaler runtime.Marshaler, client PersonsClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -80,14 +80,14 @@ func request_Persons_DeletePerson_0(ctx context.Context, marshaler runtime.Marsh
 		_   = err
 	)
 
-	val, ok = pathParams["pn"]
+	val, ok = pathParams["prs"]
 	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "pn")
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "prs")
 	}
 
-	protoReq.Pn, err = runtime.String(val)
+	protoReq.Prs, err = runtime.String(val)
 	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "pn", err)
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "prs", err)
 	}
 
 	if err := req.ParseForm(); err != nil {
@@ -113,14 +113,14 @@ func local_request_Persons_DeletePerson_0(ctx context.Context, marshaler runtime
 		_   = err
 	)
 
-	val, ok = pathParams["pn"]
+	val, ok = pathParams["prs"]
 	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "pn")
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "prs")
 	}
 
-	protoReq.Pn, err = runtime.String(val)
+	protoReq.Prs, err = runtime.String(val)
 	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "pn", err)
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "prs", err)
 	}
 
 	if err := req.ParseForm(); err != nil {
@@ -154,14 +154,14 @@ func request_Persons_FirePerson_0(ctx context.Context, marshaler runtime.Marshal
 		_   = err
 	)
 
-	val, ok = pathParams["pn"]
+	val, ok = pathParams["prs"]
 	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "pn")
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "prs")
 	}
 
-	protoReq.Pn, err = runtime.String(val)
+	protoReq.Prs, err = runtime.String(val)
 	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "pn", err)
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "prs", err)
 	}
 
 	msg, err := client.FirePerson(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
@@ -188,14 +188,14 @@ func local_request_Persons_FirePerson_0(ctx context.Context, marshaler runtime.M
 		_   = err
 	)
 
-	val, ok = pathParams["pn"]
+	val, ok = pathParams["prs"]
 	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "pn")
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "prs")
 	}
 
-	protoReq.Pn, err = runtime.String(val)
+	protoReq.Prs, err = runtime.String(val)
 	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "pn", err)
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "prs", err)
 	}
 
 	msg, err := server.FirePerson(ctx, &protoReq)
@@ -204,7 +204,7 @@ func local_request_Persons_FirePerson_0(ctx context.Context, marshaler runtime.M
 }
 
 var (
-	filter_Persons_GetPerson_0 = &utilities.DoubleArray{Encoding: map[string]int{"pn": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
+	filter_Persons_GetPerson_0 = &utilities.DoubleArray{Encoding: map[string]int{"prs": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_Persons_GetPerson_0(ctx context.Context, marshaler runtime.Marshaler, client PersonsClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -218,14 +218,14 @@ func request_Persons_GetPerson_0(ctx context.Context, marshaler runtime.Marshale
 		_   = err
 	)
 
-	val, ok = pathParams["pn"]
+	val, ok = pathParams["prs"]
 	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "pn")
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "prs")
 	}
 
-	protoReq.Pn, err = runtime.String(val)
+	protoReq.Prs, err = runtime.String(val)
 	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "pn", err)
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "prs", err)
 	}
 
 	if err := req.ParseForm(); err != nil {
@@ -251,14 +251,14 @@ func local_request_Persons_GetPerson_0(ctx context.Context, marshaler runtime.Ma
 		_   = err
 	)
 
-	val, ok = pathParams["pn"]
+	val, ok = pathParams["prs"]
 	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "pn")
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "prs")
 	}
 
-	protoReq.Pn, err = runtime.String(val)
+	protoReq.Prs, err = runtime.String(val)
 	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "pn", err)
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "prs", err)
 	}
 
 	if err := req.ParseForm(); err != nil {
@@ -310,7 +310,7 @@ func local_request_Persons_ListPersons_0(ctx context.Context, marshaler runtime.
 }
 
 var (
-	filter_Persons_UpdatePerson_0 = &utilities.DoubleArray{Encoding: map[string]int{"body": 0, "pn": 1}, Base: []int{1, 1, 2, 0, 0}, Check: []int{0, 1, 1, 2, 3}}
+	filter_Persons_UpdatePerson_0 = &utilities.DoubleArray{Encoding: map[string]int{"body": 0, "prs": 1}, Base: []int{1, 1, 2, 0, 0}, Check: []int{0, 1, 1, 2, 3}}
 )
 
 func request_Persons_UpdatePerson_0(ctx context.Context, marshaler runtime.Marshaler, client PersonsClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -332,14 +332,14 @@ func request_Persons_UpdatePerson_0(ctx context.Context, marshaler runtime.Marsh
 		_   = err
 	)
 
-	val, ok = pathParams["pn"]
+	val, ok = pathParams["prs"]
 	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "pn")
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "prs")
 	}
 
-	protoReq.Pn, err = runtime.String(val)
+	protoReq.Prs, err = runtime.String(val)
 	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "pn", err)
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "prs", err)
 	}
 
 	if err := req.ParseForm(); err != nil {
@@ -373,14 +373,14 @@ func local_request_Persons_UpdatePerson_0(ctx context.Context, marshaler runtime
 		_   = err
 	)
 
-	val, ok = pathParams["pn"]
+	val, ok = pathParams["prs"]
 	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "pn")
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "prs")
 	}
 
-	protoReq.Pn, err = runtime.String(val)
+	protoReq.Prs, err = runtime.String(val)
 	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "pn", err)
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "prs", err)
 	}
 
 	if err := req.ParseForm(); err != nil {
@@ -396,7 +396,7 @@ func local_request_Persons_UpdatePerson_0(ctx context.Context, marshaler runtime
 }
 
 var (
-	filter_Persons_UpdatePerson_1 = &utilities.DoubleArray{Encoding: map[string]int{"body": 0, "pn": 1}, Base: []int{1, 1, 2, 0, 0}, Check: []int{0, 1, 1, 2, 3}}
+	filter_Persons_UpdatePerson_1 = &utilities.DoubleArray{Encoding: map[string]int{"body": 0, "prs": 1}, Base: []int{1, 1, 2, 0, 0}, Check: []int{0, 1, 1, 2, 3}}
 )
 
 func request_Persons_UpdatePerson_1(ctx context.Context, marshaler runtime.Marshaler, client PersonsClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -425,14 +425,14 @@ func request_Persons_UpdatePerson_1(ctx context.Context, marshaler runtime.Marsh
 		_   = err
 	)
 
-	val, ok = pathParams["pn"]
+	val, ok = pathParams["prs"]
 	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "pn")
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "prs")
 	}
 
-	protoReq.Pn, err = runtime.String(val)
+	protoReq.Prs, err = runtime.String(val)
 	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "pn", err)
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "prs", err)
 	}
 
 	if err := req.ParseForm(); err != nil {
@@ -473,14 +473,14 @@ func local_request_Persons_UpdatePerson_1(ctx context.Context, marshaler runtime
 		_   = err
 	)
 
-	val, ok = pathParams["pn"]
+	val, ok = pathParams["prs"]
 	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "pn")
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "prs")
 	}
 
-	protoReq.Pn, err = runtime.String(val)
+	protoReq.Prs, err = runtime.String(val)
 	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "pn", err)
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "prs", err)
 	}
 
 	if err := req.ParseForm(); err != nil {
@@ -849,17 +849,17 @@ func RegisterPersonsHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 var (
 	pattern_Persons_CreatePerson_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0}, []string{"persons"}, ""))
 
-	pattern_Persons_DeletePerson_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 1, 0, 4, 1, 5, 1}, []string{"persons", "pn"}, ""))
+	pattern_Persons_DeletePerson_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 1, 0, 4, 1, 5, 1}, []string{"persons", "prs"}, ""))
 
-	pattern_Persons_FirePerson_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 1, 0, 4, 1, 5, 1}, []string{"persons", "pn"}, "ferment"))
+	pattern_Persons_FirePerson_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 1, 0, 4, 1, 5, 1}, []string{"persons", "prs"}, "ferment"))
 
-	pattern_Persons_GetPerson_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 1, 0, 4, 1, 5, 1}, []string{"persons", "pn"}, ""))
+	pattern_Persons_GetPerson_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 1, 0, 4, 1, 5, 1}, []string{"persons", "prs"}, ""))
 
 	pattern_Persons_ListPersons_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0}, []string{"persons"}, ""))
 
-	pattern_Persons_UpdatePerson_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 1, 0, 4, 1, 5, 1}, []string{"persons", "pn"}, ""))
+	pattern_Persons_UpdatePerson_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 1, 0, 4, 1, 5, 1}, []string{"persons", "prs"}, ""))
 
-	pattern_Persons_UpdatePerson_1 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 1, 0, 4, 1, 5, 1}, []string{"persons", "pn"}, ""))
+	pattern_Persons_UpdatePerson_1 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 1, 0, 4, 1, 5, 1}, []string{"persons", "prs"}, ""))
 )
 
 var (
