@@ -257,7 +257,7 @@ type Reference struct {
 	Id string `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	// Label of the referenced person
 	DisplayName string `protobuf:"bytes,2,opt,name=display_name,json=displayName,proto3" json:"display_name,omitempty"`
-	// HTS for the initial search (works on root resources only)
+	// HTS for the initial search (default works on root resources only)
 	Link *furo.Link `protobuf:"bytes,3,opt,name=link,proto3" json:"link,omitempty"`
 }
 

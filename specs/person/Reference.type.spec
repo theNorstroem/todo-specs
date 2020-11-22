@@ -56,7 +56,7 @@ fields:
                 message: display_name is required
     link:
         type: furo.Link
-        description: HTS for the initial search (works on root resources only)
+        description: HTS for the initial search (default works on root resources only)
         __proto:
             number: 3
             oneof: ""

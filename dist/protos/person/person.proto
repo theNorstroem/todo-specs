@@ -63,6 +63,6 @@ message Reference {
     // Label of the referenced person
     string display_name = 2;
 
-    // HTS for the initial search (works on root resources only)
+    // HTS for the initial search (default works on root resources only)
     furo.Link link = 3;
 }
