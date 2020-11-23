@@ -1,6 +1,6 @@
 # todo-specs
 
-This is the spec project for the todo-server and todo-client.
+This is the spec project for the [todo-server](https://github.com/theNorstroem/todo-server) and [todo-client](https://github.com/theNorstroem/todo-client).
 
 For simplicity we do not make use of a build pipeline. Just check out this spec to the same folder you checked out the todo-client and todo-server repository. 
 
