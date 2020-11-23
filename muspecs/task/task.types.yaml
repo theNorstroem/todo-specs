@@ -12,9 +12,9 @@
     done: 'bool:10 #this si maybe the main feature.'
   target: task.proto
 
-- type: 'task.CheckboxItem #A checkbox item'
+- type: 'task.CheckboxItem #The checkboxItem is not used at the moment, we plan to replace the repeated string (field checklist) of the task with this type.'
   fields:
-    display_name: '* string:2 #We use this field label the task'
+    display_name: '* string:2 #This is the description of the checkbox item'
     done: 'bool:3 #Sample'
     note: 'string:4 #Add some notes'
   target: task.proto

@@ -1,6 +1,6 @@
 name: CheckboxItem
 type: CheckboxItem
-description: A checkbox item
+description: The checkboxItem is not used at the moment, we plan to replace the repeated string (field checklist) of the task with this type.
 __proto:
     package: task
     targetfile: task.proto
@@ -13,7 +13,7 @@ __proto:
 fields:
     display_name:
         type: string
-        description: We use this field label the task
+        description: This is the description of the checkbox item
         __proto:
             number: 2
             oneof: ""

@@ -11,10 +11,10 @@ import "google/type/date.proto";
 import "person/person.proto";
 
 
-// A checkbox item
+// The checkboxItem is not used at the moment, we plan to replace the repeated string (field checklist) of the task with this type.
 message CheckboxItem {  
 
-    // We use this field label the task
+    // This is the description of the checkbox item
     string display_name = 2;
 
     // Sample
