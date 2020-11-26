@@ -22,6 +22,7 @@ commands: #camelCase is not allowed, command scripts can only be executed from a
   exec_protoc_services : "./scripts/proto2DomainServices.sh"
   copy_file_templates : "./scripts/copyFileTemplates/copy.sh" # copy additional files to dist
   update_client_project : "scripts/updateClientSpec.sh" # we do not use npm for this simple demo
+  gen_open_api : "./scripts/genOpenApi.sh" # generate swagger json from bundled services
 flows:
   default: #we choose µSpec as source https://fidl.furo.pro/docs/sourceoftruth/#%C2%B5spec-as-source
     - muSpec2Spec
@@ -31,6 +32,8 @@ flows:
     - exec_protoc_services
     - gen_transcoder
     - copy_file_templates
+    - genBundledServiceProto
+    - gen_open_api
     - genEsModule
     - update_client_project
 build:
