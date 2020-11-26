@@ -41,6 +41,14 @@ build:
     targetDir: "dist/protos/" #Hint: add this to your proto include path
   esModule:
     targetFile: "dist/env.js"
+  bundledservice:
+    targetFile: "dist/allservices/all-services.proto"
+    package: "allservices"
+    options:
+      go_package: "github.com/theNorstroem/todo-specs/dist/pb/allservices;allservicespb"
+      java_multiple_files: true
+      java_outer_classname: "TodoAllServices"
+      java_package: "com.github.thenorstroem.todo.allservices"
 dist:
   files: # enter a list of files and directories which should be installed by other projects
     - dist/protos

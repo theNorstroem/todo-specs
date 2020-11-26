@@ -1,0 +1,1094 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "all-services.proto",
+    "version": "version not set"
+  },
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/auth": {
+      "delete": {
+        "summary": "Logout.",
+        "operationId": "AuthSession_DeleteAuthSession",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "tags": [
+          "AuthSession"
+        ]
+      },
+      "post": {
+        "summary": "Login with credentials #A login is nothing else then creating a valid session",
+        "operationId": "AuthSession_CreateAuthSession",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": "Body with auth.Credentials",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/authCredentials"
+            }
+          }
+        ],
+        "tags": [
+          "AuthSession"
+        ]
+      }
+    },
+    "/persons": {
+      "get": {
+        "summary": "List persons with pagination.",
+        "operationId": "Persons_ListPersons",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/personPersonCollection"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "q",
+            "description": "Use this to search for a person by text.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "filter",
+            "description": "Use this field to filter the persons, this is not searching.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "order_by",
+            "description": "Use this field to specify the ordering.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "page",
+            "description": "Use this field to specify page to display.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Persons"
+        ]
+      },
+      "post": {
+        "summary": "Use this to create new persons.",
+        "operationId": "Persons_CreatePerson",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/signaturesEmptyEntity"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": "Body with person.Person",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/personPerson"
+            }
+          }
+        ],
+        "tags": [
+          "Persons"
+        ]
+      }
+    },
+    "/persons/{prs}": {
+      "get": {
+        "summary": "Returns a single person.",
+        "operationId": "Persons_GetPerson",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/personPersonEntity"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "prs",
+            "description": "The query param prs stands for the id of a person.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Persons"
+        ]
+      },
+      "delete": {
+        "summary": "We use this to disable a person in the list, we do not delete them.",
+        "operationId": "Persons_DeletePerson",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "prs",
+            "description": "The query param prs stands for the id of a person.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Persons"
+        ]
+      },
+      "put": {
+        "summary": "Use this to update existing persons. PATCH is also supported",
+        "operationId": "Persons_UpdatePerson",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/personPersonEntity"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "prs",
+            "description": "The query param prs stands for the id of a person.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "description": "Body with person.Person",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/personPerson"
+            }
+          },
+          {
+            "name": "update_mask",
+            "description": "Needed to patch a record.",
+            "in": "query",
+            "required": false,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
+          }
+        ],
+        "tags": [
+          "Persons"
+        ]
+      },
+      "patch": {
+        "summary": "Use this to update existing persons. PATCH is also supported",
+        "operationId": "Persons_UpdatePerson2",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/personPersonEntity"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "prs",
+            "description": "The query param prs stands for the id of a person.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "description": "Body with person.Person",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/personPerson"
+            }
+          },
+          {
+            "name": "update_mask",
+            "description": "Needed to patch a record.",
+            "in": "query",
+            "required": false,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
+          }
+        ],
+        "tags": [
+          "Persons"
+        ]
+      }
+    },
+    "/persons/{prs}:ferment": {
+      "post": {
+        "summary": "Fireing some persons can increase the performance of the other persons POST. Do not use this to much. The big downside is, that you have to assign their work to somone other.",
+        "operationId": "Persons_FirePerson",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "prs",
+            "description": "The query param prs stands for the id of a person.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "description": "Body with google.protobuf.Empty",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "properties": {}
+            }
+          }
+        ],
+        "tags": [
+          "Persons"
+        ]
+      }
+    },
+    "/tasks": {
+      "get": {
+        "summary": "List tasks with pagination.",
+        "operationId": "Tasks_ListTasks",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/taskTaskCollection"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "q",
+            "description": "Use this to search for a task by text.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "filter",
+            "description": "Use this field to filter the tasks, this is not searching.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "order_by",
+            "description": "Use this field to specify the ordering.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "page",
+            "description": "Use this field to specify page to display.",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "page_size",
+            "description": "Define the size of a page.",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "tags": [
+          "Tasks"
+        ]
+      },
+      "delete": {
+        "summary": "Use this to delete ALL tasks.",
+        "operationId": "Tasks_DeleteAllTaskss",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "tags": [
+          "Tasks"
+        ]
+      },
+      "post": {
+        "summary": "Use this to create new tasks.",
+        "operationId": "Tasks_CreateTask",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/signaturesEmptyEntity"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": "Body with task.Task",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/taskTask"
+            }
+          }
+        ],
+        "tags": [
+          "Tasks"
+        ]
+      }
+    },
+    "/tasks/{tsk}": {
+      "get": {
+        "summary": "Returns a single task.",
+        "operationId": "Tasks_GetTask",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/taskTaskEntity"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "tsk",
+            "description": "The query param tsk stands for the id of a task.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Tasks"
+        ]
+      },
+      "delete": {
+        "summary": "Use this to delete existing tasks.",
+        "operationId": "Tasks_DeleteTask",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "tsk",
+            "description": "tsk string.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Tasks"
+        ]
+      },
+      "put": {
+        "summary": "Use this to update existing tasks. PATCH is also supported",
+        "operationId": "Tasks_UpdateTask",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/taskTaskEntity"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "tsk",
+            "description": "tsk string.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "description": "Body with task.Task",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/taskTask"
+            }
+          },
+          {
+            "name": "update_mask",
+            "description": "Needed to patch a record.",
+            "in": "query",
+            "required": false,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
+          }
+        ],
+        "tags": [
+          "Tasks"
+        ]
+      },
+      "patch": {
+        "summary": "Use this to update existing tasks. PATCH is also supported",
+        "operationId": "Tasks_UpdateTask2",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/taskTaskEntity"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "tsk",
+            "description": "tsk string.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "description": "Body with task.Task",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/taskTask"
+            }
+          },
+          {
+            "name": "update_mask",
+            "description": "Needed to patch a record.",
+            "in": "query",
+            "required": false,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
+          }
+        ],
+        "tags": [
+          "Tasks"
+        ]
+      }
+    },
+    "/tasks/{tsk}:suspend": {
+      "post": {
+        "summary": "Custom methods are always POST.",
+        "operationId": "Tasks_SuspendTask",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "tsk",
+            "description": "tsk string.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "description": "Body with google.protobuf.Empty",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "properties": {}
+            }
+          }
+        ],
+        "tags": [
+          "Tasks"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "authCredentials": {
+      "type": "object",
+      "properties": {
+        "password": {
+          "type": "string",
+          "description": "The password."
+        },
+        "username": {
+          "type": "string",
+          "description": "The username or email, or something to identify."
+        }
+      },
+      "description": "Credentials type for login."
+    },
+    "furoFieldConstraint": {
+      "type": "object",
+      "properties": {
+        "is": {
+          "type": "string",
+          "title": "the constraint value as string, even it is a number"
+        },
+        "message": {
+          "type": "string",
+          "title": "The message to display on constraint violation"
+        }
+      },
+      "title": "a single fieldconstraint"
+    },
+    "furoFieldMeta": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "type": "string",
+          "title": "The label"
+        },
+        "hint": {
+          "type": "string",
+          "title": "A hint"
+        },
+        "default": {
+          "type": "string",
+          "title": "The default value as JSON string"
+        },
+        "readonly": {
+          "type": "boolean",
+          "title": "readonly"
+        },
+        "repeated": {
+          "type": "boolean",
+          "title": "repeated"
+        },
+        "options": {
+          "$ref": "#/definitions/furoFieldoption",
+          "title": "Fieldoptions"
+        },
+        "typespecific": {
+          "$ref": "#/definitions/protobufAny",
+          "title": "Put in type specific metas for your fields here"
+        }
+      },
+      "title": "Metas for a field"
+    },
+    "furoFieldoption": {
+      "type": "object",
+      "properties": {
+        "list": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          },
+          "title": "a list with options, use furo.optionitem or your own"
+        },
+        "flags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Add flags for your field. This can be something like \"searchable\". \n//The flags can be used by generators, ui components,..."
+        }
+      },
+      "title": "Metas for a field"
+    },
+    "furoLink": {
+      "type": "object",
+      "properties": {
+        "rel": {
+          "type": "string",
+          "description": "the relationship like self..."
+        },
+        "method": {
+          "type": "string",
+          "title": "method of curl v1.0.0"
+        },
+        "href": {
+          "type": "string",
+          "title": "link"
+        },
+        "type": {
+          "type": "string",
+          "title": "mime type"
+        },
+        "service": {
+          "type": "string",
+          "title": "name of the service which can handle this link"
+        }
+      },
+      "title": "link"
+    },
+    "furoMeta": {
+      "type": "object",
+      "properties": {
+        "fields": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/furoMetaField"
+          },
+          "title": "fields of meta info"
+        }
+      },
+      "title": "meta info"
+    },
+    "furoMetaField": {
+      "type": "object",
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/furoFieldMeta",
+          "title": "meta informatioxn of a field"
+        },
+        "constraints": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/furoFieldConstraint"
+          },
+          "title": "constraints for a field"
+        }
+      },
+      "title": "fields of meta info"
+    },
+    "personPerson": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "id (is a ULID). We do not use the email, they change sometimes."
+        },
+        "display_name": {
+          "type": "string",
+          "title": "We use this field label the person, using last_name and first_name is so 2008"
+        },
+        "note": {
+          "type": "string",
+          "title": "Add some notes, limited to 140 chars"
+        },
+        "email": {
+          "type": "string",
+          "description": "We should be able to contact someone."
+        },
+        "mobile": {
+          "type": "string",
+          "description": "We should be able to talk with someone."
+        }
+      },
+      "description": "Someone has to do the work."
+    },
+    "personPersonCollection": {
+      "type": "object",
+      "properties": {
+        "entities": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/personPersonEntity"
+          },
+          "title": "the data contains a person.Person"
+        },
+        "links": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/furoLink"
+          },
+          "title": "the Hateoas links"
+        },
+        "meta": {
+          "$ref": "#/definitions/furoMeta",
+          "title": "Meta for the response"
+        }
+      },
+      "title": "Collectioncontainer which holds a person.Person"
+    },
+    "personPersonEntity": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "$ref": "#/definitions/personPerson",
+          "title": "the data contains a person.Person"
+        },
+        "links": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/furoLink"
+          },
+          "title": "the Hateoas links"
+        },
+        "meta": {
+          "$ref": "#/definitions/furoMeta",
+          "title": "Meta for the response"
+        }
+      },
+      "title": "Entitycontainer which holds a person.Person"
+    },
+    "personReference": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Id of the referenced person."
+        },
+        "display_name": {
+          "type": "string",
+          "title": "Label of the referenced person"
+        },
+        "link": {
+          "$ref": "#/definitions/furoLink",
+          "title": "HTS for the initial search (default works on root resources only)"
+        }
+      },
+      "title": "Use this type to set a reference to a person"
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "type_url": {
+          "type": "string",
+          "description": "A URL/resource name that uniquely identifies the type of the serialized\n protocol buffer message. This string must contain at least\n one \"/\" character. The last segment of the URL's path must represent\n the fully qualified name of the type (as in\n `path/google.protobuf.Duration`). The name should be in a canonical form\n (e.g., leading \".\" is not accepted).\n\n In practice, teams usually precompile into the binary all types that they\n expect it to use in the context of Any. However, for URLs which use the\n scheme `http`, `https`, or no scheme, one can optionally set up a type\n server that maps type URLs to message definitions as follows:\n\n * If no scheme is provided, `https` is assumed.\n * An HTTP GET on the URL must yield a [google.protobuf.Type][]\n   value in binary format, or produce an error.\n * Applications are allowed to cache lookup results based on the\n   URL, or have them precompiled into a binary to avoid any\n   lookup. Therefore, binary compatibility needs to be preserved\n   on changes to types. (Use versioned type names to manage\n   breaking changes.)\n\n Note: this functionality is not currently available in the official\n protobuf release, and it is not used for type URLs beginning with\n type.googleapis.com.\n\n Schemes other than `http`, `https` (or the empty scheme) might be\n used with implementation specific semantics."
+        },
+        "value": {
+          "type": "string",
+          "format": "byte",
+          "description": "Must be a valid serialized protocol buffer of the above specified type."
+        }
+      },
+      "description": "`Any` contains an arbitrary serialized protocol buffer message along with a\n URL that describes the type of the serialized message.\n\n Protobuf library provides support to pack/unpack Any values in the form\n of utility functions or additional generated methods of the Any type.\n\n Example 1: Pack and unpack a message in C\u0026#43;\u0026#43;.\n\n     Foo foo = ...;\n     Any any;\n     any.PackFrom(foo);\n     ...\n     if (any.UnpackTo(\u0026amp;foo)) {\n       ...\n     }\n\n Example 2: Pack and unpack a message in Java.\n\n     Foo foo = ...;\n     Any any = Any.pack(foo);\n     ...\n     if (any.is(Foo.class)) {\n       foo = any.unpack(Foo.class);\n     }\n\n  Example 3: Pack and unpack a message in Python.\n\n     foo = Foo(...)\n     any = Any()\n     any.Pack(foo)\n     ...\n     if any.Is(Foo.DESCRIPTOR):\n       any.Unpack(foo)\n       ...\n\n  Example 4: Pack and unpack a message in Go\n\n      foo := \u0026amp;pb.Foo{...}\n      any, err := anypb.New(foo)\n      if err != nil {\n        ...\n      }\n      ...\n      foo := \u0026amp;pb.Foo{}\n      if err := any.UnmarshalTo(foo); err != nil {\n        ...\n      }\n\n The pack methods provided by protobuf library will by default use\n \u0026#39;type.googleapis.com/full.type.name\u0026#39; as the type URL and the unpack\n methods only use the fully qualified type name after the last \u0026#39;/\u0026#39;\n in the type URL, for example \u0026#34;foo.bar.com/x/y.z\u0026#34; will yield type\n name \u0026#34;y.z\u0026#34;.\n\n\n JSON\n ====\n The JSON representation of an `Any` value uses the regular\n representation of the deserialized, embedded message, with an\n additional field `@type` which contains the type URL. Example:\n\n     package google.profile;\n     message Person {\n       string first_name = 1;\n       string last_name = 2;\n     }\n\n     {\n       \u0026#34;@type\u0026#34;: \u0026#34;type.googleapis.com/google.profile.Person\u0026#34;,\n       \u0026#34;firstName\u0026#34;: \u0026lt;string\u0026gt;,\n       \u0026#34;lastName\u0026#34;: \u0026lt;string\u0026gt;\n     }\n\n If the embedded message type is well-known and has a custom JSON\n representation, that representation will be embedded adding a field\n `value` which holds the custom JSON in addition to the `@type`\n field. Example (for message [google.protobuf.Duration][]):\n\n     {\n       \u0026#34;@type\u0026#34;: \u0026#34;type.googleapis.com/google.protobuf.Duration\u0026#34;,\n       \u0026#34;value\u0026#34;: \u0026#34;1.212s\u0026#34;\n     }"
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "signaturesEmptyEntity": {
+      "type": "object",
+      "properties": {
+        "links": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/furoLink"
+          },
+          "title": "the Hateoas links"
+        },
+        "meta": {
+          "$ref": "#/definitions/furoMeta",
+          "title": "Meta for the response"
+        }
+      },
+      "description": "Entitycontainer which holds a empty entity. So links and meta is all you can send.\nUse this as a create response to send propper HATEOAS back to the client without the need\nto send the complete object."
+    },
+    "taskReference": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Id of the referenced task."
+        },
+        "display_name": {
+          "type": "string",
+          "title": "Label of the referenced task"
+        },
+        "link": {
+          "$ref": "#/definitions/furoLink",
+          "title": "HTS for the initial search (works on root resources only)"
+        }
+      },
+      "title": "Use this to set a reference to a task"
+    },
+    "taskTask": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Task id (is a ULID)."
+        },
+        "display_name": {
+          "type": "string",
+          "title": "We use this field label the task"
+        },
+        "note": {
+          "type": "string",
+          "title": "Add some notes"
+        },
+        "parent": {
+          "$ref": "#/definitions/taskReference",
+          "title": "The parent for this task"
+        },
+        "checklist": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "A task can have a checklist (more work)"
+        },
+        "due_date": {
+          "$ref": "#/definitions/typeDate",
+          "description": "Use this to give pressure."
+        },
+        "related_tasks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/taskReference"
+          },
+          "description": "Maybe we can benefit."
+        },
+        "involved_persons": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/personReference"
+          },
+          "description": "Sometimes a task is to hard for one person only."
+        },
+        "responsible_person": {
+          "$ref": "#/definitions/personReference",
+          "description": "If something goes wrong, we should be able to make some one responsible for it. This is aligned with our CYA strategy."
+        },
+        "done": {
+          "type": "boolean",
+          "description": "this si maybe the main feature."
+        }
+      },
+      "description": "Tasks are essential at work."
+    },
+    "taskTaskCollection": {
+      "type": "object",
+      "properties": {
+        "entities": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/taskTaskEntity"
+          },
+          "title": "the data contains a task.Task"
+        },
+        "links": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/furoLink"
+          },
+          "title": "the Hateoas links"
+        },
+        "meta": {
+          "$ref": "#/definitions/furoMeta",
+          "title": "Meta for the response"
+        }
+      },
+      "title": "Collectioncontainer which holds a task.Task"
+    },
+    "taskTaskEntity": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "$ref": "#/definitions/taskTask",
+          "title": "the data contains a task.Task"
+        },
+        "links": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/furoLink"
+          },
+          "title": "the Hateoas links"
+        },
+        "meta": {
+          "$ref": "#/definitions/furoMeta",
+          "title": "Meta for the response"
+        }
+      },
+      "title": "Entitycontainer which holds a task.Task"
+    },
+    "typeDate": {
+      "type": "object",
+      "properties": {
+        "year": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Year of date. Must be from 1 to 9999, or 0 if specifying a date without\n a year."
+        },
+        "month": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Month of year. Must be from 1 to 12."
+        },
+        "day": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Day of month. Must be from 1 to 31 and valid for the year and month, or 0\n if specifying a year/month where the day is not significant."
+        }
+      },
+      "description": "Represents a whole calendar date, e.g. date of birth. The time of day and\n time zone are either specified elsewhere or are not significant. The date\n is relative to the Proleptic Gregorian Calendar. The day may be 0 to\n represent a year and month where the day is not significant, e.g. credit card\n expiration date. The year may be 0 to represent a month and day independent\n of year, e.g. anniversary date. Related types are [google.type.TimeOfDay][google.type.TimeOfDay]\n and `google.protobuf.Timestamp`."
+    }
+  }
+}
