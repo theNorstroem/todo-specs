@@ -7,7 +7,7 @@ require (
 	github.com/gopherjs/gopherjs v0.0.0-20190910122728-9d188e94fb99 // indirect
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.0.1
 	github.com/spf13/pflag v1.0.5 // indirect
-	github.com/theNorstroem/FuroBaseSpecs v1.11.8
+	github.com/theNorstroem/FuroBaseSpecs v1.12.0
 	golang.org/x/net v0.0.0-20200904194848-62affa334b73 // indirect
 	golang.org/x/sys v0.0.0-20200905004654-be1d3432aa8f // indirect
 	golang.org/x/text v0.3.3 // indirect

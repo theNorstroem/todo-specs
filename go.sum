@@ -121,6 +121,8 @@ github.com/stretchr/objx v0.1.0/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+
 github.com/stretchr/testify v1.4.0/go.mod h1:j7eGeouHqKxXV5pUuKE4zz7dFj8WfuZ+81PSLYec5m4=
 github.com/theNorstroem/FuroBaseSpecs v1.11.8 h1:rAWZW/2bJ9x6hblHcx4j3DOQW4FOFH07BeOM4Z2QYzw=
 github.com/theNorstroem/FuroBaseSpecs v1.11.8/go.mod h1:5agi7AM0Te58qeTMmiv56Ducy8yhQiganpp2Ra6ZnFY=
+github.com/theNorstroem/FuroBaseSpecs v1.12.0 h1:yiWU3H62j+Tpy5VoJ63ltpG9hpl7jt2bFRT4BeL4DZc=
+github.com/theNorstroem/FuroBaseSpecs v1.12.0/go.mod h1:5agi7AM0Te58qeTMmiv56Ducy8yhQiganpp2Ra6ZnFY=
 github.com/yuin/goldmark v1.1.25/go.mod h1:3hX8gzYuyVAZsxl0MRgGTJEmQBFcNTphYh9decYSb74=
 github.com/yuin/goldmark v1.1.27/go.mod h1:3hX8gzYuyVAZsxl0MRgGTJEmQBFcNTphYh9decYSb74=
 github.com/yuin/goldmark v1.1.32/go.mod h1:3hX8gzYuyVAZsxl0MRgGTJEmQBFcNTphYh9decYSb74=

@@ -33,9 +33,10 @@ github.com/grpc-ecosystem/grpc-gateway/v2/runtime
 github.com/grpc-ecosystem/grpc-gateway/v2/utilities
 # github.com/spf13/pflag v1.0.5
 ## explicit
-# github.com/theNorstroem/FuroBaseSpecs v1.11.8
+# github.com/theNorstroem/FuroBaseSpecs v1.12.0
 ## explicit
 github.com/theNorstroem/FuroBaseSpecs/dist/pb/furo
+github.com/theNorstroem/FuroBaseSpecs/dist/pb/furo/signatures
 # golang.org/x/net v0.0.0-20200904194848-62affa334b73
 ## explicit
 golang.org/x/net/http/httpguts
