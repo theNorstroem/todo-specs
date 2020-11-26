@@ -26,11 +26,11 @@ You can find the following commands are in the *scripts* directory of this proje
 
 ```
 
-    :10000
+    :8080
    +-------------------------+
    |                         |
    |       todo-client       |  <-----------------+
-   |       (webserver)       |                    |
+   | (es-dev or webserver)   |                    |
    +-------------------------+                    |
                 |                         +----------------+
                 |                         |   todo-specs   |
