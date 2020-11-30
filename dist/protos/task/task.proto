@@ -43,7 +43,7 @@ message Task {
     // Task id (is a ULID).
     string id = 1;
 
-    // We use this field label the task
+    // We use this field to label the task
     string display_name = 2;
 
     // Add some notes
@@ -67,7 +67,7 @@ message Task {
     // If something goes wrong, we should be able to make some one responsible for it. This is aligned with our CYA strategy.
     person.Reference responsible_person = 9;
 
-    // this si maybe the main feature.
+    // this is maybe the main feature.
     bool done = 10;
 }
 

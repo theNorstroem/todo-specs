@@ -9,6 +9,8 @@ option java_package = "com.github.thenorstroem.todo.allservices";
 
 import "auth/auth.proto";
 import "auth/reqmsgs.proto";
+import "demo/demo.proto";
+import "demo/reqmsgs.proto";
 import "furo/signatures/signatures.proto";
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
@@ -39,6 +41,43 @@ service AuthSession {
 	//Delete: DELETE /auth google.protobuf.Empty , google.protobuf.Empty #Logout.
 	option (google.api.http) = {
 		delete: "/auth"
+		
+	};
+  }
+
+}
+
+
+
+
+
+// Give some good description here please
+// 
+service Demos {
+
+  // Use this to create new persons.
+  rpc CreateDemos (demo.CreateDemosRequest) returns (furo.signatures.EmptyEntity){
+	//Create: POST /demos demo.Demo , furo.signatures.EmptyEntity #Use this to create new persons.
+	option (google.api.http) = {
+		post: "/demos"
+		body: "body"
+	};
+  }
+
+  // Returns a single person.
+  rpc GetDemos (demo.GetDemosRequest) returns (demo.DemoEntity){
+	//Get: GET /demos/{dem} google.protobuf.Empty , demo.DemoEntity #Returns a single person.
+	option (google.api.http) = {
+		get: "/demos/{dem}"
+		
+	};
+  }
+
+  // List persons with pagination.
+  rpc ListDemoss (demo.ListDemossRequest) returns (demo.DemoCollection){
+	//List: GET /demos google.protobuf.Empty , demo.DemoCollection #List persons with pagination.
+	option (google.api.http) = {
+		get: "/demos"
 		
 	};
   }

@@ -6,6 +6,9 @@ import (
 	//auth.AuthSession
 	authpb "github.com/theNorstroem/todo-specs/dist/pb/auth"
 
+	//demo.Demos
+	demopb "github.com/theNorstroem/todo-specs/dist/pb/demo"
+
 	//person.Persons
 	personpb "github.com/theNorstroem/todo-specs/dist/pb/person"
 
@@ -19,6 +22,12 @@ func RegisterAllEndpoints(grpcBackendAddr string, ctx context.Context, mux *runt
 	var err error
 	// auth.AuthSession
 	err = authpb.RegisterAuthSessionHandlerFromEndpoint(ctx, mux, grpcBackendAddr, opts)
+	if err != nil {
+		return err
+	}
+
+	// demo.Demos
+	err = demopb.RegisterDemosHandlerFromEndpoint(ctx, mux, grpcBackendAddr, opts)
 	if err != nil {
 		return err
 	}

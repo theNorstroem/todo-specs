@@ -13,3 +13,5 @@
     display_name: '* string:2 #Label of the referenced person'
     link: '* furo.Link:3 #HTS for the initial search (default works on root resources only)'
   target: person.proto
+
+

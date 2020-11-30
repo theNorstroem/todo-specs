@@ -32,8 +32,6 @@ flows:
     - exec_protoc_services
     - gen_transcoder
     - copy_file_templates
-    - genBundledServiceProto
-    - gen_open_api
     - genEsModule
     - update_client_project
 build:

@@ -172,7 +172,7 @@ type Task struct {
 
 	// Task id (is a ULID).
 	Id string `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	// We use this field label the task
+	// We use this field to label the task
 	DisplayName string `protobuf:"bytes,2,opt,name=display_name,json=displayName,proto3" json:"display_name,omitempty"`
 	// Add some notes
 	Note string `protobuf:"bytes,3,opt,name=note,proto3" json:"note,omitempty"`
@@ -188,7 +188,7 @@ type Task struct {
 	InvolvedPersons []*person.Reference `protobuf:"bytes,8,rep,name=involved_persons,json=involvedPersons,proto3" json:"involved_persons,omitempty"`
 	// If something goes wrong, we should be able to make some one responsible for it. This is aligned with our CYA strategy.
 	ResponsiblePerson *person.Reference `protobuf:"bytes,9,opt,name=responsible_person,json=responsiblePerson,proto3" json:"responsible_person,omitempty"`
-	// this si maybe the main feature.
+	// this is maybe the main feature.
 	Done bool `protobuf:"varint,10,opt,name=done,proto3" json:"done,omitempty"`
 }
 

@@ -1,0 +1,6 @@
+- type: 'demo.Demo (ce) #a demo type'
+  fields:
+    id: '* string:1 #Id of the referenced person.'
+    display_name: '* string:2 #Label of the referenced person'
+    something: '* string:3 #something'
+  target: demo.proto

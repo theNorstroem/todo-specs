@@ -33,7 +33,7 @@ fields:
         constraints: {}
     display_name:
         type: string
-        description: We use this field label the task
+        description: We use this field to label the task
         __proto:
             number: 2
             oneof: ""
@@ -190,7 +190,7 @@ fields:
         constraints: {}
     done:
         type: bool
-        description: this si maybe the main feature.
+        description: this is maybe the main feature.
         __proto:
             number: 10
             oneof: ""

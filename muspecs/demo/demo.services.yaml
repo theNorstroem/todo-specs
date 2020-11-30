@@ -1,0 +1,16 @@
+- name: Demos
+  description: |
+    Give some good description here please
+  package: demo
+  target: demoservice.proto
+  methods:
+    - md: 'List: GET /demos google.protobuf.Empty , demo.DemoCollection #List persons with pagination.'
+      qp:
+        q: 'string #Use this to search for a person by text.'
+        filter: 'string #Use this field to filter the persons, this is not searching.'
+        order_by: 'string #Use this field to specify the ordering.'
+        page: 'string #Use this field to specify page to display.'
+    - md: 'Get: GET /demos/{dem} google.protobuf.Empty , demo.DemoEntity #Returns a single person.'
+      qp:
+        dem: 'string #The query param prs stands for the id of a person.'
+    - md: 'Create: POST /demos demo.Demo , furo.signatures.EmptyEntity #Use this to create new persons.'

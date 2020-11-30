@@ -1,7 +1,7 @@
 - type: 'task.Task (ce) #Tasks are essential at work.'
   fields:
     id: '- string:1 #Task id (is a ULID).'
-    display_name: '* string:2 #We use this field label the task'
+    display_name: '* string:2 #We use this field to label the task'
     note: 'string:3 #Add some notes'
     parent: 'task.Reference:4 #The parent for this task'
     checklist: '[]string:5 #A task can have a checklist (more work)'
@@ -9,7 +9,7 @@
     related_tasks: '[]task.Reference:7 #Maybe we can benefit.'
     involved_persons: '[]person.Reference:8 #Sometimes a task is to hard for one person only.'
     responsible_person: 'person.Reference:9 #If something goes wrong, we should be able to make some one responsible for it. This is aligned with our CYA strategy.'
-    done: 'bool:10 #this si maybe the main feature.'
+    done: 'bool:10 #this is maybe the main feature.'
   target: task.proto
 
 - type: 'task.CheckboxItem #The checkboxItem is not used at the moment, we plan to replace the repeated string (field checklist) of the task with this type.'
