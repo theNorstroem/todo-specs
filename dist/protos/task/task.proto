@@ -6,6 +6,7 @@ option java_multiple_files = true;
 option java_outer_classname = "TaskProto";
 option java_package = "pro.furo.todo";
 
+import "furo/fat/fat.proto";
 import "furo/furo.proto";
 import "google/type/date.proto";
 import "person/person.proto";
@@ -47,7 +48,7 @@ message Task {
     string display_name = 2;
 
     // Add some notes
-    string note = 3;
+    furo.fat.String note = 3;
 
     // The parent for this task
     task.Reference parent = 4;

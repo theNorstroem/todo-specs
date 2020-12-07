@@ -5,6 +5,7 @@ __proto:
     package: task
     targetfile: task.proto
     imports:
+        - furo/fat/fat.proto
         - google/type/date.proto
         - person/person.proto
     options:
@@ -58,7 +59,7 @@ fields:
                 is: "true"
                 message: display_name is required
     note:
-        type: string
+        type: furo.fat.String
         description: Add some notes
         __proto:
             number: 3
