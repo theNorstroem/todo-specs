@@ -692,10 +692,7 @@
       "type": "object",
       "properties": {
         "value": {
-          "type": "object",
-          "additionalProperties": {
-            "type": "boolean"
-          },
+          "type": "string",
           "title": "The JSON representation for `StringValue` is a JSON string"
         },
         "labels": {
