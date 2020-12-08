@@ -696,9 +696,9 @@
           "title": "The JSON representation for `StringValue` is a JSON string"
         },
         "labels": {
-          "type": "object",
-          "additionalProperties": {
-            "type": "boolean"
+          "type": "array",
+          "items": {
+            "type": "string"
           },
           "description": "Labels / flags for the value, something like unspecified, empty, confidential, absent,... Can be used for AI, UI, Business Logic,..."
         },

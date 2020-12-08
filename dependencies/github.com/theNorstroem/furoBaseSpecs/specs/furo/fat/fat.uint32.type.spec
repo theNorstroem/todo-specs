@@ -43,7 +43,7 @@ fields:
                 is: "0"
                 message: out of range
     labels:
-        type: map<string,bool>
+        type: string
         description: Labels / flags for the value, something like unspecified, empty, confidential, absent,... Can be used for AI, UI, Business Logic,...
         __proto:
             number: 2
@@ -61,7 +61,7 @@ fields:
                 flags: []
                 list: []
             readonly: false
-            repeated: false
+            repeated: true
             typespecific: null
         constraints: {}
     attributes:
