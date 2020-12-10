@@ -1,41 +1,20 @@
-# github.com/ghodss/yaml v1.0.0
-github.com/ghodss/yaml
-# github.com/golang/glog v0.0.0-20160126235308-23def4e6c14b
-github.com/golang/glog
 # github.com/golang/protobuf v1.4.3
 ## explicit
-github.com/golang/protobuf/descriptor
 github.com/golang/protobuf/proto
-github.com/golang/protobuf/protoc-gen-go/descriptor
 github.com/golang/protobuf/ptypes
 github.com/golang/protobuf/ptypes/any
 github.com/golang/protobuf/ptypes/duration
-github.com/golang/protobuf/ptypes/struct
 github.com/golang/protobuf/ptypes/timestamp
 github.com/golang/protobuf/ptypes/wrappers
-# github.com/gopherjs/gopherjs v0.0.0-20190910122728-9d188e94fb99
-## explicit
 # github.com/grpc-ecosystem/grpc-gateway/v2 v2.0.1
 ## explicit
-github.com/grpc-ecosystem/grpc-gateway/v2/internal/casing
-github.com/grpc-ecosystem/grpc-gateway/v2/internal/codegenerator
-github.com/grpc-ecosystem/grpc-gateway/v2/internal/descriptor
-github.com/grpc-ecosystem/grpc-gateway/v2/internal/descriptor/apiconfig
-github.com/grpc-ecosystem/grpc-gateway/v2/internal/descriptor/openapiconfig
-github.com/grpc-ecosystem/grpc-gateway/v2/internal/generator
 github.com/grpc-ecosystem/grpc-gateway/v2/internal/httprule
-github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-grpc-gateway
-github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-grpc-gateway/internal/gengateway
-github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2
-github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2/internal/genopenapi
-github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2/options
 github.com/grpc-ecosystem/grpc-gateway/v2/runtime
 github.com/grpc-ecosystem/grpc-gateway/v2/utilities
-# github.com/spf13/pflag v1.0.5
-## explicit
 # github.com/theNorstroem/FuroBaseSpecs v1.12.0
 ## explicit
 github.com/theNorstroem/FuroBaseSpecs/dist/pb/furo
+github.com/theNorstroem/FuroBaseSpecs/dist/pb/furo/fat
 github.com/theNorstroem/FuroBaseSpecs/dist/pb/furo/signatures
 # golang.org/x/net v0.0.0-20200904194848-62affa334b73
 ## explicit
@@ -50,7 +29,6 @@ golang.org/x/net/trace
 golang.org/x/sys/internal/unsafeheader
 golang.org/x/sys/unix
 # golang.org/x/text v0.3.3
-## explicit
 golang.org/x/text/secure/bidirule
 golang.org/x/text/transform
 golang.org/x/text/unicode/bidi
@@ -105,14 +83,8 @@ google.golang.org/grpc/serviceconfig
 google.golang.org/grpc/stats
 google.golang.org/grpc/status
 google.golang.org/grpc/tap
-# google.golang.org/grpc/cmd/protoc-gen-go-grpc v1.0.0
-## explicit
-google.golang.org/grpc/cmd/protoc-gen-go-grpc
 # google.golang.org/protobuf v1.25.0
 ## explicit
-google.golang.org/protobuf/cmd/protoc-gen-go
-google.golang.org/protobuf/cmd/protoc-gen-go/internal_gengo
-google.golang.org/protobuf/compiler/protogen
 google.golang.org/protobuf/encoding/protojson
 google.golang.org/protobuf/encoding/prototext
 google.golang.org/protobuf/encoding/protowire
@@ -137,7 +109,6 @@ google.golang.org/protobuf/internal/set
 google.golang.org/protobuf/internal/strs
 google.golang.org/protobuf/internal/version
 google.golang.org/protobuf/proto
-google.golang.org/protobuf/reflect/protodesc
 google.golang.org/protobuf/reflect/protoreflect
 google.golang.org/protobuf/reflect/protoregistry
 google.golang.org/protobuf/runtime/protoiface
@@ -147,11 +118,5 @@ google.golang.org/protobuf/types/known/anypb
 google.golang.org/protobuf/types/known/durationpb
 google.golang.org/protobuf/types/known/emptypb
 google.golang.org/protobuf/types/known/fieldmaskpb
-google.golang.org/protobuf/types/known/structpb
 google.golang.org/protobuf/types/known/timestamppb
 google.golang.org/protobuf/types/known/wrapperspb
-google.golang.org/protobuf/types/pluginpb
-# gopkg.in/yaml.v2 v2.2.3
-gopkg.in/yaml.v2
-# gopkg.in/yaml.v3 v3.0.0-20200615113413-eeeca48fe776
-## explicit

@@ -9,7 +9,7 @@
 
 - type: 'person.Reference #Use this type to set a reference to a person'
   fields:
-    id: '* string:1 #Id of the referenced person.'
-    display_name: '* string:2 #Label of the referenced person'
-    link: '* furo.Link:3 #HTS for the initial search (default works on root resources only)'
+    id: 'string:1 #Id of the referenced person.'
+    display_name: 'string:2 #Label of the referenced person'
+    link: 'furo.Link:3 #HTS for the initial search (default works on root resources only)'
   target: person.proto
