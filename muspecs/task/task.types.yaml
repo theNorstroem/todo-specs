@@ -21,7 +21,7 @@
 
 - type: 'task.Reference #Use this to set a reference to a task'
   fields:
-    id: '* string:1 #Id of the referenced task.'
-    display_name: '* string:2 #Label of the referenced task'
-    link: '* furo.Link:3 #HTS for the initial search (works on root resources only)'
+    id: 'string:1 #Id of the referenced task.'
+    display_name: 'string:2 #Label of the referenced task'
+    link: 'furo.Link:3 #HTS for the initial search (works on root resources only)'
   target: task.proto

@@ -29,10 +29,7 @@ fields:
             readonly: false
             repeated: false
             typespecific: null
-        constraints:
-            required:
-                is: "true"
-                message: id is required
+        constraints: {}
     display_name:
         type: string
         description: Label of the referenced task
@@ -50,10 +47,7 @@ fields:
             readonly: false
             repeated: false
             typespecific: null
-        constraints:
-            required:
-                is: "true"
-                message: display_name is required
+        constraints: {}
     link:
         type: furo.Link
         description: HTS for the initial search (works on root resources only)
@@ -78,7 +72,4 @@ fields:
             readonly: false
             repeated: false
             typespecific: null
-        constraints:
-            required:
-                is: "true"
-                message: link is required
+        constraints: {}
