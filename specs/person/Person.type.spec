@@ -16,7 +16,6 @@ fields:
         description: id (is a ULID). We do not use the email, they change sometimes.
         __proto:
             number: 1
-            oneof: ""
         __ui: null
         meta:
             default: ""
@@ -34,7 +33,6 @@ fields:
         description: We use this field label the person, using last_name and first_name is so 2008
         __proto:
             number: 2
-            oneof: ""
         __ui: null
         meta:
             default: ""
@@ -55,7 +53,6 @@ fields:
         description: Add some notes, limited to 140 chars
         __proto:
             number: 3
-            oneof: ""
         __ui: null
         meta:
             default: ""
@@ -73,7 +70,6 @@ fields:
         description: We should be able to contact someone.
         __proto:
             number: 4
-            oneof: ""
         __ui: null
         meta:
             default: ""
@@ -91,7 +87,6 @@ fields:
         description: We should be able to talk with someone.
         __proto:
             number: 5
-            oneof: ""
         __ui: null
         meta:
             default: ""

@@ -19,7 +19,6 @@ fields:
         description: Task id (is a ULID).
         __proto:
             number: 1
-            oneof: ""
         __ui: null
         meta:
             default: ""
@@ -37,7 +36,6 @@ fields:
         description: We use this field label the task
         __proto:
             number: 2
-            oneof: ""
         __ui:
             component: furo-data-text-input
             flags:
@@ -63,7 +61,6 @@ fields:
         description: Add some notes
         __proto:
             number: 3
-            oneof: ""
         __ui: null
         meta:
             default: ""
@@ -81,7 +78,6 @@ fields:
         description: The parent for this task
         __proto:
             number: 4
-            oneof: ""
         __ui:
             component: task-task-reference-search
             flags:
@@ -104,7 +100,6 @@ fields:
         description: A task can have a checklist (more work)
         __proto:
             number: 5
-            oneof: ""
         __ui: null
         meta:
             default: ""
@@ -122,7 +117,6 @@ fields:
         description: Use this to give pressure.
         __proto:
             number: 6
-            oneof: ""
         __ui: null
         meta:
             default: ""
@@ -140,7 +134,6 @@ fields:
         description: Maybe we can benefit.
         __proto:
             number: 7
-            oneof: ""
         __ui: null
         meta:
             default: ""
@@ -158,7 +151,6 @@ fields:
         description: Sometimes a task is to hard for one person only.
         __proto:
             number: 8
-            oneof: ""
         __ui: null
         meta:
             default: ""
@@ -176,7 +168,6 @@ fields:
         description: If something goes wrong, we should be able to make some one responsible for it. This is aligned with our CYA strategy.
         __proto:
             number: 9
-            oneof: ""
         __ui: null
         meta:
             default: ""
@@ -194,7 +185,6 @@ fields:
         description: this si maybe the main feature.
         __proto:
             number: 10
-            oneof: ""
         __ui: null
         meta:
             default: ""

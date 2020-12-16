@@ -17,7 +17,6 @@ fields:
         description: Body with task.Task
         __proto:
             number: 1
-            oneof: ""
         __ui: null
         meta:
             default: ""

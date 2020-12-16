@@ -16,7 +16,6 @@ fields:
         description: The password.
         __proto:
             number: 1
-            oneof: ""
         __ui: null
         meta:
             default: ""
@@ -37,7 +36,6 @@ fields:
         description: The username or email, or something to identify.
         __proto:
             number: 2
-            oneof: ""
         __ui: null
         meta:
             default: ""

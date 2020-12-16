@@ -18,7 +18,6 @@ fields:
         description: Body with person.Person
         __proto:
             number: 1
-            oneof: ""
         __ui: null
         meta:
             default: ""
@@ -36,7 +35,6 @@ fields:
         description: Needed to patch a record
         __proto:
             number: 3
-            oneof: ""
         __ui: null
         meta:
             default: ""
@@ -54,7 +52,6 @@ fields:
         description: The query param prs stands for the id of a person.
         __proto:
             number: 2
-            oneof: ""
         __ui: null
         meta:
             default: ""

@@ -17,7 +17,6 @@ fields:
         description: the data contains a person.Person
         __proto:
             number: 1
-            oneof: ""
         __ui: null
         meta:
             default: ""
@@ -35,7 +34,6 @@ fields:
         description: the Hateoas links
         __proto:
             number: 2
-            oneof: ""
         __ui: null
         meta:
             default: ""
@@ -53,7 +51,6 @@ fields:
         description: Meta for the response
         __proto:
             number: 3
-            oneof: ""
         __ui: null
         meta:
             default: ""

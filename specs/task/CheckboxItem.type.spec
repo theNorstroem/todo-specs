@@ -16,7 +16,6 @@ fields:
         description: This is the description of the checkbox item
         __proto:
             number: 2
-            oneof: ""
         __ui: null
         meta:
             default: ""
@@ -37,7 +36,6 @@ fields:
         description: Sample
         __proto:
             number: 3
-            oneof: ""
         __ui: null
         meta:
             default: ""
@@ -55,7 +53,6 @@ fields:
         description: Add some notes
         __proto:
             number: 4
-            oneof: ""
         __ui: null
         meta:
             default: ""

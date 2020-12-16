@@ -17,7 +17,6 @@ fields:
         description: Body with auth.Credentials
         __proto:
             number: 1
-            oneof: ""
         __ui: null
         meta:
             default: ""

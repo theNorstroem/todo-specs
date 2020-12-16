@@ -2,21 +2,23 @@ name: Condition
 type: Condition
 description: Filter condition
 __proto:
-    package: filter
+    package: furo.filter
     targetfile: filter.proto
     imports: []
     options:
-        go_package: github.com/theNorstroem/todo-specs/dist/pb/filter;filterpb
+        cc_enable_arenas: "true"
+        csharp_namespace: Furo.Filter
+        go_package: github.com/theNorstroem/FuroBaseSpecs/dist/pb/furo/filter;filterpb
         java_multiple_files: "true"
         java_outer_classname: FilterProto
-        java_package: com.furo.basefilter
+        java_package: pro.furo.filter
+        objc_class_prefix: FPB
 fields:
     fld:
         type: string
         description: Field
         __proto:
             number: 1
-            oneof: ""
         __ui: null
         meta:
             default: ""
@@ -37,7 +39,6 @@ fields:
         description: The comparator like gt, eq,...
         __proto:
             number: 2
-            oneof: ""
         __ui: null
         meta:
             default: ""
@@ -52,10 +53,9 @@ fields:
         constraints: {}
     val:
         type: string
-        description: The value as string, parse this for your field
+        description: The value as string, parse and convert this for your field
         __proto:
             number: 3
-            oneof: ""
         __ui: null
         meta:
             default: ""
@@ -70,15 +70,16 @@ fields:
         constraints: {}
     aoc:
         type: filter.Condition
-        description: And bracket with ors inside
+        description: |-
+            And bracket with ors inside
+            Nesting means and, siblings means or
         __proto:
             number: 4
-            oneof: ""
         __ui: null
         meta:
             default: ""
             hint: ""
-            label: filter.Condition.aoc.label
+            label: ""
             options:
                 flags: []
                 list: []

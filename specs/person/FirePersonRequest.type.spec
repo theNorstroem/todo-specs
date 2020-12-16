@@ -17,7 +17,6 @@ fields:
         description: Body with google.protobuf.Empty
         __proto:
             number: 1
-            oneof: ""
         __ui: null
         meta:
             default: ""
@@ -35,7 +34,6 @@ fields:
         description: The query param prs stands for the id of a person.
         __proto:
             number: 2
-            oneof: ""
         __ui: null
         meta:
             default: ""

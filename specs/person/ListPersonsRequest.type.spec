@@ -17,7 +17,6 @@ fields:
         description: Body with google.protobuf.Empty
         __proto:
             number: 1
-            oneof: ""
         __ui: null
         meta:
             default: ""
@@ -35,7 +34,6 @@ fields:
         description: Use this to search for a person by text.
         __proto:
             number: 2
-            oneof: ""
         __ui: null
         meta:
             default: ""
@@ -53,7 +51,6 @@ fields:
         description: Use this field to filter the persons, this is not searching.
         __proto:
             number: 3
-            oneof: ""
         __ui: null
         meta:
             default: ""
@@ -71,7 +68,6 @@ fields:
         description: Use this field to specify the ordering.
         __proto:
             number: 4
-            oneof: ""
         __ui: null
         meta:
             default: ""
@@ -89,7 +85,6 @@ fields:
         description: Use this field to specify page to display.
         __proto:
             number: 5
-            oneof: ""
         __ui: null
         meta:
             default: ""

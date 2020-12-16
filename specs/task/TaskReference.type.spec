@@ -17,7 +17,6 @@ fields:
         description: Id of the referenced task.
         __proto:
             number: 1
-            oneof: ""
         __ui: null
         meta:
             default: ""
@@ -35,7 +34,6 @@ fields:
         description: Label of the referenced task
         __proto:
             number: 2
-            oneof: ""
         __ui: null
         meta:
             default: ""
@@ -53,7 +51,6 @@ fields:
         description: HTS for the initial search (works on root resources only)
         __proto:
             number: 3
-            oneof: ""
         __ui: null
         meta:
             default: |
