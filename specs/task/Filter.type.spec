@@ -110,23 +110,28 @@ fields:
                 default_comparator: eq
                 hide_comparator: true
         constraints: {}
-    responsible:
+    person:
         type: furo.filter.Condition
         description: Filter for the person with the id of the person
         __proto:
-            number: 4
+            number: 6
         __ui: null
         meta:
-            default: ""
+            default: |-
+                {
+                  "fld": "person",
+                  "is": "*",
+                  "val": ""
+                }
             hint: ""
-            label: task.Filter.responsible_person.label
+            label: task.Filter.person.label
             options:
                 flags: []
                 list: []
             readonly: false
             repeated: false
             typespecific:
-                comparators: eq
-                default_comparator: eq
+                comparators: '*, sw'
+                default_comparator: ""
                 hide_comparator: false
         constraints: {}

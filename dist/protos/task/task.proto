@@ -42,7 +42,7 @@ message Filter {
     furo.filter.Condition done = 5;
 
     // Filter for the person with the id of the person
-    furo.filter.Condition responsible = 4;
+    furo.filter.Condition person = 6;
 }
 
 // Use this to set a reference to a task

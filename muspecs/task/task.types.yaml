@@ -31,6 +31,6 @@
     display_name: 'furo.filter.Condition:1 #Filter for text in the task label'
     note: 'furo.filter.Condition:2 #Filter for text in the notes'
     due_date: 'furo.filter.Condition:3 #Filter for the due date'
-    responsible: 'furo.filter.Condition:4 #Filter for the person with the id of the person'
+    person: 'furo.filter.Condition:6 #Filter for the person with the id of the person'
     done: 'furo.filter.Condition:5 #Filter for completed tasks'
   target: task.proto
