@@ -119,8 +119,8 @@ fields:
         meta:
             default: |-
                 {
-                  "fld": "person",
-                  "is": "*",
+                  "fld": "responsible_person",
+                  "is": "eq",
                   "val": ""
                 }
             hint: ""
@@ -131,7 +131,7 @@ fields:
             readonly: false
             repeated: false
             typespecific:
-                comparators: '*, sw'
-                default_comparator: ""
-                hide_comparator: false
+                comparators: eq
+                default_comparator: eq
+                hide_comparator: true
         constraints: {}
