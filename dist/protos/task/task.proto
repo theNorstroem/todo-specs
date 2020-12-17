@@ -7,6 +7,7 @@ option java_outer_classname = "TaskProto";
 option java_package = "pro.furo.todo";
 
 import "furo/fat/fat.proto";
+import "furo/filter/filter.proto";
 import "furo/furo.proto";
 import "google/type/date.proto";
 import "person/person.proto";
@@ -23,6 +24,25 @@ message CheckboxItem {
 
     // Add some notes
     string note = 4;
+}
+
+// Filterable fields for the task type This type should be used in the filter argument for the List method. Use the --filterChanged(*._base64) to connect to the filter of the collection agent
+message Filter {  
+
+    // Filter for text in the task label
+    furo.filter.Condition display_name = 1;
+
+    // Filter for text in the notes
+    furo.filter.Condition note = 2;
+
+    // Filter for the due date
+    furo.filter.Condition due_date = 3;
+
+    // Filter for completed tasks
+    furo.filter.Condition done = 5;
+
+    // Filter for the person with the id of the person
+    furo.filter.Condition responsible = 4;
 }
 
 // Use this to set a reference to a task
