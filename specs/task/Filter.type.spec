@@ -22,19 +22,21 @@ fields:
             default: |-
                 {
                   "fld": "display_name",
-                  "is": "*"
+                  "is": "*",
+                  "val": ""
                 }
             hint: ""
-            label: task.Filter.display_name.label
+            label: task.Filter.display_name
             options:
                 flags: []
                 list: []
             readonly: false
             repeated: false
             typespecific:
-                comparators: '*'
-                default_comparator: '*'
-                hide_comparator: true
+                filter:
+                    comparators: '*'
+                    default_comparator: '*'
+                    hide_comparator: true
         constraints: {}
     note:
         type: furo.filter.Condition
@@ -50,16 +52,17 @@ fields:
                   "val": ""
                 }
             hint: ""
-            label: task.Filter.note.label
+            label: task.Filter.note
             options:
                 flags: []
                 list: []
             readonly: false
             repeated: false
             typespecific:
-                comparators: '*, sw'
-                default_comparator: ""
-                hide_comparator: false
+                filter:
+                    comparators: '*, sw'
+                    default_comparator: '*'
+                    hide_comparator: false
         constraints: {}
     due_date:
         type: furo.filter.Condition
@@ -75,15 +78,16 @@ fields:
                   "val": ""
                 }
             hint: ""
-            label: task.Filter.due_date.label
+            label: task.Filter.due_date
             options:
                 flags: []
                 list: []
             readonly: false
             repeated: false
             typespecific:
-                comparators: lt, gt, lte, gte
-                default_comparator: lt
+                filter:
+                    comparators: lt, gt, lte, gte
+                    default_comparator: lt
         constraints: {}
     done:
         type: furo.filter.Condition
@@ -99,16 +103,17 @@ fields:
                   "val": "true"
                 }
             hint: ""
-            label: task.Filter.done.label
+            label: task.Filter.done
             options:
                 flags: []
                 list: []
             readonly: false
             repeated: false
             typespecific:
-                comparators: eq, not
-                default_comparator: eq
-                hide_comparator: true
+                filter:
+                    comparators: eq, not
+                    default_comparator: eq
+                    hide_comparator: true
         constraints: {}
     person:
         type: furo.filter.Condition
@@ -124,14 +129,15 @@ fields:
                   "val": ""
                 }
             hint: ""
-            label: task.Filter.person.label
+            label: task.Filter.person
             options:
                 flags: []
                 list: []
             readonly: false
             repeated: false
             typespecific:
-                comparators: eq
-                default_comparator: eq
-                hide_comparator: true
+                filter:
+                    comparators: eq
+                    default_comparator: eq
+                    hide_comparator: true
         constraints: {}

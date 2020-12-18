@@ -4,7 +4,7 @@ package task;
 option go_package = "github.com/theNorstroem/todo-specs/dist/pb/task;taskpb";
 option java_multiple_files = true;
 option java_outer_classname = "TaskProto";
-option java_package = "com.furo.basetask";
+option java_package = "pro.furo.todo";
 
 import "furo/fat/fat.proto";
 import "furo/filter/filter.proto";
