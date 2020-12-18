@@ -11,10 +11,11 @@ github.com/golang/protobuf/ptypes/wrappers
 github.com/grpc-ecosystem/grpc-gateway/v2/internal/httprule
 github.com/grpc-ecosystem/grpc-gateway/v2/runtime
 github.com/grpc-ecosystem/grpc-gateway/v2/utilities
-# github.com/theNorstroem/FuroBaseSpecs v1.12.0
+# github.com/theNorstroem/FuroBaseSpecs v1.14.1
 ## explicit
 github.com/theNorstroem/FuroBaseSpecs/dist/pb/furo
 github.com/theNorstroem/FuroBaseSpecs/dist/pb/furo/fat
+github.com/theNorstroem/FuroBaseSpecs/dist/pb/furo/filter
 github.com/theNorstroem/FuroBaseSpecs/dist/pb/furo/signatures
 # golang.org/x/net v0.0.0-20200904194848-62affa334b73
 ## explicit
