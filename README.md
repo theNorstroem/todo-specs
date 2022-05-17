@@ -1,3 +1,5 @@
+> Discontinued please look at https://furo.pro/docs/guides/ebook-tutorial/
+
 # todo-specs
 
 This is the spec project for the [todo-server](https://github.com/theNorstroem/todo-server) and [todo-client](https://github.com/theNorstroem/todo-client).
